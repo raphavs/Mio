@@ -1,0 +1,119 @@
+/* Schrift des gesamten Bodys */
+body {
+    font-family: Corbel, Arial, sans-serif;
+    color: #191b1d;
+}
+
+/* Schriftgröße Paragraphen */
+p {
+    font-size: 1.2rem;
+}
+
+/* Schrift NavBar */
+.my-navbar-font .nav-link {
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+/* Farbe aktive Seite NavBar */
+.active-site {
+    color: #f3be29 !important;
+    font-weight: bold;
+}
+
+/* Abstände zwischen NavBar Elementen */
+.navbar-nav li {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/* Style Login-Button */
+.btn-outline-login {
+    color: #226693;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Style CreateAccount-Button */
+.btn-create-account {
+    color: #ffffff;
+    background-color: #226693;
+    border-color: #226693;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Hintergrundfarbe NavBar */
+.my-navbar-bg {
+    background-color: #191b1d
+}
+
+/* Header */
+.my-header-style {
+    padding-top: 2px;
+    padding-bottom: 6px;
+    background-color: #d9d9d9;
+    color: #191b1d;
+}
+.my-header-style h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* eigene Display-Klasse für Überschriften */
+.display-5 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Style ReadMore-Button */
+.btn-readmore {
+    color: #191b1d;
+    background-color: #f3be29;
+    border-color: #f3be29;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+#my-readmore-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
+}
+
+/* Padding für About-Section */
+.my-about-padding {
+    padding-top: 30px;
+}
+
+/* Padding für User-Section */
+.my-user-padding {
+    padding-bottom: 25px;
+}
+
+/* Überschriften im Footer */
+.my-footer-bg h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* hr Style im Footer */
+.my-hr-style {
+    height: 1px;
+    border: none;
+    color: #226693;
+    background-color: #226693;
+}
+
+/* Paragraphen im Footer */
+.my-footer-bg p {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Footer Hintergrund */
+.my-footer-bg {
+    background-color: #191b1d
+}
