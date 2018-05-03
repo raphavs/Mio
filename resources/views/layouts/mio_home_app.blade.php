@@ -43,8 +43,14 @@
                 <a class="nav-link {{ (\Request::route()->getName() == 'home_profile') ? 'active-site' : '' }}"
                    href="{{ route('home_profile') }}">My Profile</a>
             </li>
-            <li class="nav-item">
-                <a class="btn btn-create-account" role="button" href="{{ route('mio_welcome') }}">Logout</a>
+            <li class="nav-item ">
+                <a class="btn btn-create-account" role="button" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
         </ul>
     </div>
@@ -55,7 +61,7 @@
 </div>
 
 <!-- footer -->
-<footer class="my-footer-bg">
+<footer class="my-footer-bg putdown">
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">

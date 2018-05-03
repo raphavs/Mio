@@ -13,12 +13,13 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'WelcomeController@invokeWelcome')->name('mio_welcome');
+Route::get('/information', 'WelcomeController@invokeInformation')->name('welcome_info');
+Route::get('/people', 'WelcomeController@invokePeople')->name('welcome_people');
+Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome_features');
 
-Route::get('/', 'PageController@invokeWelcome')->name('mio_welcome');
-Route::get('/Information', 'PageController@invokeInformation')->name('welcome_info');
-Route::get('/People', 'PageController@invokePeople')->name('welcome_people');
-Route::get('/Features', 'PageController@invokeFeatures')->name('welcome_features');
+Route::get('/home', 'HomeController@invokeHome')->name('mio_home');
+Route::get('/myprofile', 'HomeController@invokeProfile')->name('home_profile');
 
-Route::get('/Home', 'PageController@invokeHome')->name('mio_home')->middleware('auth');
-Route::get('/MyProfile', 'PageController@invokeProfile')->name('home_profile');
+Route::get('/login', 'WelcomeController@invokeLogin')->name('login');
+Route::get('/register', 'WelcomeController@invokeRegister')->name('register');

@@ -9,7 +9,7 @@
 namespace App\Http\Controllers;
 
 
-class PageController
+class WelcomeController extends Controller
 {
 
     public function invokeWelcome(){
@@ -28,12 +28,12 @@ class PageController
         return view('mio_features');
     }
 
-    public function invokeHome(){
-        return view('mio_home');
+    public function invokeLogin(){
+        return view('mio_login');
     }
 
-    public function invokeProfile(){
-        return view('mio_profile');
+    public function invokeRegister(){
+        return view('mio_register');
     }
 
 }

@@ -16,6 +16,9 @@ p {
     color: #ffffff;
     font-size: 1.3rem;
 }
+.my-navbar-font .nav-link:hover {
+    color: #f3be29;
+}
 
 /* Farbe aktive Seite NavBar */
 .active-site {
@@ -36,8 +39,17 @@ p {
     color: #226693;
     background-color: #ffffff;
     border-color: #ffffff;
+    border-width: medium;
     font-weight: bold;
     font-size: 1.1rem;
+}
+.btn-outline-login:hover {
+    color: #191b1d;
+    background-color: #f3be29;
+    border-color: #f3be29;
+}
+.btn-outline-login:focus {
+    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
 }
 
 /* Style CreateAccount-Button */
@@ -45,8 +57,17 @@ p {
     color: #ffffff;
     background-color: #226693;
     border-color: #226693;
+    border-width: medium;
     font-weight: bold;
     font-size: 1.1rem;
+}
+.btn-create-account:hover {
+    color: #191b1d;
+    background-color: #f3be29;
+    border-color: #f3be29;
+}
+.btn-create-account:focus {
+    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
 }
 
 /* Hintergrundfarbe NavBar */
@@ -77,12 +98,17 @@ p {
     color: #191b1d;
     background-color: #f3be29;
     border-color: #f3be29;
+    border-width: medium;
     font-weight: bold;
     font-size: 1.1rem;
 }
+#my-readmore-btn:hover {
+    color: #ffffff;
+    background-color: #226693;
+    border-color: #226693;
+}
 #my-readmore-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
 }
 
 /* Padding für About-Section */
@@ -129,4 +155,58 @@ p {
 /* Padding für This Is Mio */
 .thisIsMio-padding {
     padding-bottom: 16px;
+}
+
+/* Footer nach unten setzen */
+.putdown {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+/* Überschrift Logging */
+.logging {
+    color: #f3be29;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Style 'forgot your password' */
+.my-btn-link {
+    color: #226693;
+    font-weight: bold;
+}
+.my-btn-link:hover {
+    color: #226693;
+    text-decoration: underline;
+}
+.my-btn-link:focus {
+    box-shadow: none;
+}
+
+/* Logging Hintergrund */
+.logging-body {
+    background-color: #d9d9d9;
+}
+
+/* Logging Labels */
+.my-col-form-label {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* Style für Remember Me */
+.remember-me-label {
+    color: #191b1d;
+    font-weight: bold;
+}
+
+/* Logging Input Focus */
+.my-input:focus {
+    border: 1px;
+    box-shadow: 0 0 10px;
 }
