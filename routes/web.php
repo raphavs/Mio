@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('mio_welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'PageController@invokeWelcome')->name('mio_welcome');
+Route::get('/Information', 'PageController@invokeInformation')->name('welcome_info');
+Route::get('/People', 'PageController@invokePeople')->name('welcome_people');
+Route::get('/Features', 'PageController@invokeFeatures')->name('welcome_features');

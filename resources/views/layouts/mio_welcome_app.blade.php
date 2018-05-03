@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Mio</title>
+    <title>Mio Welcome</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../../public/css/bootstrap.css">
-    <link rel="stylesheet" href="../../../public/css/myStyles.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/myStyles.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -22,8 +22,8 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg my-navbar-font my-navbar-bg sticky-top">
-    <a class="navbar-brand" href="#">
-        <img src="../../assets/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
+    <a class="navbar-brand" href="{{ route('mio_welcome') }}">
+        <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
     </a>
     <button class="navbar-toggler navbar-dark" type="button"
             data-toggle="collapse" data-target="#navbarNav"
@@ -33,23 +33,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link active-site" href="#">Mio Home<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link {{ (\Request::route()->getName() == 'mio_welcome') ? 'active-site' : '' }}"
+                   href="{{ route('mio_welcome') }}">Welcome to Mio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_features') ? 'active-site' : '' }}"
+                   href="{{ route('welcome_features') }}">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">People</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_people') ? 'active-site' : '' }}"
+                   href="{{ route('welcome_people') }}">People</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Information</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_info') ? 'active-site' : '' }}"
+                   href="{{ route('welcome_info') }}">Information</a>
             </li>
             <li class="nav-item">
-                <button class="btn btn-outline-login" type="button">Login</button>
+                <a class="btn btn-outline-login" role="button" href="{{ route('login') }}">Login</a>
             </li>
             <li class="nav-item">
-                <button class="btn btn-create-account" type="button">Create Account</button>
+                <a class="btn btn-create-account" role="button" href="{{ route('register') }}">Create Account</a>
             </li>
         </ul>
     </div>
@@ -64,17 +68,9 @@
     </div>
 </header>
 
-<br>
-<br>
-<br>
-
-<main class="py-4">
+<div>
     @yield('content')
-</main>
-
-<br>
-<br>
-<br>
+</div>
 
 <!-- footer -->
 <footer class="my-footer-bg">
@@ -92,7 +88,7 @@
             <div class="col-md-4">
                 <div>
                     <hr class="my-hr-style">
-                    <img src="../../../resources/assets/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
+                    <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
                     <hr class="my-hr-style">
                 </div>
                 <br>
@@ -117,6 +113,5 @@
         </div>
     </div>
 </footer>
-
 </body>
 </html>
