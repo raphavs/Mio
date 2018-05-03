@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Mio Welcome</title>
+    <title>Mio Home</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -21,7 +21,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg my-navbar-font my-navbar-bg sticky-top">
-    <a class="navbar-brand" href="{{ route('mio_welcome') }}">
+    <a class="navbar-brand" href="{{ route('mio_home') }}">
         <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
     </a>
     <button class="navbar-toggler navbar-dark" type="button"
@@ -33,39 +33,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'mio_welcome') ? 'active-site' : '' }}"
-                   href="{{ route('mio_welcome') }}">Welcome to Mio</a>
+                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_features') ? 'active-site' : '' }}"
-                   href="{{ route('welcome_features') }}">Features</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'mio_home') ? 'active-site' : '' }}"
+                   href="{{ route('mio_home') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_info') ? 'active-site' : '' }}"
-                   href="{{ route('welcome_info') }}">Information</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'home_profile') ? 'active-site' : '' }}"
+                   href="{{ route('home_profile') }}">My Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_people') ? 'active-site' : '' }}"
-                   href="{{ route('welcome_people') }}">People</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-outline-login" role="button" href="{{ route('login') }}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-create-account" role="button" href="{{ route('register') }}">Create Account</a>
+                <a class="btn btn-create-account" role="button" href="{{ route('mio_welcome') }}">Logout</a>
             </li>
         </ul>
     </div>
 </nav>
-
-<!-- Slogan -->
-<header>
-    <div class="text-center">
-        <div class="my-header-style">
-            <h3>Manage your doors smart.</h3>
-        </div>
-    </div>
-</header>
 
 <div>
     @yield('content')
@@ -75,33 +58,10 @@
 <footer class="my-footer-bg">
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-md-4">
-                <hr class="my-hr-style">
-                <h5>Contact</h5>
-                <hr class="my-hr-style">
-                <p>+49 123 - 987654321</p>
-                <p>mio@htwg-konstanz.de</p>
-                <p>Alfred-Wachtel Straße 1</p>
-                <p>78462 Constance, Germany</p>
-            </div>
-            <div class="col-md-4">
+            <div class="col-12">
                 <div class="logo-footer-padding">
                     <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
                 </div>
-                <br>
-                <div>
-                    <p>Privacy Policy</p>
-                    <p>Feedback</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <hr class="my-hr-style">
-                <h5>Information</h5>
-                <hr class="my-hr-style">
-                <p>Charge</p>
-                <p>Devices</p>
-                <p>Security</p>
-                <p>Terms of Use</p>
             </div>
             <div class="col-12">
                 <hr class="my-hr-style">

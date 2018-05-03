@@ -19,3 +19,6 @@ Route::get('/', 'PageController@invokeWelcome')->name('mio_welcome');
 Route::get('/Information', 'PageController@invokeInformation')->name('welcome_info');
 Route::get('/People', 'PageController@invokePeople')->name('welcome_people');
 Route::get('/Features', 'PageController@invokeFeatures')->name('welcome_features');
+
+Route::get('/Home', 'PageController@invokeHome')->name('mio_home')->middleware('auth');
+Route::get('/MyProfile', 'PageController@invokeProfile')->name('home_profile');

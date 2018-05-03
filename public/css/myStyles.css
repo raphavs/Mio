@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 /* Schrift des gesamten Bodys */
 body {
-    font-family: Corbel, Arial, sans-serif;
+    font-family: 'Raleway', Corbel, Arial, sans-serif;
     color: #191b1d;
 }
 
@@ -25,7 +27,7 @@ p {
 .navbar-nav li {
     padding-right: 5px;
     padding-left: 5px;
-    padding-top: 2px;
+    padding-top: 3px;
     padding-bottom: 2px;
 }
 
@@ -54,7 +56,7 @@ p {
 
 /* Header */
 .my-header-style {
-    padding-top: 2px;
+    padding-top: 3px;
     padding-bottom: 6px;
     background-color: #d9d9d9;
     color: #191b1d;
@@ -99,12 +101,18 @@ p {
     font-weight: bold;
 }
 
+/* Padding für Logo */
+.logo-footer-padding {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
 /* hr Style im Footer */
 .my-hr-style {
     height: 1px;
     border: none;
-    color: #226693;
-    background-color: #226693;
+    color: #f3be29;
+    background-color: #f3be29;
 }
 
 /* Paragraphen im Footer */
@@ -116,4 +124,9 @@ p {
 /* Footer Hintergrund */
 .my-footer-bg {
     background-color: #191b1d
+}
+
+/* Padding für This Is Mio */
+.thisIsMio-padding {
+    padding-bottom: 16px;
 }

@@ -32,4 +32,8 @@ class PageController
         return view('mio_home');
     }
 
+    public function invokeProfile(){
+        return view('mio_profile');
+    }
+
 }
