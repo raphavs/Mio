@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/myStyles.css">
+    <link rel="stylesheet" href="/css/mio_styles.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -24,23 +24,37 @@
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
-                <h3 class="display-5 logging">{{ (\Request::route()->getName() == 'login') ? 'Login' : 'Register' }}</h3>
+                <h3 class="display-4 logging">
+                @if (\Request::route()->getName() == 'register')
+                    Register
+                @elseif(\Request::route()->getName() == 'login_resetpw')
+                    Reset your Password
+                @elseif(\Request::route()->getName() == 'login')
+                    Login
+                @endif
+                </h3>
             </div>
         </div>
     </div>
 </header>
 
+<br>
+<br>
+
 <div>
     @yield('content')
 </div>
+
+<br>
+<br>
 
 <!-- footer -->
 <footer class="my-footer-bg putdown">
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
-                <div class="logo-footer-padding">
-                    <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
+                <div class="logo-home-footer-padding">
+                    <a href="{{ route('mio_welcome') }}"><img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo"></a>
                 </div>
             </div>
             <div class="col-12">

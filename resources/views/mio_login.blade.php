@@ -1,9 +1,6 @@
 @extends('layouts.mio_logging_app')
 
 @section('content')
-<br>
-<br>
-<br>
 <div class="card-body">
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -40,12 +37,21 @@
         </div>
         <div class="form-group row mb-0">
             <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-create-account">
-                    {{ __('Login') }}
-                </button>
-                <a class="btn my-btn-link" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
+                <div class="row">
+                    <div class="logging-button-padding">
+                        <button type="submit" class="btn btn-logging">
+                            {{ __('Login') }}
+                        </button>
+                    </div>
+                    <div id="logging-textlink-padding">
+                        <a class="btn my-btn-link" href="{{ route('login_resetpw') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    </div>
+                    <div class="logging-button-padding">
+                        <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

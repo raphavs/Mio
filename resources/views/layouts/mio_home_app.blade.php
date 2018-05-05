@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/myStyles.css">
+    <link rel="stylesheet" href="/css/mio_styles.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -19,42 +19,48 @@
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg my-navbar-font my-navbar-bg sticky-top">
-    <a class="navbar-brand" href="{{ route('mio_home') }}">
-        <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
-    </a>
-    <button class="navbar-toggler navbar-dark" type="button"
-            data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'mio_home') ? 'active-site' : '' }}"
-                   href="{{ route('mio_home') }}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'home_profile') ? 'active-site' : '' }}"
-                   href="{{ route('home_profile') }}">My Profile</a>
-            </li>
-            <li class="nav-item ">
-                <a class="btn btn-create-account" role="button" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
+<div class="my-fixed-position">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md my-navbar-font my-navbar-bg">
+        <a class="navbar-brand" href="{{ route('mio_home') }}">
+            <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
+        </a>
+        <button class="navbar-toggler navbar-dark" type="button"
+                data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ (\Request::route()->getName() == 'mio_home') ? 'active-site' : '' }}"
+                       href="{{ route('mio_home') }}">My Doors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ (\Request::route()->getName() == 'home_profile') ? 'active-site' : '' }}"
+                       href="{{ route('home_profile') }}">My Profile</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="btn btn-logging" role="button" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();">Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </li>
-        </ul>
-    </div>
-</nav>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Username -->
+    <header>
+        <div class="text-center">
+            <h3 id="my-user-header-style">{{ Auth::user()->name }}</h3>
+        </div>
+    </header>
+</div>
 
 <div>
     @yield('content')
@@ -65,7 +71,7 @@
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
-                <div class="logo-footer-padding">
+                <div class="logo-home-footer-padding">
                     <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
                 </div>
             </div>

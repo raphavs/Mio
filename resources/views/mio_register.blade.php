@@ -1,9 +1,6 @@
 @extends('layouts.mio_logging_app')
 
 @section('content')
-<br>
-<br>
-<br>
 <div class="card-body">
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -48,7 +45,7 @@
         </div>
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-create-account">
+                <button type="submit" class="btn btn-logging">
                     {{ __('Register') }}
                 </button>
             </div>

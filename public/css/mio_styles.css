@@ -34,40 +34,21 @@ p {
     padding-bottom: 2px;
 }
 
-/* Style Login-Button */
-.btn-outline-login {
-    color: #226693;
-    background-color: #ffffff;
-    border-color: #ffffff;
-    border-width: medium;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-.btn-outline-login:hover {
-    color: #191b1d;
-    background-color: #f3be29;
-    border-color: #f3be29;
-}
-.btn-outline-login:focus {
-    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
-}
-
-/* Style CreateAccount-Button */
-.btn-create-account {
+/* Style Logging-Button */
+.btn-logging {
     color: #ffffff;
     background-color: #226693;
     border-color: #226693;
     border-width: medium;
-    font-weight: bold;
     font-size: 1.1rem;
 }
-.btn-create-account:hover {
+.btn-logging:hover {
     color: #191b1d;
     background-color: #f3be29;
     border-color: #f3be29;
 }
-.btn-create-account:focus {
-    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
+.btn-logging:focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
 }
 
 /* Hintergrundfarbe NavBar */
@@ -99,7 +80,6 @@ p {
     background-color: #f3be29;
     border-color: #f3be29;
     border-width: medium;
-    font-weight: bold;
     font-size: 1.1rem;
 }
 #my-readmore-btn:hover {
@@ -108,7 +88,7 @@ p {
     border-color: #226693;
 }
 #my-readmore-btn:focus {
-    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
 }
 
 /* Padding für About-Section */
@@ -157,21 +137,21 @@ p {
     padding-bottom: 16px;
 }
 
-/* Footer nach unten setzen */
+/* Footer nach unten setzen (Logging) */
 .putdown {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    bottom: 0px;
+    bottom: 0;
 }
 
-/* Überschrift Logging */
+/* Überschrift (Logging) */
 .logging {
     color: #f3be29;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-/* Style 'forgot your password' */
+/* Style 'forgot your password' (Logging) */
 .my-btn-link {
     color: #226693;
     font-weight: bold;
@@ -184,12 +164,12 @@ p {
     box-shadow: none;
 }
 
-/* Logging Hintergrund */
+/* Hintergrund (Logging) */
 .logging-body {
     background-color: #d9d9d9;
 }
 
-/* Logging Labels */
+/* Labels (Logging) */
 .my-col-form-label {
     padding-top: calc(0.375rem + 1px);
     padding-bottom: calc(0.375rem + 1px);
@@ -199,14 +179,74 @@ p {
     font-weight: bold;
 }
 
-/* Style für Remember Me */
+/* Style für Remember Me (Logging) */
 .remember-me-label {
     color: #191b1d;
     font-weight: bold;
 }
 
-/* Logging Input Focus */
+/* Input Focus (Logging) */
 .my-input:focus {
     border: 1px;
     box-shadow: 0 0 10px;
+}
+
+/* Padding für Buttons (Logging) */
+.logging-button-padding {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* Style für Textlink (Logging) */
+#logging-textlink-padding {
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* Schrift Doors Liste (Home) */
+.my-list-font .nav-link {
+    color: #191b1d;
+    font-size: 2.7rem;
+    background-color: #d9d9d9;
+}
+.my-list-font .nav-link:hover {
+    color: #226693;
+}
+
+/* Scrollbar Doors (Home) */
+.my-doors-center {
+    overflow: scroll;
+    margin-top: 220px;
+    height: 430px;
+    text-align: center;
+}
+
+/* Header Username (Home) */
+#my-user-header-style {
+    border-top: 1px solid #f3be29;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    background-color: #191b1d;
+    color: #febe29;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+#my-user-header-style h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* fixed Navbar % Header (Home) */
+.my-fixed-position {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Padding für Logo (Home) */
+.logo-home-footer-padding {
+    padding-top: 15px;
 }

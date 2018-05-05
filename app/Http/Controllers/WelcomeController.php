@@ -36,4 +36,8 @@ class WelcomeController extends Controller
         return view('mio_register');
     }
 
+    public function invokeMail(){
+        return view('mio_email');
+    }
+
 }

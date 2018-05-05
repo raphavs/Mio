@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/myStyles.css">
+    <link rel="stylesheet" href="/css/mio_styles.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -49,10 +49,10 @@
                    href="{{ route('welcome_people') }}">People</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-outline-login" role="button" href="{{ route('login') }}">Login</a>
+                <a class="btn btn-logging" role="button" href="{{ route('login') }}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-create-account" role="button" href="{{ route('register') }}">Create Account</a>
+                <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>
             </li>
         </ul>
     </div>
@@ -70,6 +70,9 @@
 <div>
     @yield('content')
 </div>
+
+<br>
+<br>
 
 <!-- footer -->
 <footer class="my-footer-bg">
