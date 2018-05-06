@@ -221,7 +221,7 @@ p {
 .my-doors-center {
     overflow: scroll;
     margin-top: 260px;
-    height: 25rem;
+    height: 430px;
     text-align: center;
 }
 ::-webkit-scrollbar {
