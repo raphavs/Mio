@@ -220,8 +220,8 @@ p {
 /* Scrollbar Doors (Home) */
 .my-doors-center {
     overflow: scroll;
-    margin-top: 220px;
-    height: 430px;
+    margin-top: 260px;
+    height: 400px;
     text-align: center;
 }
 ::-webkit-scrollbar {
