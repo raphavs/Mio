@@ -224,6 +224,10 @@ p {
     height: 430px;
     text-align: center;
 }
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 
 /* Header Username (Home) */
 #my-user-header-style {
@@ -249,4 +253,8 @@ p {
 /* Padding für Logo (Home) */
 .logo-home-footer-padding {
     padding-top: 15px;
+}
+
+.my-home-position {
+    margin-top: 220px;
 }

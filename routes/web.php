@@ -20,6 +20,7 @@ Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome_featu
 
 Route::get('/home', 'HomeController@invokeHome')->name('mio_home');
 Route::get('/home/myprofile', 'HomeController@invokeProfile')->name('home_profile');
+Route::get('/home/managedoor', 'HomeController@invokeManageDoor')->name('home_managedoor');
 
 Route::get('/login', 'WelcomeController@invokeLogin')->name('login');
 Route::get('/register', 'WelcomeController@invokeRegister')->name('register');

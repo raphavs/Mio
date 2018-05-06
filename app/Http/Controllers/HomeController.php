@@ -29,4 +29,8 @@ class HomeController extends Controller
         return view('mio_profile');
     }
 
+    public function invokeManageDoor(){
+        return view('mio_manage_door');
+    }
+
 }
