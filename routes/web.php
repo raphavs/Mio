@@ -13,15 +13,16 @@
 
 Auth::routes();
 
-Route::get('/', 'WelcomeController@invokeWelcome')->name('mio_welcome');
-Route::get('/information', 'WelcomeController@invokeInformation')->name('welcome_info');
-Route::get('/people', 'WelcomeController@invokePeople')->name('welcome_people');
-Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome_features');
+Route::get('/', 'WelcomeController@invokeWelcome')->name('mio.welcome');
+Route::get('/information', 'WelcomeController@invokeInformation')->name('welcome.info');
+Route::get('/people', 'WelcomeController@invokePeople')->name('welcome.people');
+Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome.features');
 
-Route::get('/home', 'HomeController@invokeHome')->name('mio_home');
-Route::get('/home/myprofile', 'HomeController@invokeProfile')->name('home_profile');
-Route::get('/home/managedoor', 'HomeController@invokeManageDoor')->name('home_managedoor');
+Route::get('/home', 'HomeController@invokeHome')->name('mio.home');
+Route::get('/home/myprofile', 'HomeController@invokeProfile')->name('home.profile');
+Route::get('/home/{door}', 'HomeController@invokeManageDoor')->name('home.managedoor');
+Route::get('/home/{door}/transactions', 'BP_SearchController@showTransactions')->name('home.managedoor.transactions');
 
 Route::get('/login', 'WelcomeController@invokeLogin')->name('login');
 Route::get('/register', 'WelcomeController@invokeRegister')->name('register');
-Route::get('/login/reset', 'WelcomeController@invokeMail')->name('login_resetpw');
+Route::get('/login/reset', 'WelcomeController@invokeMail')->name('login.resetpw');

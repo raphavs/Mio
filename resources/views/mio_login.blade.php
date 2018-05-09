@@ -44,7 +44,7 @@
                         </button>
                     </div>
                     <div id="logging-textlink-padding">
-                        <a class="btn my-btn-link" href="{{ route('login_resetpw') }}">
+                        <a class="btn my-btn-link" href="{{ route('login.resetpw') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     </div>

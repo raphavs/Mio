@@ -46,6 +46,7 @@ p {
     color: #191b1d;
     background-color: #f3be29;
     border-color: #f3be29;
+    text-decoration: none;
 }
 .btn-logging:focus {
     box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
@@ -86,6 +87,7 @@ p {
     color: #ffffff;
     background-color: #226693;
     border-color: #226693;
+    text-decoration: none;
 }
 #my-readmore-btn:focus {
     box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
@@ -208,13 +210,15 @@ p {
 }
 
 /* Schrift Doors Liste (Home) */
-.my-list-font .nav-link {
+.my-doors-links .nav-link {
+    width: 100%;
     color: #191b1d;
     font-size: 2.7rem;
     background-color: #d9d9d9;
 }
-.my-list-font .nav-link:hover {
+.my-doors-links .nav-link:hover {
     color: #226693;
+    text-decoration: none;
 }
 
 /* Scrollbar Doors (Home) */
@@ -248,6 +252,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 100;
 }
 
 /* Padding für Logo (Home) */
@@ -255,6 +260,82 @@ p {
     padding-top: 15px;
 }
 
+/* Position für body (Home/ManageDoors) */
 .my-home-position {
-    margin-top: 220px;
+    margin-top: 200px;
+}
+
+/* Padding für Links (Home/ManageDoors) */
+.padding-manage-links {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Links in Hintergrund (Home/ManageDoors) */
+.my-links-font {
+    z-index: -1;
+}
+
+/* Sytle Links (Home/ManageDoors) */
+.my-links-font .nav-link {
+    width: 100%;
+    color: #191b1d;
+    font-size: 1.6rem;
+    background-color: #d9d9d9;
+}
+.my-links-font .nav-link:hover {
+    color: #226693;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Style für Open Button (Home/ManageDoors) */
+.my-btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
+}
+
+/* Margin für Links (Home/ManageDoors) */
+.my-margin {
+    margin-top: 65px;
+    margin-bottom: 40px;
+}
+
+/* Style Open Button (Home/ManageDoors) */
+.btn-open {
+    color: #ffffff;
+    background-color: #226693;
+    border-color: #226693;
+    border-width: medium;
+}
+.btn-open:hover {
+    color: #f3be29;
+    background-color: #191b1d;
+    border-color: #191b1d;
+    text-decoration: none;
+}
+.btn-open:focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
+}
+
+/* put formular in bg */
+.put-them-in-bg {
+    z-index: 1;
 }

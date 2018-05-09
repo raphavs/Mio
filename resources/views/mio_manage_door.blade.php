@@ -1,28 +1,20 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-home-position col-12">
-    <h1 class="display-5 text-center">Home Constance</h1>
-    <div class="row">
-        <div>
-            <a class="nav-link" href="{{ route('home_managedoor') }}">Manage Rights</a>
+<div class="my-home-position">
+    <h1 class="text-center">{{ $door }}</h1>
+    <div class="offset-lg-3 col-lg-6">
+        <div class="row text-center my-links-font my-margin">
+            <div class="padding-manage-links col-lg-6 col-md-6">
+                <a class="nav-link" href="{{ route('mio.home') }}">Manage Rights</a>
+            </div>
+            <div class="padding-manage-links col-lg-6 col-md-6">
+                <a class="nav-link" href="/home/{{ $door }}/transactions">See Transactions</a>
+            </div>
         </div>
-        <div>
-            <a class="nav-link" href="{{ route('home_managedoor') }}">See Transactions</a>
-        </div>
     </div>
-    <div class="row">
-        <p>3</p>
+    <div class="offset-lg-4 col-lg-4 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
+        <a class="my-btn btn-open" role="button" href="{{ route('mio.home') }}">Open</a>
     </div>
-    <div class="row">
-        <p>4</p>
-    </div>
-    <div class="row">
-        <p>5</p>
-    </div>
-    <div class="row">
-        <p>6</p>
-    </div>
-    <h1>Hallo</h1>
 </div>
 @endsection

@@ -21,7 +21,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg my-navbar-font my-navbar-bg sticky-top">
-    <a class="navbar-brand" href="{{ route('mio_welcome') }}">
+    <a class="navbar-brand" href="{{ route('mio.welcome') }}">
         <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
     </a>
     <button class="navbar-toggler navbar-dark" type="button"
@@ -33,20 +33,20 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'mio_welcome') ? 'active-site' : '' }}"
-                   href="{{ route('mio_welcome') }}">Welcome to Mio</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'mio.welcome') ? 'active-site' : '' }}"
+                   href="{{ route('mio.welcome') }}">Welcome to Mio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_features') ? 'active-site' : '' }}"
-                   href="{{ route('welcome_features') }}">Features</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome.features') ? 'active-site' : '' }}"
+                   href="{{ route('welcome.features') }}">Features</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_info') ? 'active-site' : '' }}"
-                   href="{{ route('welcome_info') }}">Information</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome.info') ? 'active-site' : '' }}"
+                   href="{{ route('welcome.info') }}">Information</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome_people') ? 'active-site' : '' }}"
-                   href="{{ route('welcome_people') }}">People</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome.people') ? 'active-site' : '' }}"
+                   href="{{ route('welcome.people') }}">People</a>
             </li>
             <li class="nav-item">
                 <a class="btn btn-logging" role="button" href="{{ route('login') }}">Login</a>

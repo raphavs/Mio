@@ -27,7 +27,7 @@
                 <h3 class="display-4 logging">
                 @if (\Request::route()->getName() == 'register')
                     Register
-                @elseif(\Request::route()->getName() == 'login_resetpw')
+                @elseif(\Request::route()->getName() == 'login.resetpw')
                     Reset your Password
                 @elseif(\Request::route()->getName() == 'login')
                     Login
@@ -54,7 +54,7 @@
         <div class="row text-center">
             <div class="col-12">
                 <div class="logo-home-footer-padding">
-                    <a href="{{ route('mio_welcome') }}"><img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo"></a>
+                    <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo"></a>
                 </div>
             </div>
             <div class="col-12">

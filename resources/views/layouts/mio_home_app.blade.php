@@ -22,7 +22,7 @@
 <div class="my-fixed-position">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md my-navbar-font my-navbar-bg">
-        <a class="navbar-brand" href="{{ route('mio_home') }}">
+        <a class="navbar-brand" href="{{ route('mio.home') }}">
             <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
         </a>
         <button class="navbar-toggler navbar-dark" type="button"
@@ -34,12 +34,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ (\Request::route()->getName() == 'mio_home') ? 'active-site' : '' }}"
-                       href="{{ route('mio_home') }}">My Doors</a>
+                    <a class="nav-link {{ (\Request::route()->getName() == 'mio.home') ? 'active-site' : '' }}"
+                       href="{{ route('mio.home') }}">My Doors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (\Request::route()->getName() == 'home_profile') ? 'active-site' : '' }}"
-                       href="{{ route('home_profile') }}">My Profile</a>
+                    <a class="nav-link {{ (\Request::route()->getName() == 'home.profile') ? 'active-site' : '' }}"
+                       href="{{ route('home.profile') }}">My Profile</a>
                 </li>
                 <li class="nav-item ">
                     <a class="btn btn-logging" role="button" href="{{ route('logout') }}"

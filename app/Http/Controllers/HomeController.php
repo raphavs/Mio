@@ -21,16 +21,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function invokeHome(){
+    public function invokeHome()
+    {
         return view('mio_home');
     }
 
-    public function invokeProfile(){
+    public function invokeProfile()
+    {
         return view('mio_profile');
     }
 
-    public function invokeManageDoor(){
-        return view('mio_manage_door');
+    public function invokeManageDoor(Request $request, $door)
+    {
+        return view('mio_manage_door', ['door' => $door]);
     }
 
 }
