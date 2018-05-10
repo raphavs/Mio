@@ -22,7 +22,7 @@
 <div class="my-fixed-position">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md my-navbar-font my-navbar-bg">
-        <a class="navbar-brand" href="{{ route('mio.home') }}">
+        <a class="my-navbar-brand" href="{{ route('mio.home') }}">
             <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
         </a>
         <button class="navbar-toggler navbar-dark" type="button"
@@ -71,13 +71,8 @@
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
-                <div class="logo-home-footer-padding">
-                    <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
-                </div>
-            </div>
-            <div class="col-12">
+                <h5 class="thisIsMio-padding-home">THIS IS MIO</h5>
                 <hr class="my-hr-style">
-                <h5 class="thisIsMio-padding">THIS IS MIO</h5>
             </div>
         </div>
     </div>

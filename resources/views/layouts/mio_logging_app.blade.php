@@ -20,7 +20,7 @@
 <body class="logging-body">
 
 <!-- Header -->
-<header class="my-footer-bg">
+<header class="my-footer-bg my-fixed-position">
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
@@ -38,15 +38,9 @@
     </div>
 </header>
 
-<br>
-<br>
-
 <div>
     @yield('content')
 </div>
-
-<br>
-<br>
 
 <!-- footer -->
 <footer class="my-footer-bg putdown">

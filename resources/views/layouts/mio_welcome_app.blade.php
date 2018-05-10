@@ -21,7 +21,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg my-navbar-font my-navbar-bg sticky-top">
-    <a class="navbar-brand" href="{{ route('mio.welcome') }}">
+    <a class="my-navbar-brand" href="{{ route('mio.welcome') }}">
         <img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo">
     </a>
     <button class="navbar-toggler navbar-dark" type="button"

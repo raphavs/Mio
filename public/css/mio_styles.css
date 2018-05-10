@@ -11,6 +11,15 @@ p {
     font-size: 1.2rem;
 }
 
+/* Padding Logo Navbar */
+.my-navbar-brand {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
 /* Schrift NavBar */
 .my-navbar-font .nav-link {
     color: #ffffff;
@@ -131,7 +140,7 @@ p {
 
 /* Footer Hintergrund */
 .my-footer-bg {
-    background-color: #191b1d
+    background-color: #191b1d;
 }
 
 /* Padding für This Is Mio */
@@ -146,11 +155,16 @@ p {
     bottom: 0;
 }
 
+ /* Margin-Top (Logging) */
+.my-logging-position {
+    margin-top: 150px;
+}
+
 /* Überschrift (Logging) */
 .logging {
     color: #f3be29;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /* Style 'forgot your password' (Logging) */
@@ -187,6 +201,12 @@ p {
     font-weight: bold;
 }
 
+/* Padding für Input (Logging) */
+.my-input {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 /* Input Focus (Logging) */
 .my-input:focus {
     border: 1px;
@@ -215,6 +235,7 @@ p {
     color: #191b1d;
     font-size: 2.7rem;
     background-color: #d9d9d9;
+    border-radius: 0.25rem;
 }
 .my-doors-links .nav-link:hover {
     color: #226693;
@@ -223,9 +244,10 @@ p {
 
 /* Scrollbar Doors (Home) */
 .my-doors-center {
-    overflow: scroll;
-    margin-top: 260px;
-    height: 430px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 250px;
+    height: 420px;
     text-align: center;
 }
 ::-webkit-scrollbar {
@@ -249,10 +271,12 @@ p {
 
 /* fixed Navbar % Header (Home) */
 .my-fixed-position {
+    overflow: hidden;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 100;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 /* Padding für Logo (Home) */
@@ -284,6 +308,7 @@ p {
     color: #191b1d;
     font-size: 1.6rem;
     background-color: #d9d9d9;
+    border-radius: 0.33rem;
 }
 .my-links-font .nav-link:hover {
     color: #226693;
@@ -307,7 +332,7 @@ p {
     padding-bottom: 60px;
     font-size: 3.5rem;
     line-height: 1.5;
-    border-radius: 0.25rem;
+    border-radius: 0.7rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 100%;
 }
@@ -338,4 +363,60 @@ p {
 /* put formular in bg */
 .put-them-in-bg {
     z-index: 1;
+}
+
+/* Padding für Inputs (Home/ManageDoors/Transactions) */
+.padding-search-input {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Margin für Inputs (Home/ManageDoors/Transactions) */
+.my-transaction-margin {
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+/* Style Transactions Tabelle (Home/ManageDoors/Transactions)  */
+.my-table-fixed tbody {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+.my-table-fixed thead, .my-table-fixed tbody, .my-table-fixed tr, .my-table-fixed td, .my-table-fixed th {
+    display: block;
+}
+.my-table-fixed thead > tr > th {
+    float: left;
+    border-bottom-width: 0;
+    color: #f3be29;
+    background-color: #191b1d;
+}
+.my-table-fixed tbody td {
+    float: left;
+    border-bottom-width: 0;
+}
+
+/* Padding für Username-Input (Home/ManageDoor/Transactions)*/
+#user-id {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+/* Padding für This Is Mio (Home) */
+.thisIsMio-padding-home {
+    padding-top: 16px;
+}
+
+/* Margin-Bottom (Home) */
+.last-block-margin-home {
+    margin-bottom: 150px;
+}
+
+/* Margin-Bottom (Logging) */
+.last-block-margin-logging {
+    margin-bottom: 275px;
 }

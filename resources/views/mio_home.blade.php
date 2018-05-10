@@ -1,7 +1,7 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-doors-center my-doors-links">
+<div class="my-doors-center my-doors-links last-block-margin-home">
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" href="/home/{{ 'Home Sunthausen' }}">Home Sunthausen</a>

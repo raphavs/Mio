@@ -5,36 +5,42 @@
     <h1 class="text-center">{{ $door }}</h1>
 </div>
 <form action="/home/{{ $door }}/transactions">
-    <div class="put-them-in-bg row offset-lg-3 col-lg-6 offset-md-2 col-md-8">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <input id="user-id" type="search" class="my-input form-control" name="username" placeholder="Username ...">
-        </div>
-        <div class="col-lg-5 col-md-4 col-sm-6">
-            <input id="date-id" type="text" class="my-input form-control" name="date" placeholder="dd/mm/yyyy">
-        </div>
-        <div class="col-lg-1 col-md-2 col-sm-6">
-            <button type="submit" class="btn btn-logging">search</button>
+    <div class="put-them-in-bg offset-lg-3 col-lg-6 offset-md-2 col-md-8">
+        <div class="row my-transaction-margin">
+            <div class="padding-search-input col-lg-7 col-md-7">
+                <input id="user-id" type="search" class="my-input form-control" name="username" placeholder="Username ...">
+            </div>
+            <div class="padding-search-input col-lg-4 col-md-4">
+                <input id="date-id" type="date" class="my-input form-control" name="date" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="padding-search-input col-lg-1 col-md-1">
+                <button type="submit" class="btn btn-logging">search</button>
+            </div>
         </div>
     </div>
 </form>
-<table class="table">
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">Transaction ID</th>
-        <th scope="col">Username</th>
-        <th scope="col">Time</th>
-        <th scope="col">Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach ($transactions as $v)
-        <tr>
-            <th scope="row"> {{ $v->id }} </th>
-            <td> {{ $v->client_name }} </td>
-            <td> {{ $v->entrance_time }} </td>
-            <td> {{ $v->entrance_date }} </td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
+<div class="container-fluid last-block-margin-home">
+    <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10 row">
+        <table class="table my-table-fixed">
+            <thead class="my-table-header">
+                <tr>
+                    <th class="col-2">ID</th>
+                    <th class="col-4">Username</th>
+                    <th class="col-3">Date</th>
+                    <th class="col-3">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($transactions as $v)
+                <tr>
+                    <td class="col-2">{{ $v->id }}</td>
+                    <td class="col-4">{{ $v->client_name }}</td>
+                    <td class="col-3">{{ $v->entrance_date }}</td>
+                    <td class="col-3">{{ $v->entrance_time }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection

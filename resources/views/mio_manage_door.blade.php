@@ -1,7 +1,7 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-home-position">
+<div class="my-home-position last-block-margin-home">
     <h1 class="text-center">{{ $door }}</h1>
     <div class="offset-lg-3 col-lg-6">
         <div class="row text-center my-links-font my-margin">

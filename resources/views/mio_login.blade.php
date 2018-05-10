@@ -1,7 +1,7 @@
 @extends('layouts.mio_logging_app')
 
 @section('content')
-<div class="card-body">
+<div class="card-body my-logging-position last-block-margin-logging">
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group row">
