@@ -36,4 +36,14 @@ class HomeController extends Controller
         return view('mio_manage_door', ['door' => $door]);
     }
 
+    public function invokeSelectUser(Request $request, $door)
+    {
+        return view('mio_select_user', ['door' => $door]);
+    }
+
+    public function invokeRights(Request $request, $door, $user)
+    {
+        return view('mio_rights', ['door' => $door, 'user' => $user]);
+    }
+
 }

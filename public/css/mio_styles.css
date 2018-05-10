@@ -52,9 +52,10 @@ p {
     font-size: 1.1rem;
 }
 .btn-logging:hover {
-    color: #191b1d;
-    background-color: #f3be29;
-    border-color: #f3be29;
+    color: #febe29;
+    background-color: #226693;
+    border-color: #226693;
+    font-weight: bold;
     text-decoration: none;
 }
 .btn-logging:focus {
@@ -93,9 +94,10 @@ p {
     font-size: 1.1rem;
 }
 #my-readmore-btn:hover {
-    color: #ffffff;
+    color: #f3be29;
     background-color: #226693;
     border-color: #226693;
+    font-weight: bold;
     text-decoration: none;
 }
 #my-readmore-btn:focus {
@@ -153,6 +155,7 @@ p {
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 333;
 }
 
  /* Margin-Top (Logging) */
@@ -238,7 +241,8 @@ p {
     border-radius: 0.25rem;
 }
 .my-doors-links .nav-link:hover {
-    color: #226693;
+    color: #f3be29;
+    background-color: #226693;
     text-decoration: none;
 }
 
@@ -311,7 +315,8 @@ p {
     border-radius: 0.33rem;
 }
 .my-links-font .nav-link:hover {
-    color: #226693;
+    color: #f3be29;
+    background-color: #226693;
     font-weight: bold;
     text-decoration: none;
 }
@@ -345,19 +350,19 @@ p {
 
 /* Style Open Button (Home/ManageDoors) */
 .btn-open {
-    color: #ffffff;
-    background-color: #226693;
-    border-color: #226693;
+    color: #191b1d;
+    background-color: #d9d9d9;
+    border-color: #d9d9d9;
     border-width: medium;
 }
 .btn-open:hover {
     color: #f3be29;
-    background-color: #191b1d;
-    border-color: #191b1d;
+    background-color: #226693;
+    border-color: #226693;
     text-decoration: none;
 }
 .btn-open:focus {
-    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
 }
 
 /* put formular in bg */
@@ -381,7 +386,7 @@ p {
 
 /* Style Transactions Tabelle (Home/ManageDoors/Transactions)  */
 .my-table-fixed tbody {
-    height: 400px;
+    height: 350px;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
@@ -393,7 +398,7 @@ p {
     float: left;
     border-bottom-width: 0;
     color: #f3be29;
-    background-color: #191b1d;
+    background-color: #226693;
 }
 .my-table-fixed tbody td {
     float: left;
@@ -419,4 +424,83 @@ p {
 /* Margin-Bottom (Logging) */
 .last-block-margin-logging {
     margin-bottom: 275px;
+}
+
+/* Schrift Users Liste (Home/ManageDoor/SelectUser) */
+.my-user-links .nav-link {
+    width: 100%;
+    color: #191b1d;
+    font-size: 2.7rem;
+    background-color: #d9d9d9;
+    border-radius: 0.25rem;
+}
+.my-user-links .nav-link:hover {
+    color: #f3be29;
+    background-color: #226693;
+    text-decoration: none;
+}
+
+/* Scrollbar Users (Home/ManageDoor/SelectUser) */
+.my-user-center {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 390px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Margin between User & Door (Home/ManageDoor/SelectUser) */
+.my-user-door-margin {
+    margin-top: 60px;
+}
+
+/* Background für Zugriffsrechte (Home/ManageDoor/SelectUser) */
+.my-rights-bg {
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    min-height: 200px;
+    margin-top: 50px;
+}
+
+/* Padding für Rechte (Home/ManageDoor/SelectUser) */
+.my-rights-box {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.my-last-right-box {
+    padding-bottom: 50px;
+}
+
+/* Toggle Buttons (Home/ManageDoor/SelectUser) */
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-secondary:hover {
+    color: #f3be29;
+    font-weight: bold;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+    color: #f3be29;
+    font-weight: bold;
+    background-color: #226693;
+    border-color: #226693;
+}
+.btn-secondary:focus, .btn-secondary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.5);
+}
+
+/* Put Toggles in Center (Home/ManageDoor/SelectUser) */
+.my-toggles-in-center {
+    text-align: center;
+}
+
+/* Padding Toggles (Home/ManageDoor/SelectUser) */
+.my-rights-innerbox {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

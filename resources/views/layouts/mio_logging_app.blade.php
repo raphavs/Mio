@@ -48,7 +48,7 @@
         <div class="row text-center">
             <div class="col-12">
                 <div class="logo-home-footer-padding">
-                    <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo_cut.jpg" class="rounded" alt="Logo"></a>
+                    <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo"></a>
                 </div>
             </div>
             <div class="col-12">

@@ -6,7 +6,7 @@
     <div class="offset-lg-3 col-lg-6">
         <div class="row text-center my-links-font my-margin">
             <div class="padding-manage-links col-lg-6 col-md-6">
-                <a class="nav-link" href="{{ route('mio.home') }}">Manage Rights</a>
+                <a class="nav-link" href="/home/{{ $door }}/selectuser">Manage Rights</a>
             </div>
             <div class="padding-manage-links col-lg-6 col-md-6">
                 <a class="nav-link" href="/home/{{ $door }}/transactions">See Transactions</a>
