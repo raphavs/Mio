@@ -92,6 +92,7 @@ p {
     border-color: #f3be29;
     border-width: medium;
     font-size: 1.1rem;
+    font-weight: bold;
 }
 #my-readmore-btn:hover {
     color: #f3be29;
@@ -220,16 +221,14 @@ p {
 .logging-button-padding {
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 10px;
 }
 
 /* Style für Textlink (Logging) */
 #logging-textlink-padding {
     padding-top: 8px;
     padding-bottom: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 10px;
 }
 
 /* Schrift Doors Liste (Home) */
@@ -384,6 +383,32 @@ p {
     margin-bottom: 20px;
 }
 
+/* Style Search-Button (Home/ManageDoor/Transactions) */
+.btn-search {
+    color: #191b1d;
+    background-color: #d9d9d9;
+    border-color: #d9d9d9;
+    border-width: medium;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.btn-search:hover {
+    color: #f3be29;
+    background-color: #226693;
+    border-color: #226693;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn-search:focus {
+    box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
+}
+#search {
+    float: right;
+}
+.save {
+    font-size: 1.3rem;
+}
+
 /* Style Transactions Tabelle (Home/ManageDoors/Transactions)  */
 .my-table-fixed tbody {
     height: 350px;
@@ -440,7 +465,7 @@ p {
     text-decoration: none;
 }
 
-/* Scrollbar Users (Home/ManageDoor/SelectUser) */
+/* Scrollbar Users (Home/ManageDoor/SelectUser/Rights) */
 .my-user-center {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -449,29 +474,29 @@ p {
     margin-top: 50px;
 }
 
-/* Margin between User & Door (Home/ManageDoor/SelectUser) */
+/* Margin between User & Door (Home/ManageDoor/SelectUser/Rights) */
 .my-user-door-margin {
     margin-top: 60px;
 }
 
-/* Background für Zugriffsrechte (Home/ManageDoor/SelectUser) */
+/* Background für Zugriffsrechte (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-bg {
     background-color: #d9d9d9;
     border-radius: 0.5rem;
-    min-height: 200px;
+    min-height: 80px;
     margin-top: 50px;
 }
 
-/* Padding für Rechte (Home/ManageDoor/SelectUser) */
+/* Padding für Rechte (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-box {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 .my-last-right-box {
-    padding-bottom: 50px;
+    padding-bottom: 35px;
 }
 
-/* Toggle Buttons (Home/ManageDoor/SelectUser) */
+/* Toggle Buttons (Home/ManageDoor/SelectUser/Rights) */
 .btn-secondary {
     color: #fff;
     background-color: #6c757d;
@@ -494,13 +519,50 @@ p {
     box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.5);
 }
 
-/* Put Toggles in Center (Home/ManageDoor/SelectUser) */
+/* Put Toggles in Center (Home/ManageDoor/SelectUser/Rights) */
 .my-toggles-in-center {
     text-align: center;
 }
 
-/* Padding Toggles (Home/ManageDoor/SelectUser) */
+/* Padding Toggles (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-innerbox {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+/* Margin für Save-Button (Home/ManageDoor/SelectUser/Rights) */
+.my-margin-for-save {
+    margin-top: 30px;
+}
+
+/* Style Checkboxes (Home/ManageDoor/SelectUser/Rights) */
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #f3be29;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #f3be29, 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
+}
+.custom-checkbox .custom-control-input:hover ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #f3be29, 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
+    background-color: #f3be29;
+}
+
+/* Center Checkboxes (Home/ManageDoor/SelectUser/Rights) */
+.my-centered-checkboxes {
+    text-align: center;
+    display: block;
+}
+.my-checkboxes {
+    display: inline-block;
+    width: 80px;
 }

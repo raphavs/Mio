@@ -46,4 +46,9 @@ class HomeController extends Controller
         return view('mio_rights', ['door' => $door, 'user' => $user]);
     }
 
+    public function invokeRightsExt(Request $request, $door, $user)
+    {
+        return view('mio_rights_ext', ['door' => $door, 'user' => $user]);
+    }
+
 }
