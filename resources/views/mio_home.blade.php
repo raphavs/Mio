@@ -21,6 +21,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/home/{{ 'Apartment Gianmarco' }}">Apartment Gianmarco</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/home/{{ 'Home Lea' }}">Home Lea</a>
+        </li>
     </ul>
 </div>
 @endsection

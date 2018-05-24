@@ -9,7 +9,7 @@ use Illuminate\Database\Migrations\Migration;
 /* ROLLBACK LAST CHANGES: php artisan migrate:rollback */
 /* ROLLBACK ALL CHANGES: php artisan migrate:reset */
 /* DROP ALL TABLES & RUN MIGRATIONS: php artisan migrate:fresh */
-class CreateTransactionTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,9 +18,9 @@ class CreateTransactionTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaction', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('client_name');
+            $table->string('user_name');
             $table->date('entrance_date');
             $table->time('entrance_time');
             // $table->timestamps();

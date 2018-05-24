@@ -617,11 +617,12 @@ p {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
 }
 .custom-control-input:focus ~ .custom-control-label::before {
-    box-shadow: 0 0 0 1px #f3be29, 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
+    box-shadow: none;
 }
 .custom-checkbox .custom-control-input:hover ~ .custom-control-label::before {
     box-shadow: 0 0 0 1px #f3be29, 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
     background-color: #f3be29;
+    border-color: #f3be29;
 }
 
 /* Center Checkboxes (Home/ManageDoor/SelectUser/Rights) */

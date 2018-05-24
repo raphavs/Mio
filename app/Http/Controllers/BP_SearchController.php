@@ -24,7 +24,7 @@ class BP_SearchController extends Controller
         $username = $request->input('username');
         $date = $request->input('date');
 
-        $transactions = TransactionsModel::where('client_name', 'LIKE', '%' . $username . '%')->where('entrance_date', 'LIKE', '%' . $date . '%')->get();
+        $transactions = TransactionsModel::where('user_name', 'LIKE', '%' . $username . '%')->where('entrance_date', 'LIKE', '%' . $date . '%')->get();
 
         return view('mio_transactions', ['door' => $door])->with('transactions', $transactions);
     }
