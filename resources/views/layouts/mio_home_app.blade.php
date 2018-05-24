@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md my-navbar-font my-navbar-bg">
         <a class="my-navbar-brand" href="{{ route('mio.home') }}">
-            <img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo">
+            <img src="/Image/Mio_Logo_NavBar.jpg" class="rounded" alt="Logo">
         </a>
         <button class="navbar-toggler navbar-dark" type="button"
                 data-toggle="collapse" data-target="#navbarNav"

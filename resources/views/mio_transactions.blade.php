@@ -4,18 +4,79 @@
 <div class="my-home-position">
     <h1 class="text-center">{{ $door }}</h1>
 </div>
-<form action="/home/{{ $door }}/transactions">
-    <div class="put-them-in-bg offset-lg-3 col-lg-6 offset-md-2 col-md-8 offset-sm-2 col-sm-8">
-        <div class="row my-transaction-margin">
-            <div class="padding-search-input col-12 col-lg-6 col-md-6 col-sm-12">
-                <input id="user-id" type="search" class="my-input form-control" name="username" placeholder="Username ...">
+<form id="big-form" action="/home/{{ $door }}/transactions">
+    <div class="my-transaction-margin offset-2 col-8">
+        <div class="form-row">
+            <div class="form-row my-additional-margin-for-userinput col-5">
+                <label for="username" class="padding-search-label">Username:</label>
+                <div class="my-username-width">
+                    <input id="username" type="search" class="my-input-padding form-control" name="username" placeholder="Username ...">
+                </div>
             </div>
-            <div class="padding-search-input col-6 col-lg-4 col-md-4 col-sm-6">
-                <input id="date-id" type="date" class="my-input form-control" name="date" placeholder="dd/mm/yyyy">
+            <div class="col-1"></div>
+            <div class="form-row col-4">
+                <label for="date" class="padding-search-label">Date:</label>
+                <div class="my-date-width">
+                    <input id="date" type="date" class="my-input-padding form-control" name="date">
+                </div>
             </div>
-            <div class="padding-search-input col-6 col-lg-2 col-md-2 col-sm-6">
-                <button id="search" type="submit" class="btn btn-search">search</button>
+            <div class="my-additional-margin-for-btn col-2">
+                <div class="put-btn-right">
+                    <button type="submit" class="btn btn-search">search</button>
+                </div>
             </div>
+        </div>
+    </div>
+</form>
+<form id="little-form" action="/home/{{ $door }}/transactions">
+    <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
+        <div class="form-row">
+            <div class="form-row col-8">
+                <label for="username" class="col-4 padding-search-label">Username:</label>
+                <div class="col-8">
+                    <div class="my-username-width">
+                        <input id="username" type="search" class="my-input-padding form-control" name="username" placeholder="Username ...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-row col-8">
+                <label for="date" class="col-4 padding-search-label">Date:</label>
+                <div class="col-8">
+                    <div class="my-date-width">
+                        <input id="date" type="date" class="my-input-padding form-control" name="date">
+                    </div>
+                </div>
+            </div>
+            <div class="my-additional-margin-for-btn col-lg-4 col-md-4 col-sm-4 col-4">
+                <div class="put-btn-right">
+                    <button type="submit" class="btn btn-search">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<form id="very-little-form" action="/home/{{ $door }}/transactions">
+    <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
+        <div class="form-row">
+            <label for="username" class="col-4 padding-search-label">Username:</label>
+            <div class="col-8">
+                <div class="my-username-width">
+                    <input id="username" type="search" class="my-input-padding form-control" name="username" placeholder="Username ...">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="date" class="col-4 padding-search-label">Date:</label>
+            <div class="col-8">
+                <div class="my-date-width">
+                    <input id="date" type="date" class="my-input-padding form-control" name="date">
+                </div>
+            </div>
+        </div>
+        <div class="my-additional-margin-for-btn form-row">
+            <button type="submit" class="btn btn-search">search</button>
         </div>
     </div>
 </form>

@@ -206,13 +206,13 @@ p {
 }
 
 /* Padding für Input (Logging) */
-.my-input {
-    padding-top: 8px;
-    padding-bottom: 8px;
+.my-input-padding {
+    padding-top: 7px;
+    padding-bottom: 6px;
 }
 
 /* Input Focus (Logging) */
-.my-input:focus {
+.my-input-padding:focus {
     border: 1px;
     box-shadow: 0 0 10px;
 }
@@ -229,6 +229,11 @@ p {
     padding-top: 8px;
     padding-bottom: 5px;
     padding-right: 10px;
+}
+
+/* Margin-Bottom (Logging) */
+.last-block-margin-logging {
+    margin-bottom: 275px;
 }
 
 /* Schrift Doors Liste (Home) */
@@ -254,13 +259,13 @@ p {
     text-align: center;
 }
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
     background: transparent; /* make scrollbar transparent */
 }
 
 /* Header Username (Home) */
 #my-user-header-style {
-    border-top: 1px solid #f3be29;
+    border-top: 2px solid #f3be29;
     padding-top: 5px;
     padding-bottom: 8px;
     background-color: #191b1d;
@@ -287,6 +292,16 @@ p {
     padding-top: 15px;
 }
 
+/* Padding für This Is Mio (Home) */
+.thisIsMio-padding-home {
+    padding-top: 16px;
+}
+
+/* Margin-Bottom (Home) */
+.last-block-margin-home {
+    margin-bottom: 150px;
+}
+
 /* Position für body (Home/ManageDoors) */
 .my-home-position {
     margin-top: 200px;
@@ -294,10 +309,7 @@ p {
 
 /* Padding für Links (Home/ManageDoors) */
 .padding-manage-links {
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 /* Links in Hintergrund (Home/ManageDoors) */
@@ -332,8 +344,8 @@ p {
     -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     font-size: 3.5rem;
     line-height: 1.5;
     border-radius: 0.7rem;
@@ -342,16 +354,16 @@ p {
 }
 
 /* Margin für Links (Home/ManageDoors) */
-.my-margin {
+.my-margin-for-links-managedoor {
     margin-top: 65px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 /* Style Open Button (Home/ManageDoors) */
 .btn-open {
     color: #191b1d;
-    background-color: #d9d9d9;
-    border-color: #d9d9d9;
+    background-color: #f3be29;
+    border-color: #f3be29;
     border-width: medium;
 }
 .btn-open:hover {
@@ -364,17 +376,14 @@ p {
     box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
 }
 
-/* put formular in bg */
-.put-them-in-bg {
-    z-index: 1;
-}
-
 /* Padding für Inputs (Home/ManageDoors/Transactions) */
-.padding-search-input {
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.padding-search-label {
+    padding-top: calc(0.375rem + 4px);
+    padding-bottom: calc(0.375rem + 1px);
+    padding-right: 10px;
+    font-size: inherit;
+    line-height: 1.5;
+    font-weight: bold;
 }
 
 /* Margin für Inputs (Home/ManageDoors/Transactions) */
@@ -402,11 +411,36 @@ p {
 .btn-search:focus {
     box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
 }
-#search {
+.put-btn-right {
     float: right;
 }
+/* Save-Button (Home/ManageDoors/SelectUser/Rights)  */
 .save {
     font-size: 1.3rem;
+}
+
+/* Width Inputs (Home/ManageDoors/Transactions) */
+#big-form .my-username-width, #little-form .my-username-width {
+    min-width: 250px;
+    max-width: 350px;
+}
+#very-little-form .my-username-width {
+    min-width: 200px;
+    max-width: 350px;
+}
+.my-date-width {
+    width: 160px;
+}
+
+/* Additional Margin for Form (Home/ManageDoors/Transactions) */
+#big-form .my-additional-margin-for-userinput {
+    margin-left: 5px;
+}
+#big-form .my-additional-margin-for-btn, #little-form .my-additional-margin-for-btn {
+    margin-left: 10px;
+}
+#very-little-form .my-additional-margin-for-btn {
+    margin-left: 0;
 }
 
 /* Style Transactions Tabelle (Home/ManageDoors/Transactions)  */
@@ -430,25 +464,36 @@ p {
     border-bottom-width: 0;
 }
 
-/* Padding für Username-Input (Home/ManageDoor/Transactions)*/
-#user-id {
-    padding-top: 9px;
-    padding-bottom: 9px;
-}
+/* Media Transactions */
+@media (min-width: 1300px) {
 
-/* Padding für This Is Mio (Home) */
-.thisIsMio-padding-home {
-    padding-top: 16px;
-}
+    #little-form {
+        display: none;
+    }
+    #very-little-form {
+        display: none;
+    }
 
-/* Margin-Bottom (Home) */
-.last-block-margin-home {
-    margin-bottom: 150px;
 }
+@media (min-width: 451px) and (max-width: 1299px) {
 
-/* Margin-Bottom (Logging) */
-.last-block-margin-logging {
-    margin-bottom: 275px;
+    #big-form {
+        display: none;
+    }
+    #very-little-form {
+        display: none;
+    }
+
+}
+@media (max-width: 450px) {
+
+    #big-form {
+        display: none;
+    }
+    #little-form {
+        display: none;
+    }
+
 }
 
 /* Schrift Users Liste (Home/ManageDoor/SelectUser) */
@@ -489,7 +534,7 @@ p {
 
 /* Padding für Rechte (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-box {
-    padding-top: 35px;
+    padding-top: 40px;
     padding-bottom: 35px;
 }
 .my-last-right-box {
@@ -529,6 +574,16 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.timebox {
+    padding-right: 35px;
+    padding-left: 25px;
+    padding-top: 7px;
+}
+.timebox-xs {
+    padding-right: 15px;
+    padding-left: 35px;
+    padding-top: 7px;
+}
 
 /* Margin für Save-Button (Home/ManageDoor/SelectUser/Rights) */
 .my-margin-for-save {
@@ -536,12 +591,24 @@ p {
 }
 
 /* Style Checkboxes (Home/ManageDoor/SelectUser/Rights) */
+.my-checkboxes {
+    display: inline-block;
+    width: 80px;
+    padding-left: 7px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #191b1d;
+    font-weight: bold;
+}
 .custom-control {
     position: relative;
     display: block;
     min-height: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-right: 1rem;
+}
+.custom-checkbox .custom-control-input:not(:checked) ~ .custom-control-label::before {
+    background-color: #d9d9d9;
+    border: 2px solid #ffffff;
 }
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #f3be29;
@@ -562,7 +629,52 @@ p {
     text-align: center;
     display: block;
 }
-.my-checkboxes {
-    display: inline-block;
-    width: 80px;
+
+/* Style Labels (Home/ManageDoor/SelectUser/Rights) */
+.my-rights-label {
+    padding-top: calc(0.375rem + 4px);
+    padding-bottom: calc(0.375rem + 1px);
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: inherit;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Style Timebox (Home/ManageDoor/SelectUser/Rights) */
+.my-fixed-timebox-size {
+    width: 105px;
+
+}
+
+/* Media Rights */
+@media (max-width: 575px) {
+
+    #big-rights {
+        display: none;
+    }
+
+}
+
+@media (min-width: 576px) {
+
+    #little-rights {
+        display: none;
+    }
+
+}
+
+/* My Align Content Center */
+.my-outer-div-for-center {
+    clear: left;
+    float: left;
+    position: relative;
+    left: 50%;
+}
+.my-inner-div-for-center {
+    display: block;
+    float: left;
+    position: relative;
+    right: 50%;
 }
