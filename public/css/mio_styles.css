@@ -107,12 +107,33 @@ p {
 
 /* Padding für About-Section */
 .my-about-padding {
-    padding-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Vertically & Horizontally Center */
+.my-put-things-in-vertically-and-horizontally-center {
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Padding für User-Section */
 .my-user-padding {
-    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Image rounded */
+.my-make-img-round {
+    border-radius: 50%;
+}
+
+/* Padding für User Image */
+.padding-user-img {
+    padding-bottom: 15px;
 }
 
 /* Überschriften im Footer */
