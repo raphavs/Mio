@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DoorsModel;
+use App\MyUsersModel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +25,8 @@ class HomeController extends Controller
      */
     public function invokeHome()
     {
-        return view('mio_home');
+        $doors = DoorsModel::all();
+        return view('mio_home')->with('doors', $doors);
     }
 
     public function invokeProfile()
@@ -31,22 +34,23 @@ class HomeController extends Controller
         return view('mio_profile');
     }
 
-    public function invokeManageDoor(Request $request, $door)
+    public function invokeManageDoor($door)
     {
         return view('mio_manage_door', ['door' => $door]);
     }
 
-    public function invokeSelectUser(Request $request, $door)
+    public function invokeSelectUser($door)
     {
-        return view('mio_select_user', ['door' => $door]);
+        $my_users = MyUsersModel::all();
+        return view('mio_select_user', ['door' => $door])->with('my_users', $my_users);
     }
 
-    public function invokeRights(Request $request, $door, $user)
+    public function invokeRights($door, $user)
     {
         return view('mio_rights', ['door' => $door, 'user' => $user]);
     }
 
-    public function invokeRightsExt(Request $request, $door, $user)
+    public function invokeRightsExt($door, $user)
     {
         return view('mio_rights_ext', ['door' => $door, 'user' => $user]);
     }
