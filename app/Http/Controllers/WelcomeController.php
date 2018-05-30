@@ -8,13 +8,19 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 
 class WelcomeController extends Controller
 {
 
     public function invokeWelcome()
     {
-        return view('mio_welcome');
+        if (Auth::check()) {
+            return redirect('/home');
+        } else {
+            return view('mio_welcome');
+        }
     }
 
     public function invokeInformation()
