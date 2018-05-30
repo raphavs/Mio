@@ -30,7 +30,7 @@
                 @elseif(\Request::route()->getName() == 'login.resetpw')
                     Reset your Password
                 @elseif(\Request::route()->getName() == 'login')
-                    Login
+                    Sign In
                 @endif
                 </h3>
             </div>

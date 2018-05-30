@@ -126,14 +126,9 @@ p {
     padding-bottom: 20px;
 }
 
-/* Image rounded */
-.my-make-img-round {
-    border-radius: 50%;
-}
-
 /* Padding für User Image */
 .padding-user-img {
-    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 /* Überschriften im Footer */
@@ -559,7 +554,16 @@ p {
     padding-bottom: 35px;
 }
 .my-last-right-box {
-    padding-bottom: 35px;
+    padding-bottom: 40px;
+}
+
+/* Padding für Rechte (Home/ManageDoor/SelectUser/Rights/Ext) */
+.my-rights-ext-box {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.my-last-right-ext-box {
+    padding-bottom: 20px;
 }
 
 /* Toggle Buttons (Home/ManageDoor/SelectUser/Rights) */
@@ -594,16 +598,6 @@ p {
 .my-rights-innerbox {
     padding-top: 10px;
     padding-bottom: 10px;
-}
-.timebox {
-    padding-right: 35px;
-    padding-left: 25px;
-    padding-top: 7px;
-}
-.timebox-xs {
-    padding-right: 15px;
-    padding-left: 35px;
-    padding-top: 7px;
 }
 
 /* Margin für Save-Button (Home/ManageDoor/SelectUser/Rights) */
@@ -652,39 +646,36 @@ p {
     display: block;
 }
 
-/* Style Labels (Home/ManageDoor/SelectUser/Rights) */
-.my-rights-label {
-    padding-top: calc(0.375rem + 4px);
-    padding-bottom: calc(0.375rem + 1px);
-    padding-right: 10px;
-    padding-left: 10px;
-    font-size: inherit;
-    line-height: 1.5;
-    font-weight: bold;
-    text-align: right;
+/* Time Slider (Home/ManageDoor/SelectUser/Rights) */
+.slidecontainer {
+    width: 100%;
 }
-
-/* Style Timebox (Home/ManageDoor/SelectUser/Rights) */
-.my-fixed-timebox-size {
-    width: 105px;
-
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
-
-/* Media Rights */
-@media (max-width: 575px) {
-
-    #big-rights {
-        display: none;
-    }
-
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f3be29;
+    cursor: pointer;
 }
-
-@media (min-width: 576px) {
-
-    #little-rights {
-        display: none;
-    }
-
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f3be29;
+    cursor: pointer;
 }
 
 /* My Align Content Center */

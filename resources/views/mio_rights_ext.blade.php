@@ -7,99 +7,120 @@
 <div class="my-user-door-margin">
     <h2 class="text-center font-weight-bold">{{ $user }}:</h2>
 </div>
-<form action="{{ route('mio.home') }}" class="col-12 last-block-margin-home">
+<form action="{{ route('home.managedoor.selectuser.rights.ext.store') }}" class="col-12 last-block-margin-home" method="post">
+    @csrf
     <div class="my-rights-bg offset-lg-3 col-lg-6 offset-md-2 col-md-8 offset-sm-1 col-sm-10">
-        <div class="offset-lg-1 col-lg-10 offset-md-1 col-md-10 my-rights-box">
+        <div class="offset-lg-1 col-lg-10 offset-md-1 col-md-10 my-rights-ext-box">
             <div class="my-centered-checkboxes">
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                        @if ($mon == 1)
+                            <input type="checkbox" class="custom-control-input" name="MON" id="customCheck1" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="MON" id="customCheck1">
+                        @endif
                         <label class="custom-control-label" for="customCheck1">MON</label>
                     </div>
                 </div>
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck2" checked>
+                        @if ($tue == 1)
+                            <input type="checkbox" class="custom-control-input" name="TUE" id="customCheck2" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="TUE" id="customCheck2">
+                        @endif
                         <label class="custom-control-label" for="customCheck2">TUE</label>
                     </div>
                 </div>
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3" checked>
+                        @if ($wed == 1)
+                            <input type="checkbox" class="custom-control-input" name="WED" id="customCheck3" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="WED" id="customCheck3">
+                        @endif
                         <label class="custom-control-label" for="customCheck3">WED</label>
                     </div>
                 </div>
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck4" checked>
+                        @if ($thu == 1)
+                            <input type="checkbox" class="custom-control-input" name="THU" id="customCheck4" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="THU" id="customCheck4">
+                        @endif
                         <label class="custom-control-label" for="customCheck4">THU</label>
                     </div>
                 </div>
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck5" checked>
+                        @if ($fri == 1)
+                            <input type="checkbox" class="custom-control-input" name="FRI" id="customCheck5" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="FRI" id="customCheck5">
+                        @endif
                         <label class="custom-control-label" for="customCheck5">FRI</label>
                     </div>
                 </div>
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck6" checked>
+                        @if ($sat == 1)
+                            <input type="checkbox" class="custom-control-input" name="SAT" id="customCheck6" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="SAT" id="customCheck6">
+                        @endif
                         <label class="custom-control-label" for="customCheck6">SAT</label>
                     </div>
                 </div>
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck7" checked>
+                        @if ($sun == 1)
+                            <input type="checkbox" class="custom-control-input" name="SUN" id="customCheck7" checked>
+                        @else
+                            <input type="checkbox" class="custom-control-input" name="SUN" id="customCheck7">
+                        @endif
                         <label class="custom-control-label" for="customCheck7">SUN</label>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="big-rights" class="row my-last-right-box">
-            <div class="my-outer-div-for-center">
-                <div class="my-inner-div-for-center">
-                    <div class="row">
-                        <div class="row timebox">
-                            <label for="time1" class="my-rights-label">From:</label>
-                            <div class="my-fixed-timebox-size">
-                                <input id="time1" type="time" class="my-input-padding form-control" name="time1">
-                            </div>
-                        </div>
-                        <div class="row timebox">
-                            <label for="time2" class="my-rights-label">To:</label>
-                            <div class="my-fixed-timebox-size">
-                                <input id="time2" type="time" class="my-input-padding form-control" name="time2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="my-last-right-ext-box">
+            <div class="slidecontainer">
+                <?php
+                    $from_time = substr($from_time, 0, 2);
+                    $from_time = (integer)$from_time;
+                ?>
+                <input type="range" min="0" max="23" step="1" value="{{ $from_time }}" class="slider" name="my-from-range" id="my-from-range">
+                <p id="time-value-from" class="text-center font-weight-bold">Error</p>
             </div>
-        </div>
-        <div id="little-rights" class="row my-last-right-box">
-            <div class="row timebox-xs col-12">
-                <div class="my-outer-div-for-center">
-                    <div class="my-inner-div-for-center">
-                        <div class="row">
-                            <label for="time1" class="my-rights-label">From:</label>
-                            <div class="my-fixed-timebox-size">
-                                <input id="time1" type="time" class="my-input-padding form-control" name="time1">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="slidecontainer">
+                <?php
+                    if ($to_time == '23:59:00') {
+                        $to_time = 24;
+                    } else {
+                        $to_time = substr($to_time, 0, 2);
+                        $to_time = (integer)$to_time;
+                    }
+                ?>
+                <input type="range" min="1" max="24" step="1" value="{{ $to_time }}" class="slider" name="my-to-range" id="my-to-range">
+                <p id="time-value-to" class="text-center font-weight-bold">Error</p>
             </div>
-            <div class="row timebox-xs col-12">
-                <div class="my-outer-div-for-center">
-                    <div class="my-inner-div-for-center">
-                        <div class="row">
-                            <label for="time2" class="my-rights-label">To:</label>
-                            <div class="my-fixed-timebox-size">
-                                <input id="time2" type="time" class="my-input-padding form-control" name="time2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <script type="text/javascript">
+                var from_slider = document.getElementById("my-from-range");
+                var from_output = document.getElementById("time-value-from");
+                from_output.innerHTML = from_slider.value.toString().concat(" h");
+                from_slider.oninput = function()
+                {
+                    from_output.innerHTML = this.value.toString().concat(" h");
+                };
+                var to_slider = document.getElementById("my-to-range");
+                var to_output = document.getElementById("time-value-to");
+                to_output.innerHTML = to_slider.value.toString().concat(" h");
+                to_slider.oninput = function()
+                {
+                    to_output.innerHTML = this.value.toString().concat(" h");
+                }
+            </script>
         </div>
     </div>
     <div class="text-center my-margin-for-save">

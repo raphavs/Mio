@@ -22,8 +22,9 @@ Route::get('/home', 'HomeController@invokeHome')->name('mio.home');
 Route::get('/home/myprofile', 'HomeController@invokeProfile')->name('home.profile');
 Route::get('/home/{door}', 'HomeController@invokeManageDoor')->name('home.managedoor');
 Route::get('/home/{door}/selectuser', 'HomeController@invokeSelectUser')->name('home.managedoor.selectuser');
-Route::get('/home/{door}/selectuser/{user}', 'HomeController@invokeRights')->name('home.managedoor.selectuser.rights');
-Route::get('/home/{door}/selectuser/{user}/ext', 'HomeController@invokeRightsExt')->name('home.managedoor.selectuser.rights.ext');
+Route::get('/home/{door}/selectuser/{user}', 'BP_AdjustController@invokeRights')->name('home.managedoor.selectuser.rights');
+Route::post('/home/{door}/selectuser/{user}/ext', 'BP_AdjustController@invokeRightsExt')->name('home.managedoor.selectuser.rights.ext');
+Route::post('/home', 'BP_AdjustController@store')->name('home.managedoor.selectuser.rights.ext.store');
 Route::get('/home/{door}/transactions', 'BP_SearchController@showTransactions')->name('home.managedoor.transactions');
 
 Route::get('/login', 'WelcomeController@invokeLogin')->name('login');

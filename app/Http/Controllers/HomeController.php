@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\DoorsModel;
 use App\MyUsersModel;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -43,16 +42,6 @@ class HomeController extends Controller
     {
         $my_users = MyUsersModel::all();
         return view('mio_select_user', ['door' => $door])->with('my_users', $my_users);
-    }
-
-    public function invokeRights($door, $user)
-    {
-        return view('mio_rights', ['door' => $door, 'user' => $user]);
-    }
-
-    public function invokeRightsExt($door, $user)
-    {
-        return view('mio_rights_ext', ['door' => $door, 'user' => $user]);
     }
 
 }

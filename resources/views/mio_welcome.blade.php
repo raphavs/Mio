@@ -47,18 +47,18 @@
     <hr class="col-8 offset-2">
 
     <!-- Two Column Section -->
-    <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
         <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-md-12 col-lg-7 my-about-padding">
-                    <div class="my-put-things-in-vertically-and-horizontally-center">
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>Mio is an access control system that allows clients to manage their doors smart via smartphone, tablet or PC.
                             To do this, clients create users and determine which person is able to open which door at which time.
                             In addition, all opening transactions are recorded in a log, which clients and users can view at any time.</p>
                         <a id="my-readmore-btn" class="btn btn-readmore" role="button" href="{{ route('welcome.features') }}">read more ...</a>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-5 my-about-padding">
+                <div class="col-lg-6 my-about-padding">
                     <img src="/Image_Pixabay/User_an_Laptop_und_Smartphone.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfUsers">
                 </div>
             </div>
@@ -87,20 +87,20 @@
     <!-- Three Column Section -->
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-xs-12 col-sm-6 col-md-4 my-user-padding">
-                <img src="/Image_Pixabay/user_icon.png" class="img- my-make-img-round padding-user-img" alt="User">
+            <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
+                <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle padding-user-img" alt="User">
                 <h3 class="font-weight-bold">Clients</h3>
-                <p>... manage their doors. They determine who of their users is allowed to open which door at which time.</p>
+                <p class="col-xl-10 offset-xl-1">... manage their doors. They determine who of their users is allowed to open which door at which time.</p>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 my-user-padding">
-                <img src="/Image_Pixabay/user_icon.png" class="img-fluid my-make-img-round padding-user-img" alt="User">
+            <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
+                <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle padding-user-img" alt="User">
                 <h3 class="font-weight-bold">Users</h3>
-                <p>... open doors easily via smartphone, tablet or PC.</p>
+                <p class="col-xl-10 offset-xl-1">... open doors easily via smartphone, tablet or PC.</p>
             </div>
-            <div class="col-xs-12 col-md-4 my-user-padding">
-                <img src="/Image_Pixabay/user_icon.png" class="img-fluid my-make-img-round padding-user-img" alt="User">
+            <div class="col-xs-12 col-sm-12 col-lg-4 my-user-padding">
+                <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle padding-user-img" alt="User">
                 <h3 class="font-weight-bold">Manufacturers</h3>
-                <p>... register their devices. Thus, server and devices can communicate with each other.</p>
+                <p class="col-xl-10 offset-xl-1">... register their devices. Thus, server and devices can communicate with each other.</p>
             </div>
         </div>
     </div>
