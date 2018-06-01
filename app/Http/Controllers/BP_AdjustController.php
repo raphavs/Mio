@@ -95,55 +95,59 @@ class BP_AdjustController extends Controller
         $request->has('SAT') ? $current_user->sat = 1 : $current_user->sat = 0;
         $request->has('SUN') ? $current_user->sun = 1 : $current_user->sun = 0;
 
-        if ($request->input('my-from-range') == 0)  { $current_user->from_time = "00:00:00"; } else
-        if ($request->input('my-from-range') == 1)  { $current_user->from_time = "01:00:00"; } else
-        if ($request->input('my-from-range') == 2)  { $current_user->from_time = "02:00:00"; } else
-        if ($request->input('my-from-range') == 3)  { $current_user->from_time = "03:00:00"; } else
-        if ($request->input('my-from-range') == 4)  { $current_user->from_time = "04:00:00"; } else
-        if ($request->input('my-from-range') == 5)  { $current_user->from_time = "05:00:00"; } else
-        if ($request->input('my-from-range') == 6)  { $current_user->from_time = "06:00:00"; } else
-        if ($request->input('my-from-range') == 7)  { $current_user->from_time = "07:00:00"; } else
-        if ($request->input('my-from-range') == 8)  { $current_user->from_time = "08:00:00"; } else
-        if ($request->input('my-from-range') == 9)  { $current_user->from_time = "09:00:00"; } else
-        if ($request->input('my-from-range') == 10) { $current_user->from_time = "10:00:00"; } else
-        if ($request->input('my-from-range') == 11) { $current_user->from_time = "11:00:00"; } else
-        if ($request->input('my-from-range') == 12) { $current_user->from_time = "12:00:00"; } else
-        if ($request->input('my-from-range') == 13) { $current_user->from_time = "13:00:00"; } else
-        if ($request->input('my-from-range') == 14) { $current_user->from_time = "14:00:00"; } else
-        if ($request->input('my-from-range') == 15) { $current_user->from_time = "15:00:00"; } else
-        if ($request->input('my-from-range') == 16) { $current_user->from_time = "16:00:00"; } else
-        if ($request->input('my-from-range') == 17) { $current_user->from_time = "17:00:00"; } else
-        if ($request->input('my-from-range') == 18) { $current_user->from_time = "18:00:00"; } else
-        if ($request->input('my-from-range') == 19) { $current_user->from_time = "19:00:00"; } else
-        if ($request->input('my-from-range') == 20) { $current_user->from_time = "20:00:00"; } else
-        if ($request->input('my-from-range') == 21) { $current_user->from_time = "21:00:00"; } else
-        if ($request->input('my-from-range') == 22) { $current_user->from_time = "22:00:00"; } else
-        if ($request->input('my-from-range') == 23) { $current_user->from_time = "23:00:00"; }
+        switch ($request->input('my-from-range')) {
+            case 0:  $current_user->from_time = "00:00:00"; break;
+            case 1:  $current_user->from_time = "01:00:00"; break;
+            case 2:  $current_user->from_time = "02:00:00"; break;
+            case 3:  $current_user->from_time = "03:00:00"; break;
+            case 4:  $current_user->from_time = "04:00:00"; break;
+            case 5:  $current_user->from_time = "05:00:00"; break;
+            case 6:  $current_user->from_time = "06:00:00"; break;
+            case 7:  $current_user->from_time = "07:00:00"; break;
+            case 8:  $current_user->from_time = "08:00:00"; break;
+            case 9:  $current_user->from_time = "09:00:00"; break;
+            case 10: $current_user->from_time = "10:00:00"; break;
+            case 11: $current_user->from_time = "11:00:00"; break;
+            case 12: $current_user->from_time = "12:00:00"; break;
+            case 13: $current_user->from_time = "13:00:00"; break;
+            case 14: $current_user->from_time = "14:00:00"; break;
+            case 15: $current_user->from_time = "15:00:00"; break;
+            case 16: $current_user->from_time = "16:00:00"; break;
+            case 17: $current_user->from_time = "17:00:00"; break;
+            case 18: $current_user->from_time = "18:00:00"; break;
+            case 19: $current_user->from_time = "19:00:00"; break;
+            case 20: $current_user->from_time = "20:00:00"; break;
+            case 21: $current_user->from_time = "21:00:00"; break;
+            case 22: $current_user->from_time = "22:00:00"; break;
+            case 23: $current_user->from_time = "23:00:00";
+        }
 
-        if ($request->input('my-to-range') == 1)  { $current_user->to_time = "01:00:00"; } else
-        if ($request->input('my-to-range') == 2)  { $current_user->to_time = "02:00:00"; } else
-        if ($request->input('my-to-range') == 3)  { $current_user->to_time = "03:00:00"; } else
-        if ($request->input('my-to-range') == 4)  { $current_user->to_time = "04:00:00"; } else
-        if ($request->input('my-to-range') == 5)  { $current_user->to_time = "05:00:00"; } else
-        if ($request->input('my-to-range') == 6)  { $current_user->to_time = "06:00:00"; } else
-        if ($request->input('my-to-range') == 7)  { $current_user->to_time = "07:00:00"; } else
-        if ($request->input('my-to-range') == 8)  { $current_user->to_time = "08:00:00"; } else
-        if ($request->input('my-to-range') == 9)  { $current_user->to_time = "09:00:00"; } else
-        if ($request->input('my-to-range') == 10) { $current_user->to_time = "10:00:00"; } else
-        if ($request->input('my-to-range') == 11) { $current_user->to_time = "11:00:00"; } else
-        if ($request->input('my-to-range') == 12) { $current_user->to_time = "12:00:00"; } else
-        if ($request->input('my-to-range') == 13) { $current_user->to_time = "13:00:00"; } else
-        if ($request->input('my-to-range') == 14) { $current_user->to_time = "14:00:00"; } else
-        if ($request->input('my-to-range') == 15) { $current_user->to_time = "15:00:00"; } else
-        if ($request->input('my-to-range') == 16) { $current_user->to_time = "16:00:00"; } else
-        if ($request->input('my-to-range') == 17) { $current_user->to_time = "17:00:00"; } else
-        if ($request->input('my-to-range') == 18) { $current_user->to_time = "18:00:00"; } else
-        if ($request->input('my-to-range') == 19) { $current_user->to_time = "19:00:00"; } else
-        if ($request->input('my-to-range') == 20) { $current_user->to_time = "20:00:00"; } else
-        if ($request->input('my-to-range') == 21) { $current_user->to_time = "21:00:00"; } else
-        if ($request->input('my-to-range') == 22) { $current_user->to_time = "22:00:00"; } else
-        if ($request->input('my-to-range') == 23) { $current_user->to_time = "23:00:00"; } else
-        if ($request->input('my-to-range') == 24) { $current_user->to_time = "23:59:00"; }
+        switch ($request->input('my-to-range')) {
+            case 1:  $current_user->to_time = "01:00:00"; break;
+            case 2:  $current_user->to_time = "02:00:00"; break;
+            case 3:  $current_user->to_time = "03:00:00"; break;
+            case 4:  $current_user->to_time = "04:00:00"; break;
+            case 5:  $current_user->to_time = "05:00:00"; break;
+            case 6:  $current_user->to_time = "06:00:00"; break;
+            case 7:  $current_user->to_time = "07:00:00"; break;
+            case 8:  $current_user->to_time = "08:00:00"; break;
+            case 9:  $current_user->to_time = "09:00:00"; break;
+            case 10: $current_user->to_time = "10:00:00"; break;
+            case 11: $current_user->to_time = "11:00:00"; break;
+            case 12: $current_user->to_time = "12:00:00"; break;
+            case 13: $current_user->to_time = "13:00:00"; break;
+            case 14: $current_user->to_time = "14:00:00"; break;
+            case 15: $current_user->to_time = "15:00:00"; break;
+            case 16: $current_user->to_time = "16:00:00"; break;
+            case 17: $current_user->to_time = "17:00:00"; break;
+            case 18: $current_user->to_time = "18:00:00"; break;
+            case 19: $current_user->to_time = "19:00:00"; break;
+            case 20: $current_user->to_time = "20:00:00"; break;
+            case 21: $current_user->to_time = "21:00:00"; break;
+            case 22: $current_user->to_time = "22:00:00"; break;
+            case 23: $current_user->to_time = "23:00:00"; break;
+            case 24: $current_user->to_time = "23:59:00";
+        }
 
         $current_user->save();
 

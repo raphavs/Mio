@@ -394,11 +394,10 @@ p {
 
 /* Padding für Inputs (Home/ManageDoors/Transactions) */
 .padding-search-label {
-    padding-top: calc(0.375rem + 4px);
-    padding-bottom: calc(0.375rem + 1px);
+    padding-top: 12px;
     padding-right: 10px;
     font-size: inherit;
-    line-height: 1.5;
+    line-height: 1;
     font-weight: bold;
 }
 
@@ -419,8 +418,8 @@ p {
 }
 .btn-search:hover {
     color: #f3be29;
-    background-color: #226693;
-    border-color: #226693;
+    background-color: #d9d9d9;
+    border-color: #d9d9d9;
     font-weight: bold;
     text-decoration: none;
 }
@@ -430,17 +429,13 @@ p {
 .put-btn-right {
     float: right;
 }
-/* Save-Button (Home/ManageDoors/SelectUser/Rights)  */
-.save {
-    font-size: 1.3rem;
-}
 
 /* Width Inputs (Home/ManageDoors/Transactions) */
-#big-form .my-username-width, #little-form .my-username-width {
+#big-artificial-form .my-username-width, #little-artificial-form .my-username-width {
     min-width: 250px;
     max-width: 350px;
 }
-#very-little-form .my-username-width {
+#very-little-artificial-form .my-username-width {
     min-width: 200px;
     max-width: 350px;
 }
@@ -449,13 +444,13 @@ p {
 }
 
 /* Additional Margin for Form (Home/ManageDoors/Transactions) */
-#big-form .my-additional-margin-for-userinput {
+#big-artificial-form .my-additional-margin-for-userinput {
     margin-left: 5px;
 }
-#big-form .my-additional-margin-for-btn, #little-form .my-additional-margin-for-btn {
+#big-artificial-form .my-additional-margin-for-btn, #little-artificial-form .my-additional-margin-for-btn {
     margin-left: 10px;
 }
-#very-little-form .my-additional-margin-for-btn {
+#very-little-artificial-form .my-additional-margin-for-btn {
     margin-left: 0;
 }
 
@@ -480,33 +475,41 @@ p {
     border-bottom-width: 0;
 }
 
+/* Text Style NO ROWS FOUND (Home/ManageDoors/Transactions) */
+.my-color-grey {
+    text-align: center;
+    margin-top: 50px;
+    color: #d9d9d9;
+    font-weight: bold;
+}
+
 /* Media Transactions */
 @media (min-width: 1300px) {
 
-    #little-form {
+    #little-artificial-form {
         display: none;
     }
-    #very-little-form {
+    #very-little-artificial-form {
         display: none;
     }
 
 }
 @media (min-width: 451px) and (max-width: 1299px) {
 
-    #big-form {
+    #big-artificial-form {
         display: none;
     }
-    #very-little-form {
+    #very-little-artificial-form {
         display: none;
     }
 
 }
 @media (max-width: 450px) {
 
-    #big-form {
+    #big-artificial-form {
         display: none;
     }
-    #little-form {
+    #little-artificial-form {
         display: none;
     }
 
@@ -603,6 +606,26 @@ p {
 /* Margin für Save-Button (Home/ManageDoor/SelectUser/Rights) */
 .my-margin-for-save {
     margin-top: 30px;
+}
+
+/* Save-Button (Home/ManageDoors/SelectUser/Rights)  */
+.btn-save {
+    color: #191b1d;
+    background-color: #d9d9d9;
+    border-color: #d9d9d9;
+    border-width: medium;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.btn-save:hover {
+    color: #f3be29;
+    background-color: #226693;
+    border-color: #226693;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn-save:focus {
+    box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
 }
 
 /* Style Checkboxes (Home/ManageDoor/SelectUser/Rights) */

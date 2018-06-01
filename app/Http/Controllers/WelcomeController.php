@@ -14,13 +14,14 @@ use Illuminate\Support\Facades\Auth;
 class WelcomeController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function invokeWelcome()
     {
-        if (Auth::check()) {
-            return redirect('/home');
-        } else {
-            return view('mio_welcome');
-        }
+        return view('mio_welcome');
     }
 
     public function invokeInformation()

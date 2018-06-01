@@ -26,6 +26,8 @@ Route::get('/home/{door}/selectuser/{user}', 'BP_AdjustController@invokeRights')
 Route::post('/home/{door}/selectuser/{user}/ext', 'BP_AdjustController@invokeRightsExt')->name('home.managedoor.selectuser.rights.ext');
 Route::post('/home', 'BP_AdjustController@store')->name('home.managedoor.selectuser.rights.ext.store');
 Route::get('/home/{door}/transactions', 'BP_SearchController@showTransactions')->name('home.managedoor.transactions');
+Route::get('/home/{door}/transactions/ajax', 'BP_SearchController@filterAJAX')->name('home.managedoor.transactions.ajax');
+Route::get('/home/{door}/transactions/submit/ajax', 'BP_SearchController@submitFilterAJAX')->name('home.managedoor.transactions.submit.ajax');
 
 Route::get('/login', 'WelcomeController@invokeLogin')->name('login');
 Route::get('/register', 'WelcomeController@invokeRegister')->name('register');

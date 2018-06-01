@@ -38,7 +38,7 @@
         <div class="form-group row col-md-7 offset-md-3 col-lg-5 offset-lg-4 mb-0">
             <div class="logging-button-padding">
                 <button type="submit" class="btn btn-logging">
-                    Sign In
+                    Sign in
                 </button>
             </div>
             <div id="logging-textlink-padding">

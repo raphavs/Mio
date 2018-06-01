@@ -105,26 +105,26 @@
                 <input type="range" min="1" max="24" step="1" value="{{ $to_time }}" class="slider" name="my-to-range" id="my-to-range">
                 <p id="time-value-to" class="text-center font-weight-bold">Error</p>
             </div>
-            <script type="text/javascript">
-                var from_slider = document.getElementById("my-from-range");
-                var from_output = document.getElementById("time-value-from");
-                from_output.innerHTML = from_slider.value.toString().concat(" h");
-                from_slider.oninput = function()
-                {
-                    from_output.innerHTML = this.value.toString().concat(" h");
-                };
-                var to_slider = document.getElementById("my-to-range");
-                var to_output = document.getElementById("time-value-to");
-                to_output.innerHTML = to_slider.value.toString().concat(" h");
-                to_slider.oninput = function()
-                {
-                    to_output.innerHTML = this.value.toString().concat(" h");
-                }
-            </script>
         </div>
     </div>
     <div class="text-center my-margin-for-save">
-        <button type="submit" class="btn btn-search save">save changes</button>
+        <button type="submit" class="btn btn-save">save changes</button>
     </div>
 </form>
+<script type="text/javascript">
+    var from_slider = document.getElementById("my-from-range");
+    var from_output = document.getElementById("time-value-from");
+    from_output.innerHTML = from_slider.value.toString() + " h";
+    from_slider.oninput = function()
+    {
+        from_output.innerHTML = this.value.toString() + " h";
+    };
+    var to_slider = document.getElementById("my-to-range");
+    var to_output = document.getElementById("time-value-to");
+    to_output.innerHTML = to_slider.value.toString() + " h";
+    to_slider.oninput = function()
+    {
+        to_output.innerHTML = this.value.toString() + " h";
+    }
+</script>
 @endsection

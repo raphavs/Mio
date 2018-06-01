@@ -49,7 +49,7 @@
                    href="{{ route('welcome.people') }}">People</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-logging" role="button" href="{{ route('login') }}">Sign In</a>
+                <a class="btn btn-logging" role="button" href="{{ route('login') }}">Sign in</a>
             </li>
             <li class="nav-item">
                 <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>

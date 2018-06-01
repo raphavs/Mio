@@ -19,14 +19,53 @@ class BP_SearchController extends Controller
         $this->middleware('auth');
     }
 
-    public function showTransactions(Request $request, $door)
+    public function showTransactions($door)
+    {
+        $transactions = TransactionsModel::all();
+        return view('mio_transactions', ['door' => $door])->with('transactions', $transactions);
+    }
+
+    public function submitFilterAJAX(Request $request)
+    {
+        $transactions = $this->submitFilter($request);
+        if ($transactions->count() <= 0) {
+            return view('ajax.mio_transactions_empty');
+        } else {
+            return view('ajax.mio_transactions')->with('transactions', $transactions);
+        }
+    }
+
+    public function submitFilter(Request $request)
     {
         $username = $request->input('username');
-        $date = $request->input('date');
+        $date = '%' . $request->input('date') . '%';
 
-        $transactions = TransactionsModel::where('user_name', 'LIKE', '%' . $username . '%')->where('entrance_date', 'LIKE', '%' . $date . '%')->get();
+        if (empty($username)) {
+            $username = '%' . $request->input('username') . '%';
+            $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
+        } else {
+            $transactions = TransactionsModel::where('user_name', $username)->where('entrance_date', 'LIKE', $date)->get();
+        }
+        return $transactions;
+    }
 
-        return view('mio_transactions', ['door' => $door])->with('transactions', $transactions);
+    public function filterAJAX(Request $request)
+    {
+        $transactions = $this->filterLIKE($request);
+        if ($transactions->count() <= 0) {
+            return view('ajax.mio_transactions_empty');
+        } else {
+            return view('ajax.mio_transactions')->with('transactions', $transactions);
+        }
+    }
+
+    public function filterLIKE(Request $request)
+    {
+        $username = '%' . $request->input('username') . '%';
+        $date = '%' . $request->input('date') . '%';
+
+        $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
+        return $transactions;
     }
 
 }

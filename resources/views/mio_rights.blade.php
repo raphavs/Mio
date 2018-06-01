@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="text-center my-margin-for-save">
-        <button type="submit" class="btn btn-search save">save changes</button>
+        <button type="submit" class="btn btn-save">save changes</button>
     </div>
 </form>
 @endsection
