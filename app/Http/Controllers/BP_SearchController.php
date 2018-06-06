@@ -35,7 +35,7 @@ class BP_SearchController extends Controller
         }
     }
 
-    public function submitFilter(Request $request)
+    private function submitFilter(Request $request)
     {
         $username = $request->input('username');
         $date = '%' . $request->input('date') . '%';
@@ -59,7 +59,7 @@ class BP_SearchController extends Controller
         }
     }
 
-    public function filterLIKE(Request $request)
+    private function filterLIKE(Request $request)
     {
         $username = '%' . $request->input('username') . '%';
         $date = '%' . $request->input('date') . '%';

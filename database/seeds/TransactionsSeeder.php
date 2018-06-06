@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 /* CREATE SEEDER: php artisan make:seeder <name_of_seeder> */
 /* composer dump-autoload */
+/* RUN SEEDER: php artisan db:seed --class=<name_of_seeder> */
 /* RUN DATABASE SEEDER: php artisan db:seed */
 class TransactionsSeeder extends Seeder
 {

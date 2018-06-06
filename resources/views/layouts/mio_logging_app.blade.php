@@ -38,23 +38,19 @@
     </div>
 </header>
 
-<div>
+<main>
     @yield('content')
-</div>
+</main>
 
 <!-- footer -->
 <footer class="my-footer-bg putdown">
     <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-12">
-                <div class="logo-home-footer-padding">
-                    <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo"></a>
-                </div>
+        <div class="text-center">
+            <div class="logo-home-footer-padding">
+                <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo"></a>
             </div>
-            <div class="col-12">
-                <hr class="my-hr-style">
-                <h5 class="thisIsMio-padding">THIS IS MIO</h5>
-            </div>
+            <hr class="my-hr-style">
+            <h5 class="thisIsMio-padding">THIS IS MIO</h5>
         </div>
     </div>
 </footer>

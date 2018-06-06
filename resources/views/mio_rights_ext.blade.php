@@ -7,11 +7,14 @@
 <div class="my-user-door-margin">
     <h2 class="text-center font-weight-bold">{{ $user }}:</h2>
 </div>
-<form action="{{ route('home.managedoor.selectuser.rights.ext.store') }}" class="col-12 last-block-margin-home" method="post">
+<form action="{{ route('home.managedoor.selectuser.rights.ext.store') }}" class="col-12 last-block-margin-home" onsubmit="return checkValidation()" method="post">
     @csrf
     <div class="my-rights-bg offset-lg-3 col-lg-6 offset-md-2 col-md-8 offset-sm-1 col-sm-10">
         <div class="offset-lg-1 col-lg-10 offset-md-1 col-md-10 my-rights-ext-box">
-            <div class="my-centered-checkboxes">
+            <div id="checkboxes-error">
+                <p class="my-error-in-center">Please check your input!</p>
+            </div>
+            <div id="checkboxes-id" class="my-centered-checkboxes">
                 <div class="my-checkboxes">
                     <div class="custom-control custom-checkbox">
                         @if ($mon == 1)
@@ -90,7 +93,7 @@
                     $from_time = substr($from_time, 0, 2);
                     $from_time = (integer)$from_time;
                 ?>
-                <input type="range" min="0" max="23" step="1" value="{{ $from_time }}" class="slider" name="my-from-range" id="my-from-range">
+                <input type="range" min="0" max="24" step="1" value="{{ $from_time }}" class="slider" name="my-from-range" id="my-from-range">
                 <p id="time-value-from" class="text-center font-weight-bold">Error</p>
             </div>
             <div class="slidecontainer">
@@ -102,7 +105,7 @@
                         $to_time = (integer)$to_time;
                     }
                 ?>
-                <input type="range" min="1" max="24" step="1" value="{{ $to_time }}" class="slider" name="my-to-range" id="my-to-range">
+                <input type="range" min="0" max="24" step="1" value="{{ $to_time }}" class="slider" name="my-to-range" id="my-to-range">
                 <p id="time-value-to" class="text-center font-weight-bold">Error</p>
             </div>
         </div>
@@ -112,19 +115,46 @@
     </div>
 </form>
 <script type="text/javascript">
-    var from_slider = document.getElementById("my-from-range");
-    var from_output = document.getElementById("time-value-from");
-    from_output.innerHTML = from_slider.value.toString() + " h";
-    from_slider.oninput = function()
+    $("#checkboxes-error").hide();
+    $("#time-value-from").text($("#my-from-range").val().toString() + " h");
+    $("#time-value-to").text($("#my-to-range").val().toString() + " h");
+
+    $("#my-from-range").on("input", function()
     {
-        from_output.innerHTML = this.value.toString() + " h";
-    };
-    var to_slider = document.getElementById("my-to-range");
-    var to_output = document.getElementById("time-value-to");
-    to_output.innerHTML = to_slider.value.toString() + " h";
-    to_slider.oninput = function()
+        if ($(this).val() >= parseInt($("#my-to-range").val())) {
+            $(this).val(parseInt($("#my-to-range").val()) - 1);
+        }
+        $("#time-value-from").text($(this).val().toString() + " h");
+    });
+
+    $("#my-to-range").on("input", function()
     {
-        to_output.innerHTML = this.value.toString() + " h";
+        if ($(this).val() <= parseInt($("#my-from-range").val())) {
+            $(this).val(parseInt($("#my-from-range").val()) + 1);
+        }
+        $("#time-value-to").text($(this).val().toString() + " h");
+    });
+
+    function checkValidation()
+    {
+        if ($(":checkbox:checked").length <= 0) {
+            showCheckboxError();
+            return false;
+        }
+        return true;
+    }
+
+    function showCheckboxError()
+    {
+        $("#checkboxes-id").hide();
+        $("#checkboxes-error").show();
+        setTimeout(function()
+            {
+                $("#checkboxes-error").hide();
+                $("#checkboxes-id").show();
+            },
+            3000
+        );
     }
 </script>
 @endsection

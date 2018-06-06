@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/mio_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -67,9 +68,9 @@
     </div>
 </header>
 
-<div>
+<main>
     @yield('content')
-</div>
+</main>
 
 <br>
 <br>
@@ -78,7 +79,7 @@
 <footer class="my-footer-bg">
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <hr class="my-hr-style">
                 <h5>Contact</h5>
                 <hr class="my-hr-style">
@@ -87,7 +88,7 @@
                 <p>Alfred-Wachtel Straße 1</p>
                 <p>78462 Constance, Germany</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="logo-footer-padding">
                     <img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo">
                 </div>
@@ -96,8 +97,18 @@
                     <p>Privacy Policy</p>
                     <p>Feedback</p>
                 </div>
+                <br>
+                <div class="icons-in-center text-center">
+                    <a href="#" class="fa fa-github fa-2x"></a>
+                    <a href="#" class="fa fa-xing fa-2x"></a>
+                    <a href="#" class="fa fa-linkedin fa-2x"></a>
+                    <a href="#" class="fa fa-instagram fa-2x"></a>
+                    <a href="#" class="fa fa-facebook fa-2x"></a>
+                    <a href="#" class="fa fa-twitter fa-2x"></a>
+                    <a href="#" class="fa fa-snapchat fa-2x"></a>
+                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <hr class="my-hr-style">
                 <h5>Information</h5>
                 <hr class="my-hr-style">
@@ -106,10 +117,10 @@
                 <p>Security</p>
                 <p>Terms of Use</p>
             </div>
-            <div class="col-12">
-                <hr class="my-hr-style">
-                <h5 class="thisIsMio-padding">THIS IS MIO</h5>
-            </div>
+        </div>
+        <div class="text-center">
+            <hr class="my-hr-style">
+            <h5 class="thisIsMio-padding">THIS IS MIO</h5>
         </div>
     </div>
 </footer>

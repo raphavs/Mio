@@ -6,9 +6,9 @@ use Illuminate\Database\Migrations\Migration;
 
 /* CREATE STATEMENT: php artisan make:migration <name_of_migration> --create=<name_of_table> */
 /* php artisan migrate */
+/* DROP ALL TABLES & RUN MIGRATIONS: php artisan migrate:fresh */
 /* ROLLBACK LAST CHANGES: php artisan migrate:rollback */
 /* ROLLBACK ALL CHANGES: php artisan migrate:reset */
-/* DROP ALL TABLES & RUN MIGRATIONS: php artisan migrate:fresh */
 class CreateTransactionsTable extends Migration
 {
     /**
@@ -36,4 +36,5 @@ class CreateTransactionsTable extends Migration
     {
         Schema::dropIfExists('transaction');
     }
+
 }

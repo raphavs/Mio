@@ -5,7 +5,8 @@
     <ul class="navbar-nav">
         @foreach($doors as $v)
             <li class="nav-item">
-                <a class="nav-link" href="/home/{{ $v->door_name }}">{{ $v->door_name }}</a>
+                <a class="nav-link"
+                   href="/home/{{ $v->door_name }}">{{ $v->door_name }}</a>
             </li>
         @endforeach
     </ul>

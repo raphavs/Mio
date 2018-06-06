@@ -62,18 +62,16 @@
     </header>
 </div>
 
-<div>
+<main>
     @yield('content')
-</div>
+</main>
 
 <!-- footer -->
 <footer class="my-footer-bg putdown">
     <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-12">
-                <h5 class="thisIsMio-padding-home">THIS IS MIO</h5>
-                <hr class="my-hr-style">
-            </div>
+        <div class="text-center">
+            <h5 class="thisIsMio-padding-home">THIS IS MIO</h5>
+            <hr class="my-hr-style">
         </div>
     </div>
 </footer>

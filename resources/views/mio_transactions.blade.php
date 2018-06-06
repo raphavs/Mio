@@ -36,7 +36,7 @@
     </div>
     <div id="little-artificial-form">
         <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-            <div class="form-row">
+            <div class="form-row my-additional-margin-for-input">
                 <div class="form-row col-8">
                     <label for="username" class="col-4 padding-search-label">Username:</label>
                     <div class="col-8">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="form-row my-additional-margin-for-input">
                 <div class="form-row col-8">
                     <label for="date" class="col-4 padding-search-label">Date:</label>
                     <div class="col-8">
@@ -65,7 +65,7 @@
     </div>
     <div id="very-little-artificial-form">
         <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-            <div class="form-row">
+            <div class="form-row my-additional-margin-for-input">
                 <label for="username" class="col-4 padding-search-label">Username:</label>
                 <div class="col-8">
                     <div class="my-username-width">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="form-row my-additional-margin-for-input">
                 <label for="date" class="col-4 padding-search-label">Date:</label>
                 <div class="col-8">
                     <div class="my-date-width">
@@ -81,8 +81,10 @@
                     </div>
                 </div>
             </div>
-            <div class="my-additional-margin-for-btn form-row">
-                <button id="my-artificial-submit" class="btn btn-search">Search</button>
+            <div class="form-row my-additional-margin-for-input">
+               <div class="offset-4 col-8">
+                   <button id="my-artificial-submit" class="btn btn-search">Search</button>
+               </div>
             </div>
         </div>
     </div>
