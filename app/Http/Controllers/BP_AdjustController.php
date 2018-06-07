@@ -30,17 +30,26 @@ class BP_AdjustController extends Controller
 
     public function invokeRightsExt(Request $request, $door, $user)
     {
-        if (empty($request->input('access_option'))){
+        if (empty($request->input('access_option'))) {
 
             $request->session()->put('access_right', MyUsersModel::where('user_name', $user)->value('access_right'));
-            $request->session()->put('protocol_right', MyUsersModel::where('user_name', $user)->value('protocol_right'));
 
         } else {
 
             $request->session()->put('access_right', $request->input('access_option') == 'true' ? 1 : 0);
+
+        }
+
+        if (empty($request->input('protocol_right'))) {
+
+            $request->session()->put('protocol_right', MyUsersModel::where('user_name', $user)->value('protocol_right'));
+
+        } else {
+
             $request->session()->put('protocol_right', $request->input('protocol_option') == 'true' ? 1 : 0);
 
         }
+
 
         $access_right = $request->session()->get('access_right','There is no Access Right');
 
