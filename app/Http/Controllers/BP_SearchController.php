@@ -37,15 +37,27 @@ class BP_SearchController extends Controller
 
     private function submitFilter(Request $request)
     {
-        $username = $request->input('username');
-        $date = '%' . $request->input('date') . '%';
-
-        if (empty($username)) {
+        if (empty($request->input('username')) and empty($request->input('date'))) {
             $username = '%' . $request->input('username') . '%';
+            $date = '%' . $request->input('date') . '%';
             $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
-        } else {
+
+        } else if (empty($request->input('username'))) {
+            $username = '%' . $request->input('username') . '%';
+            $date = $request->input('date');
+            $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', $date)->get();
+
+        } else if (empty($request->input('date'))) {
+            $username = $request->input('username');
+            $date = '%' . $request->input('date') . '%';
             $transactions = TransactionsModel::where('user_name', $username)->where('entrance_date', 'LIKE', $date)->get();
+
+        } else {
+            $username = $request->input('username');
+            $date = $request->input('date');
+            $transactions = TransactionsModel::where('user_name', $username)->where('entrance_date', $date)->get();
         }
+
         return $transactions;
     }
 
@@ -64,8 +76,7 @@ class BP_SearchController extends Controller
         $username = '%' . $request->input('username') . '%';
         $date = '%' . $request->input('date') . '%';
 
-        $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
-        return $transactions;
+        return TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
     }
 
 }

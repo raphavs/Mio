@@ -1,7 +1,7 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-doors-center my-doors-links last-block-margin-home">
+<div class="my-doors-center my-doors-links">
     <ul class="navbar-nav">
         @foreach($doors as $v)
             <li class="nav-item">

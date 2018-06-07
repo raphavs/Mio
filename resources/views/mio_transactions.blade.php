@@ -10,84 +10,84 @@
     </div>
 </div>
 <div id="submit-search">
-    <div id="big-artificial-form">
+    <form id="big-artificial-form" onsubmit="return submit_reload_big()">
         <div class="my-transaction-margin offset-2 col-8">
             <div class="form-row">
                 <div class="form-row my-additional-margin-for-userinput col-5">
-                    <label for="username" class="padding-search-label">Username:</label>
+                    <label for="username-big" class="padding-search-label">Username:</label>
                     <div class="my-username-width">
-                        <input id="username" type="search" onkeyup="reload()" class="my-input-padding form-control" name="username" placeholder="Username ...">
+                        <input id="username-big" type="search" onkeyup="reload_big()" class="my-input-padding form-control" name="username" placeholder="Username ..." autocomplete="off">
                     </div>
                 </div>
                 <div class="col-1"></div>
                 <div class="form-row col-4">
-                    <label for="date" class="padding-search-label">Date:</label>
+                    <label for="date-big" class="padding-search-label">Date:</label>
                     <div class="my-date-width">
-                        <input id="date" type="date" onkeyup="reload()" class="my-input-padding form-control" name="date">
+                        <input id="date-big" type="search" onkeyup="reload_big()" class="my-input-padding form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                     </div>
                 </div>
                 <div class="my-additional-margin-for-btn col-2">
                     <div class="put-btn-right">
-                        <button id="my-artificial-submit" class="btn btn-search">Search</button>
+                        <button type="submit" class="btn btn-search">Search</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="little-artificial-form">
+    </form>
+    <form id="little-artificial-form" onsubmit="return submit_reload_little()">
         <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
             <div class="form-row my-additional-margin-for-input">
                 <div class="form-row col-8">
-                    <label for="username" class="col-4 padding-search-label">Username:</label>
+                    <label for="username-little" class="col-4 padding-search-label">Username:</label>
                     <div class="col-8">
                         <div class="my-username-width">
-                            <input id="username" type="search" onkeyup="reload()" class="my-input-padding form-control" name="username" placeholder="Username ...">
+                            <input id="username-little" type="search" onkeyup="reload_little()" class="my-input-padding form-control" name="username" placeholder="Username ..." autocomplete="off">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-row my-additional-margin-for-input">
                 <div class="form-row col-8">
-                    <label for="date" class="col-4 padding-search-label">Date:</label>
+                    <label for="date-little" class="col-4 padding-search-label">Date:</label>
                     <div class="col-8">
                         <div class="my-date-width">
-                            <input id="date" type="date" onkeyup="reload()" class="my-input-padding form-control" name="date">
+                            <input id="date-little" type="search" onkeyup="reload_little()" class="my-input-padding form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                         </div>
                     </div>
                 </div>
                 <div class="my-additional-margin-for-btn col-lg-4 col-md-4 col-sm-4 col-4">
                     <div class="put-btn-right">
-                        <button id="my-artificial-submit" class="btn btn-search">Search</button>
+                        <button type="submit" class="btn btn-search">Search</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="very-little-artificial-form">
+    </form>
+    <form id="very-little-artificial-form" onsubmit="return submit_reload_verylittle()">
         <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
             <div class="form-row my-additional-margin-for-input">
-                <label for="username" class="col-4 padding-search-label">Username:</label>
+                <label for="username-verylittle" class="col-4 padding-search-label">Username:</label>
                 <div class="col-8">
                     <div class="my-username-width">
-                        <input id="username" type="search" onkeyup="reload()" class="my-input-padding form-control" name="username" placeholder="Username ...">
+                        <input id="username-verylittle" type="search" onkeyup="reload_verylittle()" class="my-input-padding form-control" name="username" placeholder="Username ..." autocomplete="off">
                     </div>
                 </div>
             </div>
             <div class="form-row my-additional-margin-for-input">
-                <label for="date" class="col-4 padding-search-label">Date:</label>
+                <label for="date-verylittle" class="col-4 padding-search-label">Date:</label>
                 <div class="col-8">
                     <div class="my-date-width">
-                        <input id="date" type="date" onkeyup="reload()" class="my-input-padding form-control" name="date">
+                        <input id="date-verylittle" type="search" onkeyup="reload_verylittle()" class="my-input-padding form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                     </div>
                 </div>
             </div>
             <div class="form-row my-additional-margin-for-input">
                <div class="offset-4 col-8">
-                   <button id="my-artificial-submit" class="btn btn-search">Search</button>
+                   <button type="submit" class="btn btn-search">Search</button>
                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 <div class="container-fluid last-block-margin-home">
     <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10">
@@ -127,19 +127,45 @@
         $("#submit-search").show();
     }
 
-    function reload()
+    function reload_big()
     {
-        $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username").val() + "&date=" + $("#date").val());
+        $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username-big").val() + "&date=" + $("#date-big").val());
+    }
+    function reload_little()
+    {
+        $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username-little").val() + "&date=" + $("#date-little").val());
+    }
+    function reload_verylittle()
+    {
+        $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username-verylittle").val() + "&date=" + $("#date-verylittle").val());
     }
 
-    $("#my-artificial-submit").click(
-        function()
-        {
-            $("#submit-search").hide();
-            $("#start-search").show();
-            $("#my-agile-tbody").load("transactions/submit/ajax?username=" + $("#username").val() + "&date=" + $("#date").val());
-            $("#username").val("");
-        }
-    );
+    function submit_reload_big()
+    {
+        $("#submit-search").hide();
+        $("#start-search").show();
+        $("#my-agile-tbody").load("transactions/submit/ajax?username=" + $("#username-big").val() + "&date=" + $("#date-big").val());
+        $("#username-big").val("");
+        $("#date-big").val("");
+        return false;
+    }
+    function submit_reload_little()
+    {
+        $("#submit-search").hide();
+        $("#start-search").show();
+        $("#my-agile-tbody").load("transactions/submit/ajax?username=" + $("#username-little").val() + "&date=" + $("#date-little").val());
+        $("#username-little").val("");
+        $("#date-little").val("");
+        return false;
+    }
+    function submit_reload_verylittle()
+    {
+        $("#submit-search").hide();
+        $("#start-search").show();
+        $("#my-agile-tbody").load("transactions/submit/ajax?username=" + $("#username-verylittle").val() + "&date=" + $("#date-verylittle").val());
+        $("#username-verylittle").val("");
+        $("#date-verylittle").val("");
+        return false;
+    }
 </script>
 @endsection
