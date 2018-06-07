@@ -298,10 +298,10 @@ p {
 
 /* Header Username (Home) */
 #my-user-header-style {
-    border-top: 2px solid #f3be29;
+    border-top: 1px solid #f3be29;
     padding-top: 5px;
     padding-bottom: 8px;
-    background-color: #191b1d;
+    background-color: #d9d9d9;
     color: #febe29;
     font-weight: bold;
     font-size: 2.5rem;
