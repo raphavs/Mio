@@ -15,24 +15,24 @@ class TransactionsSeeder extends Seeder
      */
     public function run()
     {
-        DB::insert("insert into transactions values( 1, 'Gianmarco',  STR_TO_DATE('2018-03-23','%Y-%m-%d'), STR_TO_DATE('12:39:00','%H:%i:%s') /*, NOW(), NOW() */)");
-        DB::insert("insert into transactions values( 2, 'Rapha',      STR_TO_DATE('2018-03-22','%Y-%m-%d'), STR_TO_DATE('20:05:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values( 3, 'Mom',        STR_TO_DATE('2018-03-22','%Y-%m-%d'), STR_TO_DATE('21:11:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values( 4, 'Bruder',     STR_TO_DATE('2018-03-22','%Y-%m-%d'), STR_TO_DATE('15:53:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values( 5, 'Dad',        STR_TO_DATE('2018-03-22','%Y-%m-%d'), STR_TO_DATE('13:44:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values( 6, 'Ebrar',      STR_TO_DATE('2018-03-21','%Y-%m-%d'), STR_TO_DATE('19:48:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values( 7, 'Pheline',    STR_TO_DATE('2018-03-20','%Y-%m-%d'), STR_TO_DATE('12:39:00','%H:%i:%s') /*, NOW(), NOW() */)");
-        DB::insert("insert into transactions values( 8, 'Robin',      STR_TO_DATE('2018-03-19','%Y-%m-%d'), STR_TO_DATE('20:05:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values( 9, 'Mom',        STR_TO_DATE('2018-03-19','%Y-%m-%d'), STR_TO_DATE('21:11:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(10, 'Lea',        STR_TO_DATE('2018-03-19','%Y-%m-%d'), STR_TO_DATE('15:53:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(11, 'Gianmarco',  STR_TO_DATE('2018-03-19','%Y-%m-%d'), STR_TO_DATE('13:44:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(12, 'Dad',        STR_TO_DATE('2018-03-18','%Y-%m-%d'), STR_TO_DATE('19:48:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(13, 'Leas Mom',   STR_TO_DATE('2018-03-17','%Y-%m-%d'), STR_TO_DATE('12:39:00','%H:%i:%s') /*, NOW(), NOW() */)");
-        DB::insert("insert into transactions values(14, 'Rapha',      STR_TO_DATE('2018-03-16','%Y-%m-%d'), STR_TO_DATE('20:05:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(15, 'Leas Dad',   STR_TO_DATE('2018-03-16','%Y-%m-%d'), STR_TO_DATE('21:11:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(16, 'Bruder',     STR_TO_DATE('2018-03-16','%Y-%m-%d'), STR_TO_DATE('15:53:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(17, 'Ebrar',      STR_TO_DATE('2018-03-16','%Y-%m-%d'), STR_TO_DATE('13:44:00','%H:%i:%s'))");
-        DB::insert("insert into transactions values(18, 'Pheline',    STR_TO_DATE('2018-03-15','%Y-%m-%d'), STR_TO_DATE('19:48:00','%H:%i:%s'))");
+        DB::insert("insert into transactions values( 1, 'Gianmarco',  '2018-03-23', '12:39:00' /*, NOW(), NOW() */)");
+        DB::insert("insert into transactions values( 2, 'Rapha',      '2018-03-22', '20:05:00')");
+        DB::insert("insert into transactions values( 3, 'Mom',        '2018-03-22', '21:11:00')");
+        DB::insert("insert into transactions values( 4, 'Bruder',     '2018-03-22', '15:53:00')");
+        DB::insert("insert into transactions values( 5, 'Dad',        '2018-03-22', '13:44:00')");
+        DB::insert("insert into transactions values( 6, 'Ebrar',      '2018-03-21', '19:48:00')");
+        DB::insert("insert into transactions values( 7, 'Pheline',    '2018-03-20', '12:39:00')");
+        DB::insert("insert into transactions values( 8, 'Robin',      '2018-03-19', '20:05:00')");
+        DB::insert("insert into transactions values( 9, 'Mom',        '2018-03-19', '21:11:00')");
+        DB::insert("insert into transactions values(10, 'Lea',        '2018-03-19', '15:53:00')");
+        DB::insert("insert into transactions values(11, 'Gianmarco',  '2018-03-19', '13:44:00')");
+        DB::insert("insert into transactions values(12, 'Dad',        '2018-03-18', '19:48:00')");
+        DB::insert("insert into transactions values(13, 'Leas Mom',   '2018-03-17', '12:39:00')");
+        DB::insert("insert into transactions values(14, 'Rapha',      '2018-03-16', '20:05:00')");
+        DB::insert("insert into transactions values(15, 'Leas Dad',   '2018-03-16', '21:11:00')");
+        DB::insert("insert into transactions values(16, 'Bruder',     '2018-03-16', '15:53:00')");
+        DB::insert("insert into transactions values(17, 'Ebrar',      '2018-03-16', '13:44:00')");
+        DB::insert("insert into transactions values(18, 'Pheline',    '2018-03-15', '19:48:00')");
     }
 
 }
