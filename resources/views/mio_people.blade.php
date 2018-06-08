@@ -1,40 +1,58 @@
+
+
 @extends('layouts.mio_welcome_app')
-
 @section('content')
-<h1 class="display-1 text-center">People</h1>
+    <!-- Headline -->
+    <br>
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <img src="Image_Pixabay/user_icon.png" class="img-fluid rounded-circle padding-user-img" alt="Client">
+                <h1 class="display-5">Client</h1>
+            </div>
+            <p> Clients have to sign in and from then on they can act like administrators.
+                They have the right to see the protocol, so which user has open the door at which time.
+                Obviously they are possible to open the door and they can give rights to their chosen users.
+            </p>
+        </div>
 
-<br>
-<br>
-<br>
+    </div>
 
-<!-- About-Section -->
-<section>
+    <hr class="col-8 offset-2">
+
     <!-- Headline -->
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
-                <h1 class="display-5">About Mio</h1>
+                <img src="Image_Pixabay/user_icon.png" class="img-fluid rounded-circle padding-user-img" alt="User">
+                <h1 class="display-5">User</h1>
             </div>
+            <p>Users do not have an administrator account like clients.
+                They are chosen from clients and picked up to open doors.
+                It is possible to see the protocol but only for themselves. They can't see the transaction of the other users or of the client.
+                But the client can give the right to see the whole protocol.</p>
         </div>
     </div>
 
     <hr class="col-8 offset-2">
 
-    <!-- Two Column Section -->
-    <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-md-12 col-lg-6 my-about-padding">
-                    <p>Mio is an access control system that allows clients to manage their doors smart via smartphone, tablet or PC.
-                        To do this, clients create users and determine which person is able to open which door at which time.
-                        In addition, all opening transactions are recorded in a log, which clients and users can view at any time.</p>
-                    <a id="my-readmore-btn" class="btn btn-readmore" role="button">read more ...</a>
-                </div>
-                <div class="col-md-12 col-lg-6 my-about-padding">
-                    <img src="/Image/Smartphone_Laptop.jpg" class="img-fluid rounded" alt="PictureOfUser">
-                </div>
+    <!-- Headline -->
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <img src="Image_Pixabay/user_icon.png" class="img-fluid rounded-circle padding-user-img" alt="Manufacturer">
+                <h1 class="display-5">Manufacturer</h1>
             </div>
+            <p>Manufacturer have their own special account. They can sign in their hardware if it is compatible with our software.
+                In the webshop people can look and buy. If someone is interested in your hardware, you get a message and we do the contract.</p>
         </div>
     </div>
-</section>
-@endsection
+
+    <hr class="col-8 offset-2">
+
+    <!-- User-Section -->
+    <br>
+
+@stop
+
+
