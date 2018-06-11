@@ -63,7 +63,6 @@
 
     $(window).resize(function()
     {
-        alert("Width: " + width + " & Height: " + height);
         window.resizeTo(width, height);
         window.focus();
     });
