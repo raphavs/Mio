@@ -92,9 +92,8 @@ p {
 
 /* eigene Display-Klasse für Überschriften */
 .display-5 {
+    text-align: center;
     font-size: 5vh;
-    font-weight: 500;
-    line-height: 1.2;
 }
 
 /* Font Style h3 */
@@ -230,7 +229,8 @@ p {
 /* Überschrift (Logging) */
 .logging {
     color: #f3be29;
-    padding: 1.5vh 0;
+    padding-top: 1.6vh;
+    padding-bottom: 0.8vh;
 }
 
 /* Positioning Logging Content */
@@ -281,6 +281,15 @@ p {
     font-weight: bold;
 }
 
+/* Resize Checkbox (logging) */
+@media screen and (max-width: 500px){
+
+    .my-logging-checkbox {
+        transform: scale(0.9);
+    }
+
+}
+
 /* My Margin for form-group (Logging) */
 .form-group {
     margin-bottom: 2vh;
@@ -314,8 +323,8 @@ p {
 
 /* Style für Textlink (Logging) */
 #logging-textlink-padding {
-    padding-top: 0.8vh;
-    padding-bottom: 0.8vh;
+    padding-top: 0.9vh;
+    padding-bottom: 0.9vh;
 }
 
 /* Footer nach unten setzen (Logging) */

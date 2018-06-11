@@ -10,12 +10,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/mio_styles.css">
+
+    <script>
+        $(function() {
+            var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            $("html").css({"width":w,"height":h});
+            $("body").css({"width":w,"height":h});
+        });
+    </script>
 </head>
 <body class="logging-body">
 
 <!-- Header -->
 <header class="my-logging-header-style my-fixed-position">
-    <div class="container-fluid text-center">
+    <div class="container-fluid">
         <h3 class="display-5 logging">
             @if (\Request::route()->getName() == 'register')
                 Register

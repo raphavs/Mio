@@ -32,7 +32,7 @@
 <!-- About-Section -->
 <section class="my-margin-welcome-section">
     <!-- Headline -->
-    <div class="container-fluid text-center">
+    <div class="container-fluid">
         <h1 class="display-5">About Mio</h1>
     </div>
 
@@ -61,7 +61,7 @@
 <!-- User-Section -->
 <section class="my-margin-welcome-section">
     <!-- Headline -->
-    <div class="container-fluid text-center">
+    <div class="container-fluid">
         <h1 class="display-5">User Groups</h1>
     </div>
 
