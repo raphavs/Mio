@@ -58,12 +58,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script>
-    var size = [window.width, window.height];
-
     $(window).resize(function()
     {
-        alert("KUKU BRA");
-        window.resizeTo(size[0], size[1]);
+        var width = window.width();
+        var height = window.height();
+        alert("Width: " + width + " & Height: " + height);
+        window.resizeTo(width, height);
         window.focus();
     });
 </script>
