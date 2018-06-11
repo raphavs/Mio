@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function relation()
+    {
+        return $this->hasMany(RelationsModel::class, 'user-id');
+    }
+
 }

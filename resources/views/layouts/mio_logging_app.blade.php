@@ -14,21 +14,17 @@
 <body class="logging-body">
 
 <!-- Header -->
-<header class="my-footer-bg my-fixed-position">
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-12">
-                <h3 class="display-4 logging">
-                @if (\Request::route()->getName() == 'register')
-                    Register
-                @elseif(\Request::route()->getName() == 'login.resetpw')
-                    Reset your Password
-                @elseif(\Request::route()->getName() == 'login')
-                    Sign in
-                @endif
-                </h3>
-            </div>
-        </div>
+<header class="my-logging-header-style my-fixed-position">
+    <div class="container-fluid text-center">
+        <h3 class="display-5 logging">
+            @if (\Request::route()->getName() == 'register')
+                Register
+            @elseif(\Request::route()->getName() == 'login.resetpw')
+                Reset your Password
+            @elseif(\Request::route()->getName() == 'login')
+                Sign in
+            @endif
+        </h3>
     </div>
 </header>
 
@@ -37,15 +33,13 @@
 </main>
 
 <!-- footer -->
-<footer class="my-footer-bg putdown">
-    <div class="container-fluid">
-        <div class="text-center">
-            <div class="logo-home-footer-padding">
-                <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo"></a>
-            </div>
-            <hr class="my-hr-style">
-            <h5 class="thisIsMio-padding">THIS IS MIO</h5>
+<footer class="my-footer-bg putdown d-none d-xl-block">
+    <div class="container-fluid text-center">
+        <div class="logo-home-footer-padding">
+            <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo"></a>
         </div>
+        <hr class="my-hr-style">
+        <h5 class="thisIsMio-style">THIS IS MIO</h5>
     </div>
 </footer>
 </body>

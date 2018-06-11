@@ -11,17 +11,36 @@ p {
     font-size: 1.2rem;
 }
 
+/* My individual Padding for Navbar */
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5vh 6px;
+}
+
+/* List Elements in vertically Center */
+.my-li-btn-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 /* Size Logo Navbar */
-.my-navbar-img {
-    min-height: 5vh;
-    max-height: 8vh;
-    width: auto;
+.my-logo-size {
+    height: auto;
+    width: 26vh;
 }
 
 /* Schrift NavBar */
 .my-navbar-font .nav-link {
     color: #ffffff;
-    font-size: 1.3rem;
+    font-size: 2.2vh;
 }
 .my-navbar-font .nav-link:hover {
     color: #f3be29;
@@ -35,24 +54,21 @@ p {
 
 /* Abstände zwischen NavBar Elementen */
 .navbar-nav li {
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 3px;
-    padding-bottom: 2px;
+    padding: 0.3vh 5px;
+}
+.my-li-btn-margin {
+    margin-top: 0.12vh;
 }
 
 /* Style Logging-Button */
 .btn-logging {
     color: #ffffff;
     background-color: #226693;
-    border-color: #226693;
-    border-width: medium;
-    font-size: 1.1rem;
+    font-size: 2.2vh;
 }
 .btn-logging:hover {
     color: #febe29;
     background-color: #226693;
-    border-color: #226693;
     font-weight: bold;
     text-decoration: none;
 }
@@ -67,35 +83,42 @@ p {
 
 /* Header */
 .my-header-style {
-    padding-top: 3px;
+    padding-top: 5px;
     padding-bottom: 6px;
     background-color: #d9d9d9;
     color: #191b1d;
-}
-.my-header-style h1, h2, h3, h4, h5, h6 {
+    font-size: 3vh;
     margin: 0;
 }
 
 /* eigene Display-Klasse für Überschriften */
 .display-5 {
-    font-size: 3rem;
+    font-size: 5vh;
     font-weight: 500;
     line-height: 1.2;
+}
+
+/* Font Style h3 */
+.my-welcome-h3-size {
+    font-size: 3.2vh;
+    font-weight: bold;
+}
+
+/* Font-Size Paragraph*/
+.my-welcome-p-size {
+    font-size: 2.2vh;
 }
 
 /* Style ReadMore-Button */
 .btn-readmore {
     color: #191b1d;
     background-color: #f3be29;
-    border-color: #f3be29;
-    border-width: medium;
-    font-size: 1.1rem;
+    font-size: 2.2vh;
     font-weight: bold;
 }
 #my-readmore-btn:hover {
     color: #f3be29;
     background-color: #226693;
-    border-color: #226693;
     font-weight: bold;
     text-decoration: none;
 }
@@ -103,10 +126,15 @@ p {
     box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
 }
 
+/* Margin für Sections */
+.my-margin-welcome-section {
+    margin: 10vh 0;
+}
+
 /* Padding für About-Section */
 .my-about-padding {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 /* Vertically & Horizontally Center */
@@ -120,12 +148,14 @@ p {
 
 /* Padding für User-Section */
 .my-user-padding {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
-/* Padding für User Image */
-.padding-user-img {
+/* Style für User Image */
+.user-img {
+    height: auto;
+    width: 16vh;
     margin-bottom: 15px;
 }
 
@@ -141,18 +171,28 @@ p {
     padding-bottom: 15px;
 }
 
+/* Font-Size Header Footer */
+.my-footer-header {
+    font-size: 2.2vh;
+}
+
 /* hr Style im Footer */
 .my-hr-style {
     height: 1px;
     border: none;
-    color: #f3be29;
     background-color: #f3be29;
 }
 
 /* Paragraphen im Footer */
 .my-footer-bg p {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.8vh;
+}
+
+ /* Margin für Paragraphen in Footer */
+.my-footer-paragraph-margin {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 /* Footer Hintergrund */
@@ -162,12 +202,12 @@ p {
 
 /* Icons Style */
 .fa {
-    color: #226693;
-    margin: 15px 5px;
+    color: #f3be29;
+    margin: 2vh 5px;
 }
 .fa:hover {
     opacity: 0.7;
-    color: #226693;
+    color: #f3be29;
     text-decoration: none;
 }
 
@@ -177,34 +217,39 @@ p {
     margin-left: auto;
 }
 
-/* Padding für This Is Mio */
-.thisIsMio-padding {
+/* Style für This Is Mio */
+.thisIsMio-style {
+    font-size: 2.2vh;
     padding-bottom: 16px;
 }
 
-/* Footer nach unten setzen (Logging) */
-.putdown {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 333;
-}
-
- /* Margin-Top (Logging) */
-.my-logging-position {
-    margin-top: 150px;
+/* Style Header Logging */
+.my-logging-header-style {
+    background-color: #191b1d;
 }
 
 /* Überschrift (Logging) */
 .logging {
     color: #f3be29;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 1.5vh 0;
+}
+
+/* Positioning Logging Content */
+.my-logging-content-center {
+    position:absolute;
+    width: 100%;
+    top:42%;
+    left:50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 /* Style 'forgot your password' (Logging) */
 .my-btn-link {
+    padding-left: 0;
     color: #226693;
+    font-size: 1.8vh;
     font-weight: bold;
 }
 .my-btn-link:hover {
@@ -222,10 +267,10 @@ p {
 
 /* Labels (Logging) */
 .my-col-form-label {
-    padding-top: calc(0.375rem + 1px);
-    padding-bottom: calc(0.375rem + 1px);
+    padding-top: 0.7vh;
+    padding-bottom: 0.9vh;
     margin-bottom: 0;
-    font-size: inherit;
+    font-size: 2vh;
     line-height: 1.5;
     font-weight: bold;
 }
@@ -233,17 +278,30 @@ p {
 /* Style für Remember Me (Logging) */
 .remember-me-label {
     color: #191b1d;
+    font-size: 1.8vh;
     font-weight: bold;
 }
 
-/* Padding für Input (Logging) */
-.my-input-padding {
-    padding-top: 7px;
-    padding-bottom: 6px;
+/* My Margin for form-group (Logging) */
+.form-group {
+    margin-bottom: 2vh;
 }
 
-/* Input Focus (Logging) */
-.my-input-padding:focus {
+/* My form-control (Logging) */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.7vh 12px;
+    font-size: 2vh;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
     border: 1px;
     box-shadow: 0 0 10px;
 }
@@ -252,19 +310,21 @@ p {
 .logging-button-padding {
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 /* Style für Textlink (Logging) */
 #logging-textlink-padding {
-    padding-top: 8px;
-    padding-bottom: 5px;
-    padding-right: 10px;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
 }
 
-/* Margin-Bottom (Logging) */
-.last-block-margin-logging {
-    margin-bottom: 275px;
+/* Footer nach unten setzen (Logging) */
+.putdown {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 333;
 }
 
 /* Schrift Doors Liste (Home) */
@@ -273,7 +333,7 @@ p {
     color: #191b1d;
     font-size: 4vh;
     background-color: #d9d9d9;
-    border-radius: 0.25rem;
+    border-radius: 4px;
 }
 .my-doors-links .nav-link:hover {
     color: #f3be29;
@@ -286,11 +346,11 @@ p {
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
-    height: 40%;
+    height: 50%;
     text-align: center;
-    position:absolute;
-    top:50%;
-    left:50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
@@ -308,7 +368,7 @@ p {
     background-color: #191b1d;
     color: #f3be29;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3.5vh;
 }
 #my-user-header-style h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -334,19 +394,26 @@ p {
     padding-top: 16px;
 }
 
-/* Margin-Bottom (Home) */
-.last-block-margin-home {
-    margin-bottom: 150px;
-}
-
 /* Position für body (Home/ManageDoors) */
 .my-home-position {
-    margin-top: 200px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Doors Header (Home/ManageDoors) */
+.my-doors-header {
+    text-align: center;
+    font-size: 4vh;
 }
 
 /* Padding für Links (Home/ManageDoors) */
 .padding-manage-links {
-    padding: 10px;
+    padding: 0.5vh 1vh;
 }
 
 /* Links in Hintergrund (Home/ManageDoors) */
@@ -358,9 +425,9 @@ p {
 .my-links-font .nav-link {
     width: 100%;
     color: #191b1d;
-    font-size: 1.6rem;
+    font-size: 2.6vh;
     background-color: #d9d9d9;
-    border-radius: 0.33rem;
+    border-radius: 6px;
 }
 .my-links-font .nav-link:hover {
     color: #f3be29;
@@ -372,7 +439,7 @@ p {
 /* Style für Open Button (Home/ManageDoors) */
 .my-btn {
     display: inline-block;
-    font-weight: 400;
+    font-weight: bold;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -380,28 +447,25 @@ p {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: 1px solid transparent;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-size: 3.5rem;
+    padding: 3vh 0;
+    font-size: 5vh;
     line-height: 1.5;
-    border-radius: 0.7rem;
+    border-radius: 12px;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 100%;
 }
 
 /* Margin für Links (Home/ManageDoors) */
 .my-margin-for-links-managedoor {
-    margin-top: 65px;
-    margin-bottom: 80px;
+    margin-top: 7vh;
+    margin-bottom: 5.2vh;
 }
 
 /* Style Open Button (Home/ManageDoors) */
 .btn-open {
     color: #191b1d;
     background-color: #f3be29;
-    border-color: #f3be29;
-    border-width: medium;
+    border: #f3be29 solid medium;
 }
 .btn-open:hover {
     color: #f3be29;
@@ -415,32 +479,30 @@ p {
 
 /* Padding für Inputs (Home/ManageDoors/Transactions) */
 .padding-search-label {
-    padding-top: 12px;
-    padding-right: 10px;
-    font-size: inherit;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
+    padding-right: 1vh;
+    font-size: 2vh;
     line-height: 1;
     font-weight: bold;
 }
 
 /* Margin für Inputs (Home/ManageDoors/Transactions) */
 .my-transaction-margin {
-    margin-top: 55px;
-    margin-bottom: 30px;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
 }
 
 /* Style Search-Button (Home/ManageDoor/Transactions) */
 .btn-search {
     color: #191b1d;
     background-color: #d9d9d9;
-    border-color: #d9d9d9;
-    border-width: medium;
-    font-size: 1.1rem;
+    font-size: 2.2vh;
     font-weight: bold;
 }
 .btn-search:hover {
     color: #191b1d;
     background-color: #f3be29;
-    border-color: #f3be29;
     font-weight: bold;
     text-decoration: none;
 }
@@ -465,36 +527,40 @@ p {
 }
 
 /* Additional Margin for Form (Home/ManageDoors/Transactions) */
-#big-artificial-form .my-additional-margin-for-userinput {
-    margin-left: 5px;
-}
 #big-artificial-form .my-additional-margin-for-btn, #little-artificial-form .my-additional-margin-for-btn {
     margin-left: 10px;
 }
 
 /* Additional Margin Inputs (Home/ManageDoors/Transactions) */
 .my-additional-margin-for-input {
-    margin: 7px 0px;
+    margin: 0.3vh 0;
 }
 
 /* Style Transactions Tabelle (Home/ManageDoors/Transactions)  */
 .my-table-fixed tbody {
-    height: 350px;
+    height: 26vh;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
 }
 .my-table-fixed thead, .my-table-fixed tbody, .my-table-fixed tr, .my-table-fixed td, .my-table-fixed th {
     display: block;
+    font-size: 1.5vh;
 }
 .my-table-fixed thead > tr > th {
     float: left;
     border-bottom-width: 0;
     color: #f3be29;
     background-color: #226693;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 7px;
 }
 .my-table-fixed tbody td {
     float: left;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 7px;
     border-bottom-width: 0;
 }
 
@@ -507,7 +573,7 @@ p {
 }
 
 /* Media Transactions */
-@media (min-width: 1300px) {
+@media (min-width: 1450px) {
 
     #little-artificial-form {
         display: none;
@@ -516,7 +582,7 @@ p {
         display: none;
     }
 }
-@media (min-width: 451px) and (max-width: 1299px) {
+@media (min-width: 501px) and (max-width: 1449px) {
 
     #big-artificial-form {
         display: none;
@@ -525,7 +591,7 @@ p {
         display: none;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
 
     #big-artificial-form {
         display: none;
@@ -533,15 +599,27 @@ p {
     #little-artificial-form {
         display: none;
     }
+}
+
+/* Margin between User & Door (Home/ManageDoor/SelectUser/Rights) */
+.my-user-door-margin {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+}
+
+.my-litte-user-header {
+    text-align: center;
+    font-size: 3.3vh;
+    font-weight: bold;
 }
 
 /* Schrift Users Liste (Home/ManageDoor/SelectUser) */
 .my-user-links .nav-link {
     width: 100%;
     color: #191b1d;
-    font-size: 2.7rem;
+    font-size: 3.5vh;
     background-color: #d9d9d9;
-    border-radius: 0.25rem;
+    border-radius: 4px;
 }
 .my-user-links .nav-link:hover {
     color: #f3be29;
@@ -553,45 +631,46 @@ p {
 .my-user-center {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 390px;
+    height: 38vh;
     text-align: center;
-    margin-top: 50px;
-}
-
-/* Margin between User & Door (Home/ManageDoor/SelectUser/Rights) */
-.my-user-door-margin {
-    margin-top: 60px;
+    margin-top: 7vh;
 }
 
 /* Background für Zugriffsrechte (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-bg {
     background-color: #d9d9d9;
-    border-radius: 0.5rem;
-    min-height: 80px;
-    margin-top: 50px;
+    border-radius: 10px;
+    min-height: 20vh;
 }
 
 /* Padding für Rechte (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-box {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 .my-last-right-box {
-    padding-bottom: 40px;
+    padding-bottom: 4vh;
 }
 
 /* Padding für Rechte (Home/ManageDoor/SelectUser/Rights/Ext) */
 .my-rights-ext-box {
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-top: 4.2vh;
+    padding-bottom: 4.2vh;
 }
 .my-last-right-ext-box {
-    padding-bottom: 20px;
+    padding-bottom: 2.2vh;
+}
+
+/* Font Style for Rights (Home/ManageDoor/SelectUser/Rights) */
+.my-rights-font {
+    text-align: center;
+    font-size: 2.7vh;
 }
 
 /* Toggle Buttons (Home/ManageDoor/SelectUser/Rights) */
 .btn-secondary {
     color: #fff;
+    font-size: 2vh;
     background-color: #6c757d;
     border-color: #6c757d;
 }
@@ -619,28 +698,25 @@ p {
 
 /* Padding Toggles (Home/ManageDoor/SelectUser/Rights) */
 .my-rights-innerbox {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
 }
 
 /* Margin für Save-Button (Home/ManageDoor/SelectUser/Rights) */
 .my-margin-for-save {
-    margin-top: 30px;
+    margin-top: 2vh;
 }
 
 /* Save-Button (Home/ManageDoors/SelectUser/Rights)  */
 .btn-save {
     color: #191b1d;
     background-color: #d9d9d9;
-    border-color: #d9d9d9;
-    border-width: medium;
-    font-size: 1.3rem;
+    font-size: 2.4vh;
     font-weight: bold;
 }
 .btn-save:hover {
     color: #f3be29;
     background-color: #226693;
-    border-color: #226693;
     font-weight: bold;
     text-decoration: none;
 }
@@ -651,18 +727,16 @@ p {
 /* Style Checkboxes (Home/ManageDoor/SelectUser/Rights) */
 .my-checkboxes {
     display: inline-block;
-    width: 80px;
-    padding-left: 7px;
-    margin-right: 5px;
-    margin-left: 5px;
+    width: 73px;
+    margin: 0 5px;
+    font-size: 15px;
     color: #191b1d;
     font-weight: bold;
 }
 .custom-control {
     position: relative;
     display: block;
-    min-height: 1.5rem;
-    padding-right: 1rem;
+    padding: 0;
 }
 .custom-checkbox .custom-control-input:not(:checked) ~ .custom-control-label::before {
     background-color: #d9d9d9;
@@ -686,7 +760,6 @@ p {
 /* Center Checkboxes (Home/ManageDoor/SelectUser/Rights) */
 .my-centered-checkboxes {
     text-align: center;
-    display: block;
 }
 
 /* Time Slider (Home/ManageDoor/SelectUser/Rights) */
@@ -721,15 +794,23 @@ p {
     cursor: pointer;
 }
 
-/* Put Error in Center (Home/ManageDoor/SelectUser/Rights) */
+/* Style Range Value (Home/ManageDoor/SelectUser/Rights/Ext) */
+.my-range-value {
+    text-align: center;
+    font-size: 2.2vh;
+    font-weight: bold;
+    margin-bottom: 1.2vh;
+}
+
+/* Put Error in Center (Home/ManageDoor/SelectUser/Rights/Ext) */
 .my-error-in-center {
     text-align: center;
     display: block;
     vertical-align: middle;
-    margin: 0px;
+    margin: 0;
     color: red;
     font-weight: bold;
-    font-size: 1.0rem;
+    font-size: 1.8vh;
 }
 
 /* My Align Content Center */

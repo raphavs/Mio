@@ -1,8 +1,8 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-home-position last-block-margin-home">
-    <h1 class="text-center">{{ $door }}</h1>
+<div class="my-home-position">
+    <h1 class="my-doors-header">{{ $door }}</h1>
     <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10 offset-sm-1 col-sm-10">
         <div class="row text-center my-links-font my-margin-for-links-managedoor">
             <div class="padding-manage-links col-lg-6 col-md-6">

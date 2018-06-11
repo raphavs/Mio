@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DoorsModel extends Model
+class RolesModel extends Model
 {
-    protected $table = 'doors';
+    protected $table = 'roles';
     public $timestamps = false;
 
     public function relation()
     {
-        return $this->hasMany(RelationsModel::class, 'door-id');
+        return $this->hasMany(RelationsModel::class, 'role-id');
     }
+
 }
