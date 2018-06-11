@@ -12,31 +12,109 @@
 
     <hr class="col-8 offset-2">
 
-    <!-- Two Column Section -->
-    <div class="col-10 offset-1">
+    <!-- Two Column Section Doors-->
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
         <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-md-12 col-lg-6 my-about-padding">
-                    <p>In menu you can open your door, manage rights for user or see the transactions in a protocol. </p>
-                    <br>
-                    <br>
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
+                        <p>In this overview you can see all available doors, no matter whether you are user or client. If you choose
+                        on of the doors you go to the menu.</p>
+                    </div>
                 </div>
-                <div class="col-md-12 col-lg-6 my-about-padding">
-                    <img src="BilderFeature/Menü.png" class="img-fluid rounded" alt="PictureOfMenu">
-                </div>
-                <div>
-                    <P>It is possible to manage more than one door. So you can be a client and have all rights about your home door, for example.
-                        And also a user without any rights apart from open a door. This allows you to open the office door, for example.
-                        With Mio you can easily handle both of them in only one account. </P>
-                    <p>Manufacturers also have their advantages with Mio.
-                        You have to sign up and can offer your hardware on Mio Webshop.
-                        The only requirement is that it is compatible with our software. </p>
-                    <p>If you are interested in buying this hardware we offer to come to you and install it to your door.<BR>
-                        You have problems and something doesn't work?
-                        Call us and we help as soon as possible.</p>
-                    <p><b>With Mio you choose quality, service and support.</b></p>
+                <div class="col-lg-6 my-about-padding">
+                    <img src="/BilderfuerFeature/Doors.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfDoors">
                 </div>
             </div>
         </div>
     </div>
-@stop
+    <hr>
+
+    <!-- Two Column Section menu -->
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
+                        <p>In menu you can open your door, manage rights for users or see the transactions in a protocol.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-about-padding">
+                    <img src="/BilderfuerFeature/Menu.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfMenu">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Two Column Section protocol -->
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
+                        <p>If you choose "see Transactions" you get a view about who opened the door at which time.
+                        You can also search for an user or a date.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-about-padding">
+                    <img src="/BilderfuerFeature/Protocol.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfProtocol">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Two Column Section user -->
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
+                        <p>If you choose "manage Rights" you get an overwiew about all users who have access to this door.
+                        Then you can select one or add a new user.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-about-padding">
+                    <img src="/BilderfuerFeature/Benutzer.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfUsers">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- Two Column Section rights-->
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
+                        <p>Here you can add whether your user get the Access Right and the right to see the whole protocol or not.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-about-padding">
+                    <img src="/BilderfuerFeature/Rights.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfRight">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Two Column Section AccessRight -->
+    <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 my-about-padding">
+                    <div class="my-put-things-in-vertically-and-horizontally-center text-center">
+                        <p>If you give the user the Access Right you can pick the days you give him access and the time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-about-padding">
+                    <img src="/BilderfuerFeature/Rechte.jpg" class="img-fluid rounded my-put-things-in-vertically-and-horizontally-center" alt="PictureOfAccessRight">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @stop
