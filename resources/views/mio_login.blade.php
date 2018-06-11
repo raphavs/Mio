@@ -5,7 +5,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group row">
-            <label for="email" class="col-md-4 col-lg-4 my-col-form-label text-md-right">{{ __('E-Mail Addres') }}</label>
+            <label for="email" class="col-md-4 col-lg-4 my-col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
             <div class="col-md-6 col-lg-5">
                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                 @if ($errors->has('email'))
@@ -62,7 +62,9 @@
 
     $(window).resize(function()
     {
-        window.resizeTo(size[0],size[1]);
+        alert("KUKU BRA");
+        window.resizeTo(size[0], size[1]);
+        window.focus();
     });
 </script>
 @endsection
