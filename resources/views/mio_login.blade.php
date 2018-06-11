@@ -63,8 +63,8 @@
 
     $(window).resize(function()
     {
-        window.resizeTo(width, height);
-        window.moveTo(0, 0);
+        $(window).height(height);
+        $(window).width(width);
     });
 </script>
 @endsection
