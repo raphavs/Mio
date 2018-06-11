@@ -892,3 +892,7 @@ p {
     position: relative;
     right: 50%;
 }
+
+.my-prevent-resizing-margin {
+    margin-bottom: 333px;
+}
