@@ -58,15 +58,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script>
-    var height = $(window).width();
-    var width = $(window).height();
+    var height = $(window).height();
+    var width = $(window).width();
 
     $(window).resize(function()
     {
         alert("Width: " + width + " & Height: " + height);
         window.resizeTo(width, height);
         window.focus();
-        alert("After");
     });
 </script>
 @endsection
