@@ -63,10 +63,7 @@
 
     $(window).resize(function()
     {
-        alert("Width: " + height + " & Height: " + width);
-        alert("Davor");
-        alert("Width: " + $(window).width() + " & Height: " + $(window).height());
-        // window.resizeTo(width, height);
+        window.resizeTo(width, height);
         alert("Danach");
     });
 </script>
