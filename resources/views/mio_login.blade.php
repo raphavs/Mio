@@ -64,7 +64,7 @@
     $(window).resize(function()
     {
         window.resizeTo(width, height);
-        window.focus();
+        window.moveTo(0, 0);
     });
 </script>
 @endsection
