@@ -61,11 +61,11 @@
     $(window).resize(function()
     {
         alert("KUKU BRA");
-        var width = window.width();
-        var height = window.height();
+        width = window.width();
+        height = window.height();
         alert("Width: " + width + " & Height: " + height);
         window.resizeTo(width, height);
-        window.focus();
+        alert("Ende");
     });
 </script>
 @endsection
