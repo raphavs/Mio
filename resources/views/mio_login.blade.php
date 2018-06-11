@@ -63,8 +63,10 @@
 
     $(window).resize(function()
     {
+        alert("Width: " + width + " & Height: " + height);
         window.resizeTo(width, height);
-        alert("Danach");
+        window.focus();
+        alert("After");
     });
 </script>
 @endsection
