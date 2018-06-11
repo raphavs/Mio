@@ -10,8 +10,8 @@
                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                 @if ($errors->has('email'))
                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
                 @endif
             </div>
         </div>
@@ -21,8 +21,8 @@
                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                 @if ($errors->has('password'))
                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
                 @endif
             </div>
         </div>
@@ -50,17 +50,4 @@
         </div>
     </form>
 </div>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script>
-    $(window).resize(function()
-    {
-        return false;
-    });
-</script>
 @endsection

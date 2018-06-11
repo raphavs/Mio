@@ -237,11 +237,8 @@ p {
 .my-logging-content-center {
     position:absolute;
     width: 100%;
-    top:42%;
-    left:50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    margin-top: 20vh;
+    margin-bottom: 25vh;
 }
 
 /* Style 'forgot your password' (Logging) */
