@@ -60,12 +60,10 @@
 <script>
     $(window).resize(function()
     {
-        alert("KUKU BRA");
-        width = window.width();
-        height = window.height();
-        alert("Width: " + width + " & Height: " + height);
-        window.resizeTo(width, height);
-        alert("Ende");
+        alert("Davor");
+        alert("Width: " + window.width() + " & Height: " + window.height());
+        // window.resizeTo(width, height);
+        alert("Danach");
     });
 </script>
 @endsection
