@@ -61,7 +61,7 @@
     $(window).resize(function()
     {
         alert("Davor");
-        alert("Width: " + window.width() + " & Height: " + window.height());
+        alert("Width: " + $(window).width() + " & Height: " + $(window).height());
         // window.resizeTo(width, height);
         alert("Danach");
     });
