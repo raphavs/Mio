@@ -54,7 +54,7 @@ p {
 
 /* Abstände zwischen NavBar Elementen */
 .navbar-nav li {
-    padding: 0.3vh 5px;
+    padding: 1vh 5px;
 }
 .my-li-btn-margin {
     margin-top: 0.12vh;
@@ -83,8 +83,7 @@ p {
 
 /* Header */
 .my-header-style {
-    padding-top: 5px;
-    padding-bottom: 6px;
+    padding: 5px 0;
     background-color: #d9d9d9;
     color: #191b1d;
     font-size: 3vh;
@@ -327,50 +326,14 @@ p {
     z-index: 333;
 }
 
-/* Schrift Doors Liste (Home) */
-.my-doors-links .nav-link {
-    width: 100%;
-    color: #191b1d;
-    font-size: 4vh;
-    background-color: #d9d9d9;
-    border-radius: 4px;
-}
-.my-doors-links .nav-link:hover {
-    color: #f3be29;
-    background-color: #226693;
-    text-decoration: none;
-}
-
-/* Scrollbar Doors (Home) */
-.my-doors-center {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-}
-::-webkit-scrollbar {
-    width: 0;
-    background: transparent; /* make scrollbar transparent */
-}
-
 /* Header Username (Home) */
 #my-user-header-style {
     border-top: 1px solid #f3be29;
-    padding-top: 5px;
-    padding-bottom: 8px;
+    padding: 7px 0;
     background-color: #191b1d;
     color: #f3be29;
     font-weight: bold;
     font-size: 3.5vh;
-}
-#my-user-header-style h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -389,6 +352,56 @@ p {
     padding-top: 15px;
 }
 
+/* Scrollbar Doors (Home) */
+.my-doors-center {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    height: 45%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* make scrollbar transparent */
+}
+
+/* Style Doors List (Home) */
+.my-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.my-list li {
+    padding: 0.3vh 5px;
+}
+
+/* Schrift Doors Liste (Home) */
+.my-doors-links .nav-link {
+    width: 100%;
+    color: #191b1d;
+    font-size: 4vh;
+    background-color: #d9d9d9;
+    border-radius: 4px;
+}
+.my-doors-links .nav-link:hover {
+    color: #f3be29;
+    background-color: #226693;
+    text-decoration: none;
+}
+
 /* Padding für This Is Mio (Home) */
 .thisIsMio-padding-home {
     padding-top: 16px;
@@ -398,11 +411,37 @@ p {
 .my-home-position {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 48%;
     left: 50%;
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+/* Position für body (Home/Blades Business Process) */
+.my-home-bp-position {
+    position: absolute;
+    width: 100%;
+    top: 48%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Position für body (Home/Blades Business Process) */
+@media screen and (max-width: 500px) {
+
+    .my-home-bp-position {
+        position: absolute;
+        width: 100%;
+        top: 52%;
+        left: 50%;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
 }
 
 /* Doors Header (Home/ManageDoors) */
@@ -437,7 +476,7 @@ p {
 }
 
 /* Style für Open Button (Home/ManageDoors) */
-.my-btn {
+.my-btn-open {
     display: inline-block;
     font-weight: bold;
     text-align: center;
@@ -573,7 +612,7 @@ p {
 }
 
 /* Media Transactions */
-@media (min-width: 1450px) {
+@media screen and (min-width: 1450px) {
 
     #little-artificial-form {
         display: none;
@@ -581,8 +620,9 @@ p {
     #very-little-artificial-form {
         display: none;
     }
+
 }
-@media (min-width: 501px) and (max-width: 1449px) {
+@media screen and (min-width: 501px) and (max-width: 1449px) {
 
     #big-artificial-form {
         display: none;
@@ -590,8 +630,9 @@ p {
     #very-little-artificial-form {
         display: none;
     }
+
 }
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
 
     #big-artificial-form {
         display: none;
@@ -599,6 +640,7 @@ p {
     #little-artificial-form {
         display: none;
     }
+
 }
 
 /* Margin between User & Door (Home/ManageDoor/SelectUser/Rights) */
@@ -633,7 +675,7 @@ p {
     overflow-x: hidden;
     height: 38vh;
     text-align: center;
-    margin-top: 7vh;
+    margin-top: 6vh;
 }
 
 /* Background für Zugriffsrechte (Home/ManageDoor/SelectUser/Rights) */
@@ -752,9 +794,24 @@ p {
     box-shadow: none;
 }
 .custom-checkbox .custom-control-input:hover ~ .custom-control-label::before {
-    box-shadow: 0 0 0 1px #f3be29, 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
-    background-color: #f3be29;
-    border-color: #f3be29;
+    box-shadow: 0 0 0 1px #ffffff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Style Checkboxes */
+@media screen and (max-width: 500px){
+
+    .custom-checkbox .custom-control-input:not(:checked) ~ .custom-control-label::before {
+        background-color: #d9d9d9;
+        border: 2px solid #ffffff;
+        transform: scale(0.8);
+    }
+    .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+        transform: scale(0.8);
+        background-color: #f3be29;
+    }
+
 }
 
 /* Center Checkboxes (Home/ManageDoor/SelectUser/Rights) */

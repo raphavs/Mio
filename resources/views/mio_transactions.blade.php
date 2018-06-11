@@ -1,7 +1,7 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-home-position">
+<div class="my-home-bp-position">
     <h1 class="my-doors-header">{{ $door }}</h1>
     <div id="start-search" class="text-center">
         <div class="my-transaction-margin">
