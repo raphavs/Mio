@@ -48,7 +48,7 @@
                     <p class="my-welcome-p-size">Mio is an access control system that allows clients to manage their doors smart via smartphone, tablet or PC.
                         To do this, clients create users and determine which person is able to open which door at which time.
                         In addition, all opening transactions are recorded in a log, which clients and users can view at any time.</p>
-                    <a id="my-readmore-btn" class="btn btn-readmore" role="button" href="{{ route('welcome.features') }}">read more ...</a>
+                    <a id="my-readmore-btn" class="btn btn-readmore" role="button" href="{{ route('welcome.info') }}">read more ...</a>
                 </div>
             </div>
             <div class="col-lg-6 my-about-padding">
