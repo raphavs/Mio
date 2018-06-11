@@ -60,6 +60,7 @@
 <script>
     $(window).resize(function()
     {
+        alert("KUKU BRA");
         var width = window.width();
         var height = window.height();
         alert("Width: " + width + " & Height: " + height);
