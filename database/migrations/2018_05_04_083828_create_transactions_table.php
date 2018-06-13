@@ -23,6 +23,7 @@ class CreateTransactionsTable extends Migration
             $table->string('user_name');
             $table->date('entrance_date');
             $table->time('entrance_time');
+            $table->integer('door_id');
             // $table->timestamps();
         });
     }

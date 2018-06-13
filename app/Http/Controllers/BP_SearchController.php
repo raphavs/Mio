@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Routing\Controller;
 use App\TransactionsModel;
 use Illuminate\Http\Request;
@@ -21,8 +22,18 @@ class BP_SearchController extends Controller
 
     public function showTransactions($door)
     {
-        $transactions = TransactionsModel::all();
-        return view('mio_transactions', ['door' => $door])->with('transactions', $transactions);
+        $id = Auth::id();
+        $door_id = DoorsModel::where('door_name', $door)->value('id');
+        $role_id = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('role_id');
+        $protocol_right = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('protocol_right');
+
+        if ($protocol_right != 1) {
+            $transactions = TransactionsModel::where('door_id', $door_id)->where('user_name', Auth::user())->get();
+        } else {
+            $transactions = TransactionsModel::where('door_id', $door_id)->get();
+        }
+
+        return view('mio_transactions', ['door' => $door, 'transactions' => $transactions]);
     }
 
     public function submitFilterAJAX(Request $request)
@@ -31,7 +42,7 @@ class BP_SearchController extends Controller
         if ($transactions->count() <= 0) {
             return view('ajax.mio_transactions_empty');
         } else {
-            return view('ajax.mio_transactions')->with('transactions', $transactions);
+            return view('ajax.mio_transactions', ['transactions' => $transactions]);
         }
     }
 
@@ -67,7 +78,7 @@ class BP_SearchController extends Controller
         if ($transactions->count() <= 0) {
             return view('ajax.mio_transactions_empty');
         } else {
-            return view('ajax.mio_transactions')->with('transactions', $transactions);
+            return view('ajax.mio_transactions', ['transactions' => $transactions]);
         }
     }
 

@@ -13,4 +13,10 @@ class DoorsModel extends Model
     {
         return $this->hasMany(RelationsModel::class, 'door_id');
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(TransactionsModel::class, 'door_id');
+    }
+
 }

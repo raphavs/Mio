@@ -9,4 +9,10 @@ class TransactionsModel extends Model
 {
     protected $table = 'transactions';
     public $timestamps = false;
+
+    public function door()
+    {
+        return $this->belongsTo(DoorsModel::class, 'door_id');
+    }
+
 }

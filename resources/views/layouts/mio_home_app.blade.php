@@ -37,10 +37,6 @@
                     <a class="nav-link {{ (\Request::route()->getName() == 'mio.home') ? 'active-site' : '' }}"
                        href="{{ route('mio.home') }}">My Doors</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (\Request::route()->getName() == 'home.profile') ? 'active-site' : '' }}"
-                       href="{{ route('home.profile') }}">My Profile</a>
-                </li>
                 <li class="nav-item my-li-btn-margin">
                     <a class="btn btn-logging my-li-btn-center" role="button" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

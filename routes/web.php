@@ -19,7 +19,6 @@ Route::get('/people', 'WelcomeController@invokePeople')->name('welcome.people');
 Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome.features');
 
 Route::get('/home', 'HomeController@invokeHome')->name('mio.home');
-Route::get('/home/myprofile', 'HomeController@invokeProfile')->name('home.profile');
 Route::get('/home/{door}', 'HomeController@invokeManageDoor')->name('home.managedoor');
 Route::get('/home/{door}/selectuser', 'HomeController@invokeSelectUser')->name('home.managedoor.selectuser');
 Route::get('/home/{door}/selectuser/{user}', 'BP_AdjustController@invokeRights')->name('home.managedoor.selectuser.rights');

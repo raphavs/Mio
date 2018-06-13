@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="my-doors-center my-doors-links">
-
     <ul class="navbar-nav">
         @foreach($doors as $v)
             <li class="nav-item">
