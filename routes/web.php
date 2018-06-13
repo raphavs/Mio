@@ -32,3 +32,6 @@ Route::get('/home/{door}/transactions/submitajax', 'BP_SearchController@submitFi
 Route::get('/login', 'WelcomeController@invokeLogin')->name('login');
 Route::get('/register', 'WelcomeController@invokeRegister')->name('register');
 Route::get('/login/reset', 'WelcomeController@invokeMail')->name('login.resetpw');
+
+Route::get('/home/{door}/addUser','HomeController@addUser');
+Route::post('/home/{door}/add','HomeController@add');

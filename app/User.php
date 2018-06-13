@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function relation()
     {
-        return $this->hasMany(RelationsModel::class, 'user-id');
+        return $this->hasMany(RelationsModel::class, 'user_id');
     }
 
 }
