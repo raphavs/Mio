@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\DoorsModel;
-use App\MyUsersModel;
 use App\RelationsModel;
 use App\RolesModel;
+use App\TransactionsModel;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
@@ -67,8 +67,27 @@ class HomeController extends Controller
         $id=Auth::id();
         $doors=RelationsModel::where('user_id',$id)->get();
         return view('mio_home')->with('doors', $doors);
-
-
     }
 
+
+    public function open($door)
+    {
+        $door_id = DoorsModel::where('door_name', $door)->value('id');
+        $user_name = Auth::user()->name;
+        $date = date('Y-m-d');
+        date_default_timezone_set("Europe/Berlin");
+        $time = date(' H:i:s');
+
+        $user = new TransactionsModel;
+        $user->user_name = $user_name;
+        $user->entrance_date = $date;
+        $user->entrance_time = $time;
+        $user->door_id = $door_id;
+        $user->save();
+
+        $id = Auth::id();
+        $role_id = RelationsModel::where('user_id',$id)->where('door_id', $door_id)->value('role_id');
+        return view('mio_manage_door', ['door' => $door])->with('role_id', $role_id);
+
+    }
 }

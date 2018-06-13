@@ -34,3 +34,4 @@ Route::get('/login/reset', 'WelcomeController@invokeMail')->name('login.resetpw'
 
 Route::get('/home/{door}/addUser','HomeController@addUser');
 Route::post('/home/{door}/add','HomeController@add');
+Route::get('/home/{door}/open','HomeController@open');
