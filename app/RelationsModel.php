@@ -11,17 +11,17 @@ class RelationsModel extends Model
 
     public function door()
     {
-        return $this->belongsTo(DoorsModel::class, 'door-id');
+        return $this->belongsTo(DoorsModel::class, 'door_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user-id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function role()
     {
-        return $this->belongsTo(RolesModel::class, 'role-id');
+        return $this->belongsTo(RolesModel::class, 'role_id');
     }
 
 }

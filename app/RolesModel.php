@@ -11,7 +11,7 @@ class RolesModel extends Model
 
     public function relation()
     {
-        return $this->hasMany(RelationsModel::class, 'role-id');
+        return $this->hasMany(RelationsModel::class, 'role_id');
     }
 
 }

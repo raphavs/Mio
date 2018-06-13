@@ -11,6 +11,6 @@ class DoorsModel extends Model
 
     public function relation()
     {
-        return $this->hasMany(RelationsModel::class, 'door-id');
+        return $this->hasMany(RelationsModel::class, 'door_id');
     }
 }
