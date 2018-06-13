@@ -35,17 +35,19 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row col-md-5 offset-md-4 col-lg-5 offset-lg-4">
-            <div class="logging-button-padding">
-                <button type="submit" class="btn btn-logging">Sign in</button>
-            </div>
-            <div id="logging-textlink-padding">
-                <a class="btn my-btn-link" href="{{ route('login.resetpw') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            </div>
-            <div class="logging-button-padding">
-                <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>
+        <div class="form-group row">
+            <div class="row col-md-6 offset-md-4 col-lg-5 offset-lg-4">
+                <div class="logging-button-padding">
+                    <button type="submit" class="btn btn-logging">Sign in</button>
+                </div>
+                <div id="logging-textlink-padding">
+                    <a class="btn my-btn-link" href="{{ route('login.resetpw') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                </div>
+                <div class="logging-button-padding">
+                    <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>
+                </div>
             </div>
         </div>
     </form>
