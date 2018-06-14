@@ -70,12 +70,12 @@ class HomeController extends Controller
     }
 
 
-    public function open($door)
+    public function open ($door)
     {
         $door_id = DoorsModel::where('door_name', $door)->value('id');
         $user_name = Auth::user()->name;
-        $date = date('Y-m-d');
         date_default_timezone_set("Europe/Berlin");
+        $date = date('Y-m-d');
         $time = date(' H:i:s');
 
         $user = new TransactionsModel;
