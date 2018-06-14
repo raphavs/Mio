@@ -49,11 +49,11 @@
                 <a class="nav-link {{ (\Request::route()->getName() == 'welcome.people') ? 'active-site' : '' }}"
                    href="{{ route('welcome.people') }}">People</a>
             </li>
-            <li class="nav-item my-li-btn-margin">
-                <a class="btn btn-logging my-li-btn-center" role="button" href="{{ route('login') }}">Sign in</a>
+            <li class="nav-item">
+                <a class="btn btn-logging" role="button" href="{{ route('login') }}">Sign in</a>
             </li>
-            <li class="nav-item my-li-btn-margin">
-                <a class="btn btn-logging my-li-btn-center" role="button" href="{{ route('register') }}">Create Account</a>
+            <li class="nav-item">
+                <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>
             </li>
         </ul>
     </div>

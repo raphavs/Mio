@@ -21,17 +21,15 @@
 
 <!-- Header -->
 <header class="my-logging-header-style my-fixed-position">
-    <div class="container-fluid">
-        <h3 class="display-5 logging">
-            @if (\Request::route()->getName() == 'register')
-                Register
-            @elseif(\Request::route()->getName() == 'login.resetpw')
-                Reset your Password
-            @elseif(\Request::route()->getName() == 'login')
-                Sign in
-            @endif
-        </h3>
-    </div>
+    <h3 class="logging-header">
+        @if (\Request::route()->getName() == 'register')
+            Register
+        @elseif(\Request::route()->getName() == 'login.resetpw')
+            Reset your Password
+        @elseif(\Request::route()->getName() == 'login')
+            Sign in
+        @endif
+    </h3>
 </header>
 
 <main>
@@ -42,7 +40,7 @@
 <footer class="my-footer-bg putdown d-none d-xl-block">
     <div class="container-fluid text-center">
         <div class="logo-home-footer-padding">
-            <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded" alt="Logo"></a>
+            <a href="{{ route('mio.welcome') }}"><img src="/Image/Mio_Logo.jpg" class="rounded my-logo-size" alt="Logo"></a>
         </div>
         <hr class="my-hr-style">
         <h5 class="thisIsMio-style">THIS IS MIO</h5>

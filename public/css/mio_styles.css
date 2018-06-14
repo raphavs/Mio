@@ -6,65 +6,68 @@ body {
     color: #191b1d;
 }
 
-/* Schriftgröße Paragraphen */
-p {
-    font-size: 1.2rem;
-}
-
-/* My individual Padding for Navbar */
+/* Individual Padding Navbar */
 .navbar {
     position: relative;
+    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 0.5vh 6px;
-}
-
-/* List Elements in vertically Center */
-.my-li-btn-center {
-    display: table-cell;
-    vertical-align: middle;
+    padding: 0.4rem 0.7rem;
 }
 
 /* Size Logo Navbar */
 .my-logo-size {
     height: auto;
-    width: 26vh;
+    width: 14rem;
+}
+@media screen and (max-width: 500px) {
+    .my-logo-size {
+        width: 11rem;
+    }
 }
 
 /* Schrift NavBar */
 .my-navbar-font .nav-link {
     color: #ffffff;
-    font-size: 2.2vh;
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 500px) {
+    .my-navbar-font .nav-link {
+        font-size: 0.9rem;
+    }
 }
 .my-navbar-font .nav-link:hover {
     color: #f3be29;
 }
-
 /* Farbe aktive Seite NavBar */
-.active-site {
+.my-navbar-font .active-site {
     color: #f3be29 !important;
     font-weight: bold;
 }
 
 /* Abstände zwischen NavBar Elementen */
 .navbar-nav li {
-    padding: 1vh 5px;
-}
-.my-li-btn-margin {
-    margin-top: 0.12vh;
+    padding: 0.2rem 0.5rem;
 }
 
 /* Style Logging-Button */
 .btn-logging {
     color: #ffffff;
     background-color: #226693;
-    font-size: 2.2vh;
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 500px) {
+    .btn-logging {
+        font-size: 1rem;
+    }
 }
 .btn-logging:hover {
     color: #febe29;
@@ -83,36 +86,62 @@ p {
 
 /* Header */
 .my-header-style {
-    padding: 5px 0;
+    padding: 0.3rem 0;
     background-color: #d9d9d9;
     color: #191b1d;
-    font-size: 3vh;
+    font-size: 1.8rem;
     margin: 0;
+}
+@media screen and (max-width: 500px) {
+    .my-header-style {
+        font-size: 1.2rem;
+    }
 }
 
 /* eigene Display-Klasse für Überschriften */
 .display-5 {
     text-align: center;
-    font-size: 5vh;
+    font-size: 2.7rem;
+}
+@media screen and (max-width: 500px) {
+    .display-5 {
+        font-size: 2rem;
+    }
 }
 
 /* Font Style h3 */
 .my-welcome-h3-size {
-    font-size: 3.2vh;
+    font-size: 1.6rem;
     font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .my-welcome-h3-size {
+        font-size: 1.3rem;
+    }
 }
 
 /* Font-Size Paragraph*/
 .my-welcome-p-size {
-    font-size: 2.2vh;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+@media screen and (max-width: 500px) {
+    .my-welcome-p-size {
+        font-size: 0.9rem;
+    }
 }
 
 /* Style ReadMore-Button */
 .btn-readmore {
     color: #191b1d;
     background-color: #f3be29;
-    font-size: 2.2vh;
+    font-size: 1.2rem;
     font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .btn-readmore {
+        font-size: 1rem;
+    }
 }
 #my-readmore-btn:hover {
     color: #f3be29;
@@ -131,8 +160,13 @@ p {
 
 /* Padding für About-Section */
 .my-about-padding {
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+
+/* Margin für Readmore Button */
+.add-margin {
+    margin-bottom: 3vh;
 }
 
 /* Vertically & Horizontally Center */
@@ -147,14 +181,14 @@ p {
 /* Padding für User-Section */
 .my-user-padding {
     padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-bottom: 4vh;
 }
 
 /* Style für User Image */
 .user-img {
     height: auto;
     width: 16vh;
-    margin-bottom: 15px;
+    margin-bottom: 0.9rem;
 }
 
 /* Überschriften im Footer */
@@ -165,13 +199,13 @@ p {
 
 /* Padding für Logo */
 .logo-footer-padding {
-    padding-top: 30px;
-    padding-bottom: 15px;
+    padding-top: 3vh;
+    padding-bottom: 1vh;
 }
 
 /* Font-Size Header Footer */
 .my-footer-header {
-    font-size: 2.2vh;
+    font-size: 1.2rem;
 }
 
 /* hr Style im Footer */
@@ -184,13 +218,21 @@ p {
 /* Paragraphen im Footer */
 .my-footer-bg p {
     color: #ffffff;
-    font-size: 1.8vh;
+    font-size: 1rem;
+}
+@media screen and (max-width: 500px) {
+    .my-footer-header {
+        font-size: 1rem;
+    }
+    .my-footer-bg p {
+        font-size: 0.8rem;
+    }
 }
 
  /* Margin für Paragraphen in Footer */
 .my-footer-paragraph-margin {
-    margin-top: 4vh;
-    margin-bottom: 4vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
 }
 
 /* Footer Hintergrund */
@@ -201,7 +243,7 @@ p {
 /* Icons Style */
 .fa {
     color: #f3be29;
-    margin: 2vh 5px;
+    margin: 2vh 0.5rem;
 }
 .fa:hover {
     opacity: 0.7;
@@ -217,8 +259,8 @@ p {
 
 /* Style für This Is Mio */
 .thisIsMio-style {
-    font-size: 2.2vh;
-    padding-bottom: 16px;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
 }
 
 /* Style Header Logging */
@@ -227,29 +269,44 @@ p {
 }
 
 /* Überschrift (Logging) */
-.logging {
+.logging-header {
+    text-align: center;
     color: #f3be29;
-    padding-top: 1.6vh;
-    padding-bottom: 0.8vh;
+    font-size: 3rem;
+    margin: 0.7rem 0;
+}
+@media screen and (max-width: 500px) {
+    .logging-header {
+        font-size: 2rem;
+        margin: 0.6rem 0;
+    }
 }
 
 /* Positioning Logging Content */
 .my-logging-content-center {
-    position:absolute;
-    width: 100%;
-    top:42%;
-    left:50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    justify-content: center;
+    margin: 16rem 0;
+}
+@media screen and (max-width: 500px){
+    .my-logging-content-center {
+        margin: 7rem 0;
+    }
 }
 
 /* Style 'forgot your password' (Logging) */
 .my-btn-link {
+    padding-top: calc(0.375rem + 4px);
+    padding-bottom: calc(0.375rem + 4px);
+    padding-right: 1rem;
     padding-left: 0;
     color: #226693;
-    font-size: 1.8vh;
+    font-size: 1.2rem;
     font-weight: bold;
+}
+@media screen and (max-width: 500px){
+    .my-btn-link {
+        font-size: 1rem;
+    }
 }
 .my-btn-link:hover {
     color: #226693;
@@ -266,10 +323,10 @@ p {
 
 /* Labels (Logging) */
 .my-col-form-label {
-    padding-top: 0.7vh;
-    padding-bottom: 0.9vh;
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
     margin-bottom: 0;
-    font-size: 2vh;
+    font-size: 1.1rem;
     line-height: 1.5;
     font-weight: bold;
 }
@@ -277,17 +334,13 @@ p {
 /* Style für Remember Me (Logging) */
 .remember-me-label {
     color: #191b1d;
-    font-size: 1.8vh;
+    font-size: 1rem;
     font-weight: bold;
 }
-
-/* Resize Checkbox (logging) */
-@media screen and (max-width: 500px){
-
-    .my-logging-checkbox {
-        transform: scale(0.9);
+@media screen and (max-width: 500px) {
+    .my-col-form-label, .remember-me-label {
+        font-size: 0.8rem;
     }
-
 }
 
 /* My Margin for form-group (Logging) */
@@ -296,18 +349,6 @@ p {
 }
 
 /* My form-control (Logging) */
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.7vh 1.2vh;
-    font-size: 2vh;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border-radius: 5px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
 .form-control:focus {
     border: 1px;
     box-shadow: 0 0 10px;
@@ -315,16 +356,16 @@ p {
 
 /* Padding für Buttons (Logging) */
 .logging-button-padding {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 20px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-right: 1rem;
 }
 
-/* Style für Textlink (Logging) */
-#logging-textlink-padding {
-    padding-top: 0.9vh;
-    padding-bottom: 0.9vh;
-    padding-right: 5px;
+/* Additional Margin für Buttons (Logging) */
+@media screen and (max-width: 767.98px){
+    .add-margin-btn-sm {
+        margin-left: 0.1rem;
+    }
 }
 
 /* Footer nach unten setzen (Logging) */
@@ -342,8 +383,13 @@ p {
     background-color: #191b1d;
     color: #f3be29;
     font-weight: bold;
-    font-size: 3.5vh;
+    font-size: 2rem;
     margin: 0;
+}
+@media screen and (max-width: 500px) {
+    #my-user-header-style {
+        font-size: 1.5rem;
+    }
 }
 
 /* fixed Navbar % Header (Home) */
