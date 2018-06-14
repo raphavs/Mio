@@ -32,6 +32,6 @@ Route::get('/login', 'WelcomeController@invokeLogin')->name('login');
 Route::get('/register', 'WelcomeController@invokeRegister')->name('register');
 Route::get('/login/reset', 'WelcomeController@invokeMail')->name('login.resetpw');
 
-Route::get('/home/{door}/addUser','HomeController@addUser');
+Route::get('/home/{door}/adduser','HomeController@addUser');
 Route::post('/home/{door}/add','HomeController@add');
 Route::get('/home/{door}/open','HomeController@open');

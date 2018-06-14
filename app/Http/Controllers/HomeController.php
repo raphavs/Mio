@@ -52,7 +52,7 @@ class HomeController extends Controller
 
     public function addUser($door)
     {
-        return view ('mio_adduser',['door'=>$door]);
+        return view ('mio_add_user', ['door'=>$door]);
     }
 
     public function add(Request $request,$door)
