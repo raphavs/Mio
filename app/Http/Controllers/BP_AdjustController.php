@@ -43,7 +43,7 @@ class BP_AdjustController extends Controller
             $request->session()->put('access_right', $request->input('access_option') == 'true' ? 1 : 0);
         }
 
-        if (empty($request->input('protocol_right'))) {
+        if (empty($request->input('protocol_option'))) {
             $request->session()->put('protocol_right',
                 RelationsModel::where('user_id', User::where('name', $user)->value('id'))
                               ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('protocol_right'));
@@ -54,11 +54,13 @@ class BP_AdjustController extends Controller
         $access_right = $request->session()->get('access_right','There is no Access Right');
         if ($access_right == 0) {
 
+            $protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
+
             $current_user = RelationsModel::where('user_id', $request->session()->get('current_user_id', 'There is no User-ID'))
                                           ->where('door_id', $request->session()->get('current_door_id', 'There is no Door-ID'))->first();
 
             $current_user->access_right = $access_right;
-            $current_user->protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
+            $current_user->protocol_right = $protocol_right;
 
             $current_user->save();
 

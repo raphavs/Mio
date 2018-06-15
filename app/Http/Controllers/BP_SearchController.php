@@ -22,15 +22,15 @@ class BP_SearchController extends Controller
         $this->middleware('auth');
     }
 
-    public function showTransactions($door)
+    public function showTransactions(Request $request, $door)
     {
         $id = Auth::id();
         $door_id = DoorsModel::where('door_name', $door)->value('id');
-        $role_id = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('role_id');
+        $request->session()->put('concerned_door_id', $door_id);
         $protocol_right = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('protocol_right');
 
-        if ($protocol_right != 1) {
-            $transactions = TransactionsModel::where('door_id', $door_id)->where('user_name', Auth::user())->get();
+        if ($protocol_right == 0) {
+            $transactions = TransactionsModel::where('door_id', $door_id)->where('user_name', Auth::user()->name)->get();
         } else {
             $transactions = TransactionsModel::where('door_id', $door_id)->get();
         }
@@ -50,15 +50,27 @@ class BP_SearchController extends Controller
 
     private function submitFilter(Request $request)
     {
+        $id = Auth::id();
+        $door_id = $request->session()->get('concerned_door_id', 'There is no Door-ID');
+        $protocol_right = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('protocol_right');
+
         if (empty($request->input('username')) and empty($request->input('date'))) {
             $username = '%' . $request->input('username') . '%';
             $date = '%' . $request->input('date') . '%';
             $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
 
+            if ($protocol_right == 0) {
+                return TransactionsModel::where('user_name', Auth::user()->name)->where('entrance_date', 'LIKE', $date)->get();
+            }
+
         } else if (empty($request->input('username'))) {
             $username = '%' . $request->input('username') . '%';
             $date = $request->input('date');
             $transactions = TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', $date)->get();
+
+            if ($protocol_right == 0) {
+                return TransactionsModel::where('user_name', Auth::user()->name)->where('entrance_date', $date)->get();
+            }
 
         } else if (empty($request->input('date'))) {
             $username = $request->input('username');
@@ -86,8 +98,16 @@ class BP_SearchController extends Controller
 
     private function filterLIKE(Request $request)
     {
+        $id = Auth::id();
+        $door_id = $request->session()->get('concerned_door_id', 'There is no Door-ID');
+        $protocol_right = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('protocol_right');
+
         $username = '%' . $request->input('username') . '%';
         $date = '%' . $request->input('date') . '%';
+
+        if ($protocol_right == 0) {
+            return TransactionsModel::where('user_name', Auth::user()->name)->where('entrance_date', 'LIKE', $date)->get();
+        }
 
         return TransactionsModel::where('user_name', 'LIKE', $username)->where('entrance_date', 'LIKE', $date)->get();
     }
