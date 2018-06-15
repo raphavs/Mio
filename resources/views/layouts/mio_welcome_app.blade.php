@@ -22,7 +22,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-xl my-navbar-font my-navbar-bg sticky-top">
-    <a href="{{ route('mio.home') }}">
+    <a href="{{ route('mio.welcome') }}">
         <img src="/Image/Mio_Logo_NavBar.jpg" class="rounded my-logo-size" alt="Logo">
     </a>
     <button class="navbar-toggler navbar-dark" type="button"
@@ -50,10 +50,14 @@
                    href="{{ route('welcome.people') }}">People</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-logging" role="button" href="{{ route('login') }}">Sign in</a>
+                <a class="nav-link {{ (\Request::route()->getName() == 'welcome.contact') ? 'active-site' : '' }}"
+                   href="{{ route('welcome.contact') }}">Contact</a>
             </li>
-            <li class="nav-item">
-                <a class="btn btn-logging" role="button" href="{{ route('register') }}">Create Account</a>
+            <li class="nav-item my-li-btn-margin">
+                <a class="btn btn-logging my-li-btn-center" role="button" href="{{ route('login') }}">Sign in</a>
+            </li>
+            <li class="nav-item my-li-btn-margin">
+                <a class="btn btn-logging my-li-btn-center" role="button" href="{{ route('register') }}">Create Account</a>
             </li>
         </ul>
     </div>
@@ -76,13 +80,13 @@
         <div class="row text-center">
             <div class="col-lg-4">
                 <hr class="my-hr-style">
-                <h5 class="my-footer-header">Contact</h5>
+                <h5 class="my-footer-header">Contact-do not interact. It's a webproject.</h5>
                 <hr class="my-hr-style">
                 <div class="my-footer-paragraph-margin">
-                    <p>$$ phone number $$</p>
-                    <p>$$ email $$</p>
-                    <p>$$ address $$</p>
-                    <p>$$ city $$</p>
+                    <p>07531-954682</p>
+                    <p>mio@managedoors.de</p>
+                    <p> Alfred-Wachtel-Str. 8</p>
+                    <p>78462 Konstanz</p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -91,7 +95,7 @@
                 </div>
                 <div class="my-footer-paragraph-margin">
                     <p>Privacy Policy</p>
-                    <p>Feedback</p>
+                    <p><a id="impressum" href="{{ route('welcome.contact') }}">Imprint</a></p>
                 </div>
                 <div class="icons-in-center text-center">
                     <a href="#" class="fa fa-github fa-2x"></a>

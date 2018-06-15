@@ -17,6 +17,7 @@ Route::get('/', 'WelcomeController@invokeWelcome')->name('mio.welcome');
 Route::get('/information', 'WelcomeController@invokeInformation')->name('welcome.info');
 Route::get('/people', 'WelcomeController@invokePeople')->name('welcome.people');
 Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome.features');
+Route::get('/contact', 'WelcomeController@invokeContact')->name('welcome.contact');
 
 Route::get('/home', 'HomeController@invokeHome')->name('mio.home');
 Route::get('/home/{door}', 'HomeController@invokeManageDoor')->name('home.managedoor');

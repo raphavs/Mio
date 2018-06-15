@@ -984,3 +984,7 @@ body {
     right: 50%;
 }
 
+.adresse{text-decoration: underline}
+#contact{font-size:15px}
+.anfahrt{text-decoration: underline}
+#impressum{text-decoration: none; color:white}

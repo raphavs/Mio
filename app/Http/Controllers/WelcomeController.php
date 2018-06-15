@@ -54,4 +54,8 @@ class WelcomeController extends Controller
         return view('mio_email');
     }
 
+    public function invokeContact(){
+        return view('mio_contact');
+    }
+
 }
