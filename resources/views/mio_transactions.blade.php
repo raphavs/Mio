@@ -1,7 +1,7 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-home-bp-position">
+<div class="my-home-bp-search-position">
     <h1 class="my-doors-header">{{ $door }}</h1>
     <div id="start-search" class="text-center">
         <div class="my-transaction-margin">
@@ -13,22 +13,20 @@
             <div class="my-transaction-margin offset-2 col-8">
                 <div class="form-row">
                     <div class="form-row col-5">
-                        <label for="username-big" class="padding-search-label">Username:</label>
+                        <label for="username-big" class="my-col-form-label">Username:</label>
                         <div class="my-username-width">
                             <input id="username-big" type="search" onkeyup="reload_big()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
                         </div>
                     </div>
                     <div class="col-1"></div>
                     <div class="form-row col-4">
-                        <label for="date-big" class="padding-search-label">Date:</label>
+                        <label for="date-big" class="my-col-form-label">Date:</label>
                         <div class="my-date-width">
                             <input id="date-big" type="search" onkeyup="reload_big()" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                         </div>
                     </div>
                     <div class="my-additional-margin-for-btn col-2">
-                        <div class="put-btn-right">
-                            <button type="submit" class="btn btn-search">Search</button>
-                        </div>
+                        <button type="submit" class="btn btn-search put-btn-right">Search</button>
                     </div>
                 </div>
             </div>
@@ -37,7 +35,7 @@
             <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
                 <div class="form-row my-additional-margin-for-input">
                     <div class="form-row col-8">
-                        <label for="username-little" class="col-4 padding-search-label">Username:</label>
+                        <label for="username-little" class="col-4 my-col-form-label">Username:</label>
                         <div class="col-8">
                             <div class="my-username-width">
                                 <input id="username-little" type="search" onkeyup="reload_little()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
@@ -47,7 +45,7 @@
                 </div>
                 <div class="form-row my-additional-margin-for-input">
                     <div class="form-row col-8">
-                        <label for="date-little" class="col-4 padding-search-label">Date:</label>
+                        <label for="date-little" class="col-4 my-col-form-label">Date:</label>
                         <div class="col-8">
                             <div class="my-date-width">
                                 <input id="date-little" type="search" onkeyup="reload_little()" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
@@ -55,9 +53,7 @@
                         </div>
                     </div>
                     <div class="my-additional-margin-for-btn col-lg-4 col-md-4 col-sm-4 col-4">
-                        <div class="put-btn-right">
-                            <button type="submit" class="btn btn-search">Search</button>
-                        </div>
+                        <button type="submit" class="btn btn-search put-btn-right">Search</button>
                     </div>
                 </div>
             </div>
@@ -65,7 +61,7 @@
         <form id="very-little-artificial-form" onsubmit="return submit_reload_verylittle()">
             <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
                 <div class="form-row my-additional-margin-for-input">
-                    <label for="username-verylittle" class="col-4 padding-search-label">Username:</label>
+                    <label for="username-verylittle" class="col-4 my-col-form-label">Username:</label>
                     <div class="col-8">
                         <div class="my-username-width">
                             <input id="username-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
@@ -73,7 +69,7 @@
                     </div>
                 </div>
                 <div class="form-row my-additional-margin-for-input">
-                    <label for="date-verylittle" class="col-4 padding-search-label">Date:</label>
+                    <label for="date-verylittle" class="col-4 my-col-form-label">Date:</label>
                     <div class="col-8">
                         <div class="my-date-width">
                             <input id="date-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">

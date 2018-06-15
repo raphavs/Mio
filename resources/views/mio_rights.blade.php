@@ -1,7 +1,7 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-<div class="my-home-bp-position">
+<div class="my-home-bp-adjust-position">
     <h1 class="my-doors-header">{{ $door }}</h1>
     <div class="my-user-door-margin">
         <h2 class="my-litte-user-header">{{ $user }}:</h2>
@@ -28,7 +28,7 @@
                                 <input type="radio" value="false" name="access_option" id="access_option2">OFF
                             </label>
                         @endif
-                    </div>
+                   </div>
                 </div>
             </div>
             <div class="row my-last-right-box">

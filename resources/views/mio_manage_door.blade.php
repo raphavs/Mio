@@ -20,8 +20,7 @@
         </div>
     </div>
     <div class="offset-1 col-10 offset-lg-4 col-lg-4 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
-        <a class="my-btn-open btn-open" id="hallo" role="button" href="/home/{{ $door }}/open">Open</a>
+        <a class="my-btn-open btn-open" role="button" href="/home/{{ $door }}/open">Open</a>
     </div>
-
 </div>
 @endsection

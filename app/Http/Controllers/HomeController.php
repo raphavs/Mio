@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\DoorsModel;
 use App\RelationsModel;
-use App\RolesModel;
 use App\TransactionsModel;
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -88,6 +87,5 @@ class HomeController extends Controller
         $id = Auth::id();
         $role_id = RelationsModel::where('user_id',$id)->where('door_id', $door_id)->value('role_id');
         return view('mio_manage_door', ['door' => $door])->with('role_id', $role_id);
-
     }
 }

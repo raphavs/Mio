@@ -8,10 +8,12 @@
 
 namespace App\Http\Controllers;
 
+use App\RelationsModel;
+use App\User;
 use Illuminate\Routing\Controller;
-use App\MyUsersModel;
 use App\DoorsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BP_AdjustController extends Controller
 {
@@ -22,68 +24,73 @@ class BP_AdjustController extends Controller
 
     public function invokeRights(Request $request, $door, $user)
     {
-        $request->session()->put('current_user', $user);
-        $access_right = MyUsersModel::where('user_name', $user)->value('access_right');
-        $protocol_right = MyUsersModel::where('user_name', $user)->value('protocol_right');
-        return view('mio_rights', ['door' => $door, 'user' => $user])->with('access_right', $access_right)->with('protocol_right', $protocol_right);
+        $user_id = User::where('name', $user)->value('id');
+        $request->session()->put('current_user_id', $user_id);
+        $door_id = DoorsModel::where('door_name', $door)->value('id');
+        $request->session()->put('current_door_id', $door_id);
+        $access_right = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('access_right');
+        $protocol_right = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('protocol_right');
+        return view('mio_rights', ['door' => $door, 'user' => $user, 'access_right' => $access_right, 'protocol_right' => $protocol_right]);
     }
 
     public function invokeRightsExt(Request $request, $door, $user)
     {
         if (empty($request->input('access_option'))) {
-
-            $request->session()->put('access_right', MyUsersModel::where('user_name', $user)->value('access_right'));
-
+            $request->session()->put('access_right',
+                RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                              ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('access_right'));
         } else {
-
             $request->session()->put('access_right', $request->input('access_option') == 'true' ? 1 : 0);
-
         }
 
         if (empty($request->input('protocol_right'))) {
-
-            $request->session()->put('protocol_right', MyUsersModel::where('user_name', $user)->value('protocol_right'));
-
+            $request->session()->put('protocol_right',
+                RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                              ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('protocol_right'));
         } else {
-
             $request->session()->put('protocol_right', $request->input('protocol_option') == 'true' ? 1 : 0);
-
         }
 
-
         $access_right = $request->session()->get('access_right','There is no Access Right');
+        if ($access_right == 0) {
 
-        if($access_right == 0) {
-
-            $current_user = MyUsersModel::where('user_name', $user)->first();
-
-            $protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
+            $current_user = RelationsModel::where('user_id', $request->session()->get('current_user_id', 'There is no User-ID'))
+                                          ->where('door_id', $request->session()->get('current_door_id', 'There is no Door-ID'))->first();
 
             $current_user->access_right = $access_right;
-            $current_user->protocol_right = $protocol_right;
+            $current_user->protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
 
             $current_user->save();
 
-            $doors = DoorsModel::all();
-            return view('mio_home')->with('doors', $doors);
+            $id = Auth::id();
+            $doors = RelationsModel::where('user_id', $id)->get();
+            return view('mio_home', ['doors' => $doors]);
 
         } else {
 
-            $mon = MyUsersModel::where('user_name', $user)->value('mon');
-            $tue = MyUsersModel::where('user_name', $user)->value('tue');
-            $wed = MyUsersModel::where('user_name', $user)->value('wed');
-            $thu = MyUsersModel::where('user_name', $user)->value('thu');
-            $fri = MyUsersModel::where('user_name', $user)->value('fri');
-            $sat = MyUsersModel::where('user_name', $user)->value('sat');
-            $sun = MyUsersModel::where('user_name', $user)->value('sun');
+            $mon = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('mon');
+            $tue = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('tue');
+            $wed = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('wed');
+            $thu = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('thu');
+            $fri = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('fri');
+            $sat = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('sat');
+            $sun = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('sun');
 
-            $from_time = MyUsersModel::where('user_name', $user)->value('from_time');
-            $to_time = MyUsersModel::where('user_name', $user)->value('to_time');
+            $from_time = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                       ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('from_time');
+            $to_time = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                     ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('to_time');
 
-            return view('mio_rights_ext', ['door' => $door, 'user' => $user])
-                ->with('mon', $mon)->with('tue', $tue)->with('wed', $wed)->with('thu', $thu)
-                ->with('fri', $fri)->with('sat', $sat)->with('sun', $sun)
-                ->with('from_time', $from_time)->with('to_time', $to_time);
+            return view('mio_rights_ext', ['door' => $door, 'user' => $user, 'mon' => $mon, 'tue' => $tue,
+                'wed' => $wed, 'thu' => $thu, 'fri' => $fri, 'sat' => $sat, 'sun' => $sun,
+                'from_time' => $from_time, 'to_time' => $to_time]);
 
         }
 
@@ -91,7 +98,8 @@ class BP_AdjustController extends Controller
 
     public function store(Request $request)
     {
-        $current_user = MyUsersModel::where('user_name', $request->session()->get('current_user','There is no User'))->first();
+        $current_user = RelationsModel::where('user_id', $request->session()->get('current_user_id', 'There is no User-ID'))
+                                      ->where('door_id', $request->session()->get('current_door_id', 'There is no Door-ID'))->first();
 
         $current_user->access_right = $request->session()->get('access_right','There is no Access Right');
         $current_user->protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
@@ -160,8 +168,9 @@ class BP_AdjustController extends Controller
 
         $current_user->save();
 
-        $doors = DoorsModel::all();
-        return view('mio_home')->with('doors', $doors);
+        $id = Auth::id();
+        $doors = RelationsModel::where('user_id', $id)->get();
+        return view('mio_home', ['doors' => $doors]);
     }
 
 }
