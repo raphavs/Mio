@@ -10,8 +10,8 @@ namespace App\Http\Controllers;
 
 use App\DoorsModel;
 use App\RelationsModel;
-use Illuminate\Routing\Controller;
 use App\TransactionsModel;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

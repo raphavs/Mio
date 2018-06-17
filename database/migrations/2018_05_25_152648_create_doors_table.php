@@ -15,7 +15,7 @@ class CreateDoorsTable extends Migration
     {
         Schema::create('doors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('door_name');
+            $table->string('door_name')->unique();
             // $table->timestamps();
         });
     }

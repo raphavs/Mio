@@ -10,8 +10,8 @@ namespace App\Http\Controllers;
 
 use App\RelationsModel;
 use App\User;
-use Illuminate\Routing\Controller;
 use App\DoorsModel;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,9 +64,7 @@ class BP_AdjustController extends Controller
 
             $current_user->save();
 
-            $id = Auth::id();
-            $doors = RelationsModel::where('user_id', $id)->get();
-            return view('mio_home', ['doors' => $doors]);
+            return redirect('/home');
 
         } else {
 
@@ -170,9 +168,7 @@ class BP_AdjustController extends Controller
 
         $current_user->save();
 
-        $id = Auth::id();
-        $doors = RelationsModel::where('user_id', $id)->get();
-        return view('mio_home', ['doors' => $doors]);
+        return redirect('/home');
     }
 
 }

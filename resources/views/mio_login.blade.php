@@ -41,7 +41,7 @@
                     <div class="logging-button-padding">
                         <button type="submit" class="btn btn-logging">Sign in</button>
                     </div>
-                    <a class="btn my-btn-link" href="{{ route('login.resetpw') }}">
+                    <a class="btn my-btn-link" href="{{ route('login.resetpassword') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                     <div class="logging-button-padding">
