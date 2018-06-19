@@ -359,7 +359,7 @@ body {
 }
 
 /* Additional Margin für Buttons (Logging) */
-@media screen and (max-width: 767.98px){
+@media screen and (max-width: 767px){
     .add-margin-btn-sm {
         margin-left: 0.1rem;
     }
@@ -396,22 +396,28 @@ body {
         font-size: 1.5rem;
     }
 }
-.my-slanted-user-header-one:after {
+.my-user-header-in-fg {
+    z-index: 100;
+    padding: 0;
+}
+.my-user-header-left-corner {
+    z-index: 50;
     content:'';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    border-bottom: 80px solid white;
-    border-right: 80px solid #d9d9d9;
+    border-top: 130px solid #d9d9d9;
+    border-left: 150px solid transparent;
     width: 0;
 }
-.my-slanted-user-header-two:before {
+.my-user-header-right-corner {
+    z-index: 50;
     content:'';
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
-    border-bottom: 80px solid white;
-    border-left: 80px solid #d9d9d9;
+    border-top: 130px solid #d9d9d9;
+    border-right: 150px solid transparent;
     width: 0;
 }
 
@@ -1200,7 +1206,7 @@ body {
     text-decoration: none;
 }
 .btn-change:focus {
-    box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
 }
 
 /* Margin für Errors (Home/AddUser) */

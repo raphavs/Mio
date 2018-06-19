@@ -72,11 +72,13 @@
     </nav>
 
     <!-- Username -->
-    <header class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12 my-header-in-bg">
-        <div class="my-slanted-user-header-one">
-            <div class="my-slanted-user-header-two">
+    <header class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 offset-1 col-10 my-header-in-bg">
+        <div class="row">
+            <div class="my-user-header-left-corner"></div>
+            <div class="my-user-header-in-fg offset-2 col-8">
                 <h3 id="my-user-header-style">{{ Auth::user()->name }}</h3>
             </div>
+            <div class="my-user-header-right-corner"></div>
         </div>
     </header>
 </div>
