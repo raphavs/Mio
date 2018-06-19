@@ -66,7 +66,7 @@ class HomeController extends Controller
 
     public function invokeManageDoor($door)
     {
-        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+        if (RelationsModel::where('door_id', DoorsModel::where('door_name', $door)->value('id'))->where('user_id', Auth::id())->get()->count() < 1) {
             return redirect('/home');
         }
 
@@ -78,7 +78,10 @@ class HomeController extends Controller
 
     public function invokeSelectUser($door)
     {
-        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+        $door_id = DoorsModel::where('door_name', $door)->value('id');
+        $role_id = RolesModel::where('name', 'client')->value('id');
+
+        if (RelationsModel::where('door_id', $door_id)->where('user_id', Auth::id())->where('role_id', $role_id)->get()->count() < 1) {
             return redirect('/home');
         }
 
@@ -89,7 +92,7 @@ class HomeController extends Controller
 
     public function open ($door)
     {
-        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+        if (RelationsModel::where('door_id', DoorsModel::where('door_name', $door)->value('id'))->where('user_id', Auth::id())->get()->count() < 1) {
             return redirect('/home');
         }
 

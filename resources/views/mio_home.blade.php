@@ -3,11 +3,12 @@
 @section('content')
 <div class="row my-position-btns-home">
     <div class="col-12 col-md-6 my-position-btn-door-home">
-        <button id="btn-add-door" class="btn btn-change">Add Door</button>
+        <button id="btn-add-door" class="btn btn-change" @if (!\Illuminate\Support\Facades\Auth::user()->hasRole('client')
+        and !\Illuminate\Support\Facades\Auth::user()->hasRole('admin')) disabled @endif>Add Door</button>
     </div>
-    <div id="div-manage-clients" class="col-12 col-md-6 my-position-btn-admin-home">
-        <a href="/admin" role="button" class="btn btn-change">Manage Clients</a>
-    </div>
+    <form id="div-manage-clients" class="col-12 col-md-6 my-position-btn-admin-home" action="/admin">
+        <button class="btn btn-change" type="submit" @if (!\Illuminate\Support\Facades\Auth::user()->hasRole('admin')) disabled @endif>Manage Clients</button>
+    </form>
     <div class="col-12 col-md-6 my-position-btn-door-home">
         <button id="btn-close-add-door" class="btn btn-change">Close Form</button>
     </div>

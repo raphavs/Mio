@@ -9,10 +9,12 @@
 namespace App\Http\Controllers;
 
 use App\RelationsModel;
+use App\RolesModel;
 use App\User;
 use App\DoorsModel;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BP_AdjustController extends Controller
 {
@@ -28,7 +30,8 @@ class BP_AdjustController extends Controller
         $door_id = DoorsModel::where('door_name', $door)->value('id');
         $request->session()->put('current_door_id', $door_id);
 
-        if (RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1) {
+        if (RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1
+            or RelationsModel::where('door_id', $door_id)->where('user_id', Auth::id())->where('role_id', RolesModel::where('name', 'client')->value('id'))->get()->count() < 1) {
             return redirect('/home');
         }
 
@@ -41,10 +44,6 @@ class BP_AdjustController extends Controller
     {
         $user_id = User::where('name', $user)->value('id');
         $door_id = DoorsModel::where('door_name', $door)->value('id');
-
-        if (RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1) {
-            return redirect('/home');
-        }
 
         if (empty($request->input('access_option'))) {
             $request->session()->put('access_right', RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('access_right'));

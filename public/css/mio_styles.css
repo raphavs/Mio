@@ -4,6 +4,7 @@
 body {
     font-family: 'Raleway', Corbel, Arial, sans-serif;
     color: #191b1d;
+    overflow-x: hidden;
 }
 
 /* Individual Padding Navbar */
@@ -261,6 +262,7 @@ body {
 .thisIsMio-style {
     font-size: 1.2rem;
     padding-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 /* Style Header Logging */
@@ -383,8 +385,8 @@ body {
 #my-user-header-style {
     text-align: center;
     padding: 4px 0;
-    background-color: #191b1d;
-    color: #f3be29;
+    background-color: #d9d9d9;
+    color: #191b1d;
     font-weight: bold;
     font-size: 2rem;
     margin: 0;
@@ -400,7 +402,7 @@ body {
     bottom: 0;
     left: 0;
     border-bottom: 80px solid white;
-    border-right: 80px solid #191b1d;
+    border-right: 80px solid #d9d9d9;
     width: 0;
 }
 .my-slanted-user-header-two:before {
@@ -409,7 +411,7 @@ body {
     bottom: 0;
     right: 0;
     border-bottom: 80px solid white;
-    border-left: 80px solid #191b1d;
+    border-left: 80px solid #d9d9d9;
     width: 0;
 }
 
@@ -1165,8 +1167,28 @@ body {
     font-weight: bold;
     width: 30vh;
 }
+.my-position-btn-admin-home .my-disabled {
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 30vh;
+    border: 2px solid #226693;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: #226693;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+.my-position-btn-admin-home .my-disabled:hover {
+    color: #ffffff;
+    background-color: #226693;
+    border: 2px solid #226693;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 0.5;
+}
 @media screen and (max-width: 500px){
-    .btn-change {
+    .btn-change, .my-position-btn-admin-home .my-disabled {
         font-size: 0.9rem;
     }
 }

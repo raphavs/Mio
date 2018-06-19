@@ -52,7 +52,7 @@ class AdminController extends Controller
 
     public function manageClient($user)
     {
-        if (User::where('name', $user)->get()->count() < 1) {
+        if (User::where('name', $user)->where('role_id', RolesModel::where('name', 'client')->value('id'))->get()->count() < 1) {
             return redirect('/admin');
         }
 

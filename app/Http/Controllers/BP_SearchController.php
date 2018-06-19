@@ -24,7 +24,7 @@ class BP_SearchController extends Controller
 
     public function showTransactions($door)
     {
-        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+        if (RelationsModel::where('door_id', DoorsModel::where('door_name', $door)->value('id'))->where('user_id', Auth::id())->get()->count() < 1) {
             return redirect('/home');
         }
 

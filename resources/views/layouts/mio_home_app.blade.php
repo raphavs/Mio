@@ -35,8 +35,29 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link {{ (\Request::route()->getName() == 'mio.home') ? 'active-site' : '' }}"
-                       href="{{ route('mio.home') }}">My Doors</a>
+                       href="{{ route('mio.home') }}">Home</a>
                 </li>
+                @if (\Request::route()->getName() == 'home.admin' or \Request::route()->getName() == 'home.admin.client')
+                    <li class="nav-item">
+                        <a class="nav-link {{ (\Request::route()->getName() == 'home.admin') ? 'active-site' : '' }}"
+                           href="{{ route('home.admin') }}">Manage Clients</a>
+                    </li>
+                @endif
+                @if (\Request::route()->getName() == 'home.managedoor' or \Request::route()->getName() == 'home.managedoor.transactions'
+                or \Request::route()->getName() == 'home.managedoor.adduser' or \Request::route()->getName() == 'home.managedoor.selectuser'
+                or \Request::route()->getName() == 'home.managedoor.selectuser.rights' or \Request::route()->getName() == 'home.managedoor.selectuser.rights.ext')
+                    <li class="nav-item">
+                        <a class="nav-link {{ (\Request::route()->getName() == 'home.managedoor') ? 'active-site' : '' }}"
+                           href="/home/{{ $door }}">Manage Door</a>
+                    </li>
+                @endif
+                @if (\Request::route()->getName() == 'home.managedoor.selectuser.rights' or \Request::route()->getName() == 'home.managedoor.selectuser.rights.ext'
+                or \Request::route()->getName() == 'home.managedoor.selectuser')
+                    <li class="nav-item">
+                        <a class="nav-link {{ (\Request::route()->getName() == 'home.managedoor.selectuser') ? 'active-site' : '' }}"
+                           href="/home/{{ $door }}/selectuser">Select User</a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <a class="btn btn-logging" role="button" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

@@ -25,20 +25,24 @@ class AddUserController extends Controller
 
     public function addUser($door)
     {
-        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+        $door_id = DoorsModel::where('door_name', $door)->value('id');
+        $role_id = RolesModel::where('name', 'client')->value('id');
+
+        if (RelationsModel::where('door_id', $door_id)->where('user_id', Auth::id())->where('role_id', $role_id)->get()->count() < 1) {
             return redirect('/home');
         }
+
         return view ('mio_add_user', ['door' => $door, 'error' => 'okay']);
     }
 
     public function storeUser(Request $request, $door)
     {
         if ($request->has('name')) {
-            $role_id = $this->addNewUser($request, $door);
+            $this->addNewUser($request, $door);
         } else {
-            $role_id = $this->addExistingUser($request, $door);
+            $this->addExistingUser($request, $door);
         }
-        return view('mio_manage_door', ['door' => $door, 'role_id' => $role_id]);
+        return redirect("/home/$door");
     }
 
     private function addNewUser(Request $request, $door)
@@ -77,8 +81,6 @@ class AddUserController extends Controller
         $new_relation->to_time = '23:59:00';
         $new_relation->save();
 
-        $id = Auth::id();
-        return RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('role_id');
     }
 
     private function addExistingUser(Request $request, $door)
@@ -117,8 +119,6 @@ class AddUserController extends Controller
         $new_relation->to_time = '23:59:00';
         $new_relation->save();
 
-        $id = Auth::id();
-        return RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('role_id');
     }
 
 }

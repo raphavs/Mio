@@ -31,11 +31,6 @@ Route::get('/home/{door}/selectuser/{user}', 'BP_AdjustController@invokeRights')
 Route::post('/home/{door}/selectuser/{user}/ext', 'BP_AdjustController@invokeRightsExt')->name('home.managedoor.selectuser.rights.ext');
 Route::get('/home/{door}/selectuser/{user}/ext', function ($door, $user)
     {
-        $door_id = \App\DoorsModel::where('door_name', $door)->value('id');
-        $user_id = \App\User::where('name', $user)->value('id');
-        if (\App\RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1) {
-            return redirect('/home');
-        }
         return redirect("/home/$door/selectuser/$user");
     }
 )->name('home.managedoor.selectuser.rights.redirect');
