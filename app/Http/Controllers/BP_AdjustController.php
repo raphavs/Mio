@@ -13,7 +13,6 @@ use App\User;
 use App\DoorsModel;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class BP_AdjustController extends Controller
 {
@@ -28,6 +27,11 @@ class BP_AdjustController extends Controller
         $request->session()->put('current_user_id', $user_id);
         $door_id = DoorsModel::where('door_name', $door)->value('id');
         $request->session()->put('current_door_id', $door_id);
+
+        if (RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1) {
+            return redirect('/home');
+        }
+
         $access_right = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('access_right');
         $protocol_right = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('protocol_right');
         return view('mio_rights', ['door' => $door, 'user' => $user, 'access_right' => $access_right, 'protocol_right' => $protocol_right]);
@@ -35,18 +39,21 @@ class BP_AdjustController extends Controller
 
     public function invokeRightsExt(Request $request, $door, $user)
     {
+        $user_id = User::where('name', $user)->value('id');
+        $door_id = DoorsModel::where('door_name', $door)->value('id');
+
+        if (RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1) {
+            return redirect('/home');
+        }
+
         if (empty($request->input('access_option'))) {
-            $request->session()->put('access_right',
-                RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                              ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('access_right'));
+            $request->session()->put('access_right', RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('access_right'));
         } else {
             $request->session()->put('access_right', $request->input('access_option') == 'true' ? 1 : 0);
         }
 
         if (empty($request->input('protocol_option'))) {
-            $request->session()->put('protocol_right',
-                RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                              ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('protocol_right'));
+            $request->session()->put('protocol_right', RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('protocol_right'));
         } else {
             $request->session()->put('protocol_right', $request->input('protocol_option') == 'true' ? 1 : 0);
         }
@@ -56,15 +63,14 @@ class BP_AdjustController extends Controller
 
             $protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
 
-            $current_user = RelationsModel::where('user_id', $request->session()->get('current_user_id', 'There is no User-ID'))
-                                          ->where('door_id', $request->session()->get('current_door_id', 'There is no Door-ID'))->first();
+            $current_user = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->first();
 
             $current_user->access_right = $access_right;
             $current_user->protocol_right = $protocol_right;
 
             $current_user->save();
 
-            return redirect('/home');
+            return redirect("/home/$door/selectuser");
 
         } else {
 
@@ -83,10 +89,8 @@ class BP_AdjustController extends Controller
             $sun = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
                                  ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('sun');
 
-            $from_time = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                       ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('from_time');
-            $to_time = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                     ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('to_time');
+            $from_time = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('from_time');
+            $to_time = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('to_time');
 
             return view('mio_rights_ext', ['door' => $door, 'user' => $user, 'mon' => $mon, 'tue' => $tue,
                 'wed' => $wed, 'thu' => $thu, 'fri' => $fri, 'sat' => $sat, 'sun' => $sun,
@@ -96,7 +100,7 @@ class BP_AdjustController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $door)
     {
         $current_user = RelationsModel::where('user_id', $request->session()->get('current_user_id', 'There is no User-ID'))
                                       ->where('door_id', $request->session()->get('current_door_id', 'There is no Door-ID'))->first();
@@ -168,7 +172,7 @@ class BP_AdjustController extends Controller
 
         $current_user->save();
 
-        return redirect('/home');
+        return redirect("/home/$door/selectuser");
     }
 
 }

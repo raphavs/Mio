@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\DoorsModel;
 use App\RelationsModel;
 use App\RolesModel;
@@ -26,6 +25,9 @@ class AddUserController extends Controller
 
     public function addUser($door)
     {
+        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+            return redirect('/home');
+        }
         return view ('mio_add_user', ['door' => $door, 'error' => 'okay']);
     }
 
@@ -34,7 +36,7 @@ class AddUserController extends Controller
         if ($request->has('name')) {
             $role_id = $this->addNewUser($request, $door);
         } else {
-            $role_id = $this->checkUser($request, $door);
+            $role_id = $this->addExistingUser($request, $door);
         }
         return view('mio_manage_door', ['door' => $door, 'role_id' => $role_id]);
     }
@@ -52,6 +54,7 @@ class AddUserController extends Controller
         $new_user->email = $request->input('email');
         $password = Hash::make($request->input('password'));
         $new_user->password = $password;
+        $new_user->role()->associate(RolesModel::where('name', 'user')->first());
         $new_user->save();
 
         $door_id = DoorsModel::where('door_name', $door)->value('id');
@@ -78,15 +81,15 @@ class AddUserController extends Controller
         return RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('role_id');
     }
 
-    private function checkUser(Request $request, $door)
+    private function addExistingUser(Request $request, $door)
     {
         $hashedPassword = User::where('email', $request->input('email'))->value('password');
         if ($hashedPassword == null) {
-            return view ('mio_add_user', ['door' => $door, 'error' => 'not']);
+            return view ('mio_add_user', ['door' => $door, 'error' => 'not-exists']);
         }
 
         if (!Hash::check($request->input('password'), $hashedPassword)) {
-            return view ('mio_add_user', ['door' => $door, 'error' => 'wrong']);
+            return view ('mio_add_user', ['door' => $door, 'error' => 'wrong-password']);
         }
 
         $door_id = DoorsModel::where('door_name', $door)->value('id');
@@ -94,7 +97,7 @@ class AddUserController extends Controller
         $is_user_already_user = RelationsModel::where('door_id', $door_id)->where('user_id', $existing_user_id)->get();
 
         if ($is_user_already_user->count() > 0) {
-            return view ('mio_add_user', ['door' => $door, 'error' => 'already']);
+            return view ('mio_add_user', ['door' => $door, 'error' => 'already-exists']);
         }
 
         $new_relation = new RelationsModel();

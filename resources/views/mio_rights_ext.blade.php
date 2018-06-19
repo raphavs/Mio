@@ -6,7 +6,7 @@
     <div class="my-user-door-margin">
         <h2 class="my-litte-user-header">{{ $user }}:</h2>
     </div>
-    <form action="{{ route('home.managedoor.selectuser.rights.ext.store') }}" class="col-12" onsubmit="return checkValidation()" method="post">
+    <form action="/home/{{ $door }}/selectuser" class="col-12" onsubmit="return checkValidation()" method="post">
         @csrf
         <div class="my-rights-bg offset-lg-3 col-lg-6 offset-md-2 col-md-8 offset-sm-1 col-sm-10">
             <div class="my-rights-ext-box">

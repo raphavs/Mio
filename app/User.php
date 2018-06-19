@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role_id',
     ];
 
     /**
@@ -30,6 +30,22 @@ class User extends Authenticatable
     public function relation()
     {
         return $this->hasMany(RelationsModel::class, 'user_id');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(RolesModel::class, 'role_id');
+    }
+
+    public function hasRole($role)
+    {
+        return $this->role->name == $role;
+    }
+
+    public function authorizeRole($role)
+    {
+        return $this->hasRole($role) ||
+            abort(401, 'This action is unauthorized.');
     }
 
 }

@@ -9,46 +9,50 @@
         </div>
     </div>
     <div id="submit-search">
-        <form id="big-artificial-form" onsubmit="return submit_reload_big()">
-            <div class="my-transaction-margin offset-2 col-8">
+        <form id="big-artificial-form" onsubmit="@if ($role_id == 3) return submit_reload_big_role_user(); @else return submit_reload_big(); @endif">
+            <div class="my-transaction-margin @if ($role_id == 3) offset-3 col-6 @else offset-2 col-8 @endif">
                 <div class="form-row">
-                    <div class="form-row col-5">
-                        <label for="username-big" class="my-col-form-label">Username:</label>
-                        <div class="my-username-width">
-                            <input id="username-big" type="search" onkeyup="reload_big()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
+                    @if ($role_id != 3)
+                        <div class="form-row col-5">
+                            <label for="username-big" class="my-col-form-label">Username:</label>
+                            <div class="my-username-width">
+                                <input id="username-big" type="search" onkeyup="reload_big()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-1"></div>
-                    <div class="form-row col-4">
+                        <div class="col-1"></div>
+                    @endif
+                    <div class="form-row @if ($role_id == 3) col-9 @else col-4 @endif">
                         <label for="date-big" class="my-col-form-label">Date:</label>
                         <div class="my-date-width">
-                            <input id="date-big" type="search" onkeyup="reload_big()" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                            <input id="date-big" type="search" onkeyup="@if ($role_id == 3) reload_big_role_user(); @else reload_big(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                         </div>
                     </div>
-                    <div class="my-additional-margin-for-btn col-2">
+                    <div class="@if ($role_id == 3) col-3 @else my-additional-margin-for-btn col-2 @endif">
                         <button type="submit" class="btn btn-search put-btn-right">Search</button>
                     </div>
                 </div>
             </div>
         </form>
-        <form id="little-artificial-form" onsubmit="return submit_reload_little()">
+        <form id="little-artificial-form" onsubmit="@if ($role_id == 3) return submit_reload_little_role_user(); @else return submit_reload_little(); @endif">
             <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-                <div class="form-row my-additional-margin-for-input">
-                    <div class="form-row col-8">
-                        <label for="username-little" class="col-4 my-col-form-label">Username:</label>
-                        <div class="col-8">
-                            <div class="my-username-width">
-                                <input id="username-little" type="search" onkeyup="reload_little()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
+                @if ($role_id != 3)
+                    <div class="form-row my-additional-margin-for-input">
+                        <div class="form-row col-8">
+                            <label for="username-little" class="col-4 my-col-form-label">Username:</label>
+                            <div class="col-8">
+                                <div class="my-username-width">
+                                    <input id="username-little" type="search" onkeyup="reload_little()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="form-row my-additional-margin-for-input">
                     <div class="form-row col-8">
                         <label for="date-little" class="col-4 my-col-form-label">Date:</label>
                         <div class="col-8">
                             <div class="my-date-width">
-                                <input id="date-little" type="search" onkeyup="reload_little()" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                                <input id="date-little" type="search" onkeyup="@if ($role_id == 3) reload_little_role_user(); @else reload_little(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                             </div>
                         </div>
                     </div>
@@ -58,21 +62,23 @@
                 </div>
             </div>
         </form>
-        <form id="very-little-artificial-form" onsubmit="return submit_reload_verylittle()">
+        <form id="very-little-artificial-form" onsubmit="@if ($role_id == 3) return submit_reload_verylittle_role_user(); @else return submit_reload_verylittle(); @endif">
             <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-                <div class="form-row my-additional-margin-for-input">
-                    <label for="username-verylittle" class="col-4 my-col-form-label">Username:</label>
-                    <div class="col-8">
-                        <div class="my-username-width">
-                            <input id="username-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
+                @if ($role_id != 3)
+                    <div class="form-row my-additional-margin-for-input">
+                        <label for="username-verylittle" class="col-4 my-col-form-label">Username:</label>
+                        <div class="col-8">
+                            <div class="my-username-width">
+                                <input id="username-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="form-row my-additional-margin-for-input">
                     <label for="date-verylittle" class="col-4 my-col-form-label">Date:</label>
                     <div class="col-8">
                         <div class="my-date-width">
-                            <input id="date-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                            <input id="date-verylittle" type="search" onkeyup="@if ($role_id == 3) reload_verylittle_role_user(); @else reload_verylittle(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                         </div>
                     </div>
                 </div>
@@ -88,7 +94,7 @@
         <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10">
             <div class="row">
                 <table class="table my-table-fixed">
-                    <thead class="my-table-header">
+                    <thead>
                     <tr>
                         <th class="col-2">ID</th>
                         <th class="col-4">Username</th>
@@ -124,13 +130,25 @@
     {
         $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username-big").val() + "&date=" + $("#date-big").val());
     }
+    function reload_big_role_user()
+    {
+        $("#my-agile-tbody").load("transactions/ajax?date=" + $("#date-big").val());
+    }
     function reload_little()
     {
         $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username-little").val() + "&date=" + $("#date-little").val());
     }
+    function reload_little_role_user()
+    {
+        $("#my-agile-tbody").load("transactions/ajax?date=" + $("#date-little").val());
+    }
     function reload_verylittle()
     {
         $("#my-agile-tbody").load("transactions/ajax?username=" + $("#username-verylittle").val() + "&date=" + $("#date-verylittle").val());
+    }
+    function reload_verylittle_role_user()
+    {
+        $("#my-agile-tbody").load("transactions/ajax?date=" + $("#date-verylittle").val());
     }
 
     function submit_reload_big()
@@ -139,6 +157,14 @@
         $("#start-search").show();
         $("#my-agile-tbody").load("transactions/submitajax?username=" + $("#username-big").val() + "&date=" + $("#date-big").val());
         $("#username-big").val("");
+        $("#date-big").val("");
+        return false;
+    }
+    function submit_reload_big_role_user()
+    {
+        $("#submit-search").hide();
+        $("#start-search").show();
+        $("#my-agile-tbody").load("transactions/submitajax?date=" + $("#date-big").val());
         $("#date-big").val("");
         return false;
     }
@@ -151,12 +177,28 @@
         $("#date-little").val("");
         return false;
     }
+    function submit_reload_little_role_user()
+    {
+        $("#submit-search").hide();
+        $("#start-search").show();
+        $("#my-agile-tbody").load("transactions/submitajax?date=" + $("#date-little").val());
+        $("#date-little").val("");
+        return false;
+    }
     function submit_reload_verylittle()
     {
         $("#submit-search").hide();
         $("#start-search").show();
         $("#my-agile-tbody").load("transactions/submitajax?username=" + $("#username-verylittle").val() + "&date=" + $("#date-verylittle").val());
         $("#username-verylittle").val("");
+        $("#date-verylittle").val("");
+        return false;
+    }
+    function submit_reload_verylittle_role_user()
+    {
+        $("#submit-search").hide();
+        $("#start-search").show();
+        $("#my-agile-tbody").load("transactions/submitajax?date=" + $("#date-verylittle").val());
         $("#date-verylittle").val("");
         return false;
     }

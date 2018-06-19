@@ -14,6 +14,5 @@ class RolesSeeder extends Seeder
         DB::insert("insert into roles values(1, 'admin')");
         DB::insert("insert into roles values(2, 'client')");
         DB::insert("insert into roles values(3, 'user')");
-        DB::insert("insert into roles values(4, 'manufacturer')");
     }
 }

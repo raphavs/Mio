@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\RolesModel;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -67,6 +68,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role_id' => RolesModel::where('name', 'client')->value('id') /* Angepasst von Rapha am 18.06.2018 */
         ]);
     }
 }

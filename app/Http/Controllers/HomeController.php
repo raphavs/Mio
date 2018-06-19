@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DoorsModel;
 use App\RelationsModel;
+use App\RolesModel;
 use App\TransactionsModel;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -31,8 +33,43 @@ class HomeController extends Controller
         return view('mio_home', ['doors' => $doors]);
     }
 
+    public function addDoor(Request $request)
+    {
+        $doorname = $request->input('doorname');
+
+        $new_door = new DoorsModel();
+        $new_door->door_name = $doorname;
+        $new_door->save();
+
+        $user_id = Auth::id();
+        $door_id = DoorsModel::where('door_name', $doorname)->value('id');
+
+        $new_relation = new RelationsModel();
+        $new_relation->door_id = $door_id;
+        $new_relation->user_id = $user_id;
+        $new_relation->role_id = RolesModel::where('name', 'client')->value('id');
+        $new_relation->protocol_right = 1;
+        $new_relation->access_right = 1;
+        $new_relation->mon = 1;
+        $new_relation->tue = 1;
+        $new_relation->wed = 1;
+        $new_relation->thu = 1;
+        $new_relation->fri = 1;
+        $new_relation->sat = 1;
+        $new_relation->sun = 1;
+        $new_relation->from_time = '00:00:00';
+        $new_relation->to_time = '23:59:00';
+        $new_relation->save();
+
+        return redirect('/home');
+    }
+
     public function invokeManageDoor($door)
     {
+        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+            return redirect('/home');
+        }
+
         $id = Auth::id();
         $door_id = DoorsModel::where('door_name', $door)->value('id');
         $role_id = RelationsModel::where('user_id',$id)->where('door_id', $door_id)->value('role_id');
@@ -41,13 +78,21 @@ class HomeController extends Controller
 
     public function invokeSelectUser($door)
     {
+        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+            return redirect('/home');
+        }
+
         $door_id = DoorsModel::where('door_name', $door)->value('id');
-        $users = RelationsModel::where('door_id', $door_id)->where('role_id', 3)->get();
-        return view('mio_select_user', ['door' => $door])->with('users', $users);
+        $users = RelationsModel::where('door_id', $door_id)->where('role_id', RolesModel::where('name', 'user')->value('id'))->get();
+        return view('mio_select_user', ['door' => $door, 'users' => $users]);
     }
 
     public function open ($door)
     {
+        if (DoorsModel::where('door_name', $door)->get()->count() < 1) {
+            return redirect('/home');
+        }
+
         $door_id = DoorsModel::where('door_name', $door)->value('id');
         $user_name = Auth::user()->name;
         date_default_timezone_set("Europe/Berlin");
@@ -61,9 +106,7 @@ class HomeController extends Controller
         $user->door_id = $door_id;
         $user->save();
 
-        $id = Auth::id();
-        $role_id = RelationsModel::where('user_id',$id)->where('door_id', $door_id)->value('role_id');
-        return view('mio_manage_door', ['door' => $door])->with('role_id', $role_id);
+        return redirect('/home');
     }
 
 }

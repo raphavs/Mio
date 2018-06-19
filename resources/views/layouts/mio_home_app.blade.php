@@ -21,7 +21,7 @@
 
 <div class="my-fixed-position">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md my-navbar-font my-navbar-bg">
+    <nav class="navbar navbar-expand-md my-navbar-font my-navbar-bg my-navbar-in-fg">
         <a href="{{ route('mio.home') }}">
             <img src="/Image/Mio_Logo_NavBar.jpg" class="rounded my-logo-size" alt="Logo">
         </a>
@@ -51,9 +51,11 @@
     </nav>
 
     <!-- Username -->
-    <header>
-        <div class="text-center">
-            <h3 id="my-user-header-style">{{ Auth::user()->name }}</h3>
+    <header class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12 my-header-in-bg">
+        <div class="my-slanted-user-header-one">
+            <div class="my-slanted-user-header-two">
+                <h3 id="my-user-header-style">{{ Auth::user()->name }}</h3>
+            </div>
         </div>
     </header>
 </div>

@@ -1,11 +1,10 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-@if ($error == 'not')
+@if ($error == 'not-exists')
     <script>
         window.onload = function ()
         {
-            $("#add-user-header").text("Add existing User");
             $("#add-new-user").hide();
             $("#wrong-error").hide();
             $("#already-error").hide();
@@ -15,24 +14,18 @@
             $("#not-error").show();
             setTimeout(function()
                 {
-                    $("#add-new-user").hide();
-                    $("#wrong-error").hide();
-                    $("#already-error").hide();
                     $("#not-error").hide();
-                    $("#add-existing-user").show();
                     $("#div-existing-email").show();
-                    $("#div-existing-password").show();
                     $("#add-btn").show();
                 },
                 3000
             );
         };
     </script>
-@elseif ($error == 'wrong')
+@elseif ($error == 'wrong-password')
     <script>
         window.onload = function ()
         {
-            $("#add-user-header").text("Add existing User");
             $("#add-new-user").hide();
             $("#already-error").hide();
             $("#not-error").hide();
@@ -42,12 +35,7 @@
             $("#wrong-error").show();
             setTimeout(function()
                 {
-                    $("#add-new-user").hide();
                     $("#wrong-error").hide();
-                    $("#already-error").hide();
-                    $("#not-error").hide();
-                    $("#add-existing-user").show();
-                    $("#div-existing-email").show();
                     $("#div-existing-password").show();
                     $("#add-btn").show();
                 },
@@ -55,11 +43,10 @@
             );
         };
     </script>
-@elseif ($error == 'already')
+@elseif ($error == 'already-exists')
     <script>
         window.onload = function ()
         {
-            $("#add-user-header").text("Add existing User");
             $("#add-new-user").hide();
             $("#not-error").hide();
             $("#wrong-error").hide();
@@ -70,11 +57,7 @@
             $("#already-error").show();
             setTimeout(function()
                 {
-                    $("#add-new-user").hide();
-                    $("#wrong-error").hide();
                     $("#already-error").hide();
-                    $("#not-error").hide();
-                    $("#add-existing-user").show();
                     $("#div-existing-email").show();
                     $("#div-existing-password").show();
                     $("#add-btn").show();
@@ -85,7 +68,7 @@
     </script>
 @endif
 <div class="my-adduser-content-center">
-    <h1 id="add-user-header" class="my-doors-header">{{ __('Add new User') }}</h1>
+    <h1 class="my-doors-header">{{ $door }}</h1>
     <div class="card-body my-add-user-margin">
         <form id="add-new-user" action="/home/{{ $door }}" method="post">
             @csrf
@@ -130,9 +113,7 @@
             </div>
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-add">
-                        {{ __('Add') }}
-                    </button>
+                    <button type="submit" class="btn btn-add">{{ __('Add User') }}</button>
                 </div>
             </div>
             <div class="my-margin-change-blade-btn text-center">
@@ -155,6 +136,9 @@
                     @endif
                 </div>
             </div>
+            <div id="wrong-error" class="adduser-error-margin-half">
+                <p class="adduser-error-font">Wrong password!</p>
+            </div>
             <div id="div-existing-password" class="form-group row">
                 <label for="password" class="col-md-4 col-lg-4 my-col-form-label text-md-right">{{ __('Password') }}</label>
                 <div class="col-md-6 col-lg-5">
@@ -166,13 +150,10 @@
                     @endif
                 </div>
             </div>
-            <div id="wrong-error" class="adduser-error-margin-half">
-                <p class="adduser-error-font">Wrong password!</p>
-            </div>
             <div class="form-group row">
                 <div class="add-margin-btn-sm row col-md-6 offset-md-4 col-lg-5 offset-lg-4">
                     <div class="logging-button-padding">
-                        <button id="add-btn" type="submit" class="btn btn-add">{{ __('Add') }}</button>
+                        <button id="add-btn" type="submit" class="btn btn-add">{{ __('Add User') }}</button>
                     </div>
                 </div>
             </div>
@@ -193,13 +174,11 @@
 
     function showNew()
     {
-        $("#add-user-header").text("Add new User");
         $("#add-existing-user").hide();
         $("#add-new-user").show();
     }
     function showExisting()
     {
-        $("#add-user-header").text("Add existing User");
         $("#add-new-user").hide();
         $("#add-existing-user").show();
     }
