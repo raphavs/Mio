@@ -6,7 +6,8 @@
     <div class="my-delete-client-div">
         <form action="/admin/{{ $user_row->name }}" method="post">
             @csrf
-            <button type="submit" name="user-id" value="{{ $user_row->id }}" class="btn btn-delete-client">Delete Client</button>
+            <button type="submit" name="user-id" value="{{ $user_row->id }}" class="btn btn-delete-client"
+                    @if ($user_row->hasRole('admin')) disabled @endif>Delete {{ $user_row->role->name }}</button>
         </form>
     </div>
     <div class="my-table-margin col-lg-8 offset-lg-2 col-md-10 offset-md-1">

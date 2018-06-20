@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\DoorsModel;
 use App\RelationsModel;
 use App\RolesModel;
+use App\TransactionsModel;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -52,7 +53,8 @@ class AdminController extends Controller
 
     public function manageClient($user)
     {
-        if (User::where('name', $user)->where('role_id', RolesModel::where('name', 'client')->value('id'))->get()->count() < 1) {
+        if (User::where('name', $user)->where('role_id', RolesModel::where('name', 'client')->value('id'))->get()->count() < 1
+        and User::where('name', $user)->where('role_id', RolesModel::where('name', 'admin')->value('id'))->get()->count() < 1) {
             return redirect('/admin');
         }
 
@@ -74,6 +76,10 @@ class AdminController extends Controller
                 $all_relations_of_that_door = RelationsModel::where('door_id', $d->door_id)->get();
                 foreach ($all_relations_of_that_door as $r) {
                     $r->delete();
+                }
+                $all_transactions_to_delete = TransactionsModel::where('door_id', $d->door_id)->get();
+                foreach ($all_transactions_to_delete as $t) {
+                    $t->delete();
                 }
             }
 
@@ -99,6 +105,11 @@ class AdminController extends Controller
             $all_relations_of_door = RelationsModel::where('door_id', $door_id)->get();
             foreach ($all_relations_of_door as $r) {
                 $r->delete();
+            }
+
+            $all_transactions_to_delete = TransactionsModel::where('door_id', $door_id)->get();
+            foreach ($all_transactions_to_delete as $t) {
+                $t->delete();
             }
 
             $door_to_delete = DoorsModel::find($door_id);

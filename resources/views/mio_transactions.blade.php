@@ -9,50 +9,48 @@
         </div>
     </div>
     <div id="submit-search">
-        <form id="big-artificial-form" onsubmit="@if ($role_id == 3) return submit_reload_big_role_user(); @else return submit_reload_big(); @endif">
-            <div class="my-transaction-margin @if ($role_id == 3) offset-3 col-6 @else offset-2 col-8 @endif">
+        <form id="big-artificial-form" onsubmit="@if ($protocol_right == 0) return submit_reload_big_role_user(); @else return submit_reload_big(); @endif">
+            <div class="my-transaction-margin offset-2 col-8">
                 <div class="form-row">
-                    @if ($role_id != 3)
-                        <div class="form-row col-5">
-                            <label for="username-big" class="my-col-form-label">Username:</label>
-                            <div class="my-username-width">
-                                <input id="username-big" type="search" onkeyup="reload_big()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="col-1"></div>
-                    @endif
-                    <div class="form-row @if ($role_id == 3) col-9 @else col-4 @endif">
-                        <label for="date-big" class="my-col-form-label">Date:</label>
-                        <div class="my-date-width">
-                            <input id="date-big" type="search" onkeyup="@if ($role_id == 3) reload_big_role_user(); @else reload_big(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                    <div class="form-row col-5">
+                        <label for="username-big" class="my-col-form-label">Username:</label>
+                        <div class="my-username-width">
+                            <input id="username-big" type="search" onkeyup="reload_big()" class="form-control" name="username"
+                                   placeholder="Username ..." autocomplete="off" @if ($protocol_right == 0) disabled @endif>
                         </div>
                     </div>
-                    <div class="@if ($role_id == 3) col-3 @else my-additional-margin-for-btn col-2 @endif">
+                    <div class="col-1"></div>
+                    <div class="form-row col-4">
+                        <label for="date-big" class="my-col-form-label">Date:</label>
+                        <div class="my-date-width">
+                            <input id="date-big" type="search" onkeyup="@if ($protocol_right == 0) return reload_big_role_user(); @else return reload_big(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="my-additional-margin-for-btn col-2">
                         <button type="submit" class="btn btn-search put-btn-right">Search</button>
                     </div>
                 </div>
             </div>
         </form>
-        <form id="little-artificial-form" onsubmit="@if ($role_id == 3) return submit_reload_little_role_user(); @else return submit_reload_little(); @endif">
+        <form id="little-artificial-form" onsubmit="@if ($protocol_right == 0) return submit_reload_little_role_user(); @else return submit_reload_little(); @endif">
             <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-                @if ($role_id != 3)
-                    <div class="form-row my-additional-margin-for-input">
-                        <div class="form-row col-8">
-                            <label for="username-little" class="col-4 my-col-form-label">Username:</label>
-                            <div class="col-8">
-                                <div class="my-username-width">
-                                    <input id="username-little" type="search" onkeyup="reload_little()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
-                                </div>
+                <div class="form-row my-additional-margin-for-input">
+                    <div class="form-row col-8">
+                        <label for="username-little" class="col-4 my-col-form-label">Username:</label>
+                        <div class="col-8">
+                            <div class="my-username-width">
+                                <input id="username-little" type="search" onkeyup="reload_little()" class="form-control" name="username"
+                                       placeholder="Username ..." autocomplete="off" @if ($protocol_right == 0) disabled @endif>
                             </div>
                         </div>
                     </div>
-                @endif
+                </div>
                 <div class="form-row my-additional-margin-for-input">
                     <div class="form-row col-8">
                         <label for="date-little" class="col-4 my-col-form-label">Date:</label>
                         <div class="col-8">
                             <div class="my-date-width">
-                                <input id="date-little" type="search" onkeyup="@if ($role_id == 3) reload_little_role_user(); @else reload_little(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                                <input id="date-little" type="search" onkeyup="@if ($protocol_right == 0) reload_little_role_user(); @else reload_little(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                             </div>
                         </div>
                     </div>
@@ -62,23 +60,22 @@
                 </div>
             </div>
         </form>
-        <form id="very-little-artificial-form" onsubmit="@if ($role_id == 3) return submit_reload_verylittle_role_user(); @else return submit_reload_verylittle(); @endif">
+        <form id="very-little-artificial-form" onsubmit="@if ($protocol_right == 0) return submit_reload_verylittle_role_user(); @else return submit_reload_verylittle(); @endif">
             <div class="my-transaction-margin offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-                @if ($role_id != 3)
-                    <div class="form-row my-additional-margin-for-input">
-                        <label for="username-verylittle" class="col-4 my-col-form-label">Username:</label>
-                        <div class="col-8">
-                            <div class="my-username-width">
-                                <input id="username-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="username" placeholder="Username ..." autocomplete="off">
-                            </div>
+                <div class="form-row my-additional-margin-for-input">
+                    <label for="username-verylittle" class="col-4 my-col-form-label">Username:</label>
+                    <div class="col-8">
+                        <div class="my-username-width">
+                            <input id="username-verylittle" type="search" onkeyup="reload_verylittle()" class="form-control" name="username"
+                                   placeholder="Username ..." autocomplete="off" @if ($protocol_right == 0) disabled @endif>
                         </div>
                     </div>
-                @endif
+                </div>
                 <div class="form-row my-additional-margin-for-input">
                     <label for="date-verylittle" class="col-4 my-col-form-label">Date:</label>
                     <div class="col-8">
                         <div class="my-date-width">
-                            <input id="date-verylittle" type="search" onkeyup="@if ($role_id == 3) reload_verylittle_role_user(); @else reload_verylittle(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
+                            <input id="date-verylittle" type="search" onkeyup="@if ($protocol_right == 0) reload_verylittle_role_user(); @else reload_verylittle(); @endif" class="form-control" name="date" placeholder="yyyy-mm-dd" autocomplete="off">
                         </div>
                     </div>
                 </div>

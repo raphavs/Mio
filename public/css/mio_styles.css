@@ -110,6 +110,18 @@ body {
     }
 }
 
+/* Carousel */
+@media screen and (min-width: 501px) {
+    #carouselExampleControls {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    #carouselExampleIndicators {
+        display: none;
+    }
+}
+
 /* Font Style h3 */
 .my-welcome-h3-size {
     font-size: 1.6rem;
@@ -627,6 +639,9 @@ body {
     border-radius: 0.5rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 100%;
+}
+.my-btn-open.disabled, .my-btn-open:disabled {
+    opacity: 0.65;
 }
 
 /* Margin für Links (Home/ManageDoors) */

@@ -43,9 +43,10 @@ Route::get('/home/{door}/transactions/submitajax', 'BP_SearchController@submitFi
 Route::get('/home/{door}/adduser', 'AddUserController@addUser')->name('home.managedoor.adduser');
 Route::post('home/{door}', 'AddUserController@storeUser')->name('home.managedoor.storeuser');
 
-Route::get('/admin', 'AdminController@manage')->name('home.admin');
+Route::get('/admin', 'AdminController@manage')->name('home.admin')->middleware('checkRole:admin');
 Route::post('/admin', 'AdminController@deleteUser')->name('home.admin.deleteuser');
-Route::get('/admin/{user}', 'AdminController@manageClient')->name('home.admin.client');
+Route::get('/admin/{user}', 'AdminController@manageClient')->name('home.admin.client')->middleware('checkRole:admin');
 Route::post('/admin/{user}', 'AdminController@delete')->name('home.admin.client.deletedoor');
 
-Route::get('/home/{door}/open', 'HomeController@open')->name('home.managedoor.open');
+Route::get('/open/{door}', 'HomeController@openPseudo')->name('home.managedoor.open.pseudo');
+Route::post('/open/{door}', 'HomeController@open')->name('home.managedoor.open');

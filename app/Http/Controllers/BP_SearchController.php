@@ -38,8 +38,7 @@ class BP_SearchController extends Controller
             $transactions = TransactionsModel::where('door_id', $door_id)->get();
         }
 
-        $role_id = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->value('role_id');
-        return view('mio_transactions', ['door' => $door, 'transactions' => $transactions, 'role_id' => $role_id]);
+        return view('mio_transactions', ['door' => $door, 'transactions' => $transactions, 'protocol_right' => $protocol_right]);
     }
 
     public function submitFilterAJAX(Request $request, $door)

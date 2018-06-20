@@ -30,6 +30,7 @@ class HomeController extends Controller
     {
         $id = Auth::id();
         $doors = RelationsModel::where('user_id', $id)->get();
+
         return view('mio_home', ['doors' => $doors]);
     }
 
@@ -72,8 +73,37 @@ class HomeController extends Controller
 
         $id = Auth::id();
         $door_id = DoorsModel::where('door_name', $door)->value('id');
-        $role_id = RelationsModel::where('user_id',$id)->where('door_id', $door_id)->value('role_id');
-        return view('mio_manage_door', ['door' => $door, 'role_id' => $role_id]);
+
+        date_default_timezone_set("Europe/Berlin");
+        $week_day = date('w');
+
+        switch($week_day) {
+            case 1:
+                $week_day = 'mon';
+                break;
+            case 2:
+                $week_day = 'tue';
+                break;
+            case 3:
+                $week_day = 'wed';
+                break;
+            case 4:
+                $week_day = 'thu';
+                break;
+            case 5:
+                $week_day = 'fri';
+                break;
+            case 6:
+                $week_day = 'sat';
+                break;
+            case 7:
+                $week_day = 'sun';
+                break;
+        }
+
+        $relation_row = RelationsModel::where('user_id', $id)->where('door_id', $door_id)->first();
+
+        return view('mio_manage_door', ['door' => $door, 'relation_row' => $relation_row, 'week_day' => $week_day]);
     }
 
     public function invokeSelectUser($door)
@@ -88,6 +118,14 @@ class HomeController extends Controller
         $door_id = DoorsModel::where('door_name', $door)->value('id');
         $users = RelationsModel::where('door_id', $door_id)->where('role_id', RolesModel::where('name', 'user')->value('id'))->get();
         return view('mio_select_user', ['door' => $door, 'users' => $users]);
+    }
+
+    public function openPseudo($door)
+    {
+        if (RelationsModel::where('door_id', DoorsModel::where('door_name', $door)->value('id'))->where('user_id', Auth::id())->get()->count() < 1) {
+            return redirect('/home');
+        }
+        return redirect("/home/$door");
     }
 
     public function open ($door)

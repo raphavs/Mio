@@ -25,7 +25,7 @@
         <div class="form-group row">
             <label for="device" class="col-md-5 my-col-form-label text-md-right">{{ __('Device:') }}</label>
             <div class="col-md-4 col-lg-3">
-                <input type="number" class="form-control" id="device" placeholder="ID of your Device..." readonly>
+                <input type="number" class="form-control" id="device" placeholder="ID of your Device..." disabled>
             </div>
         </div>
         <div class="form-group row">
