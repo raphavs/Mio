@@ -12,7 +12,7 @@
 
         <!-- Two Column Section Doors-->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>In this overview you can see all available doors, no matter whether you are user or client. If you choose
@@ -27,7 +27,7 @@
         <hr>
         <!-- Two Column Section Doors-->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>If you want to add a new door you get this view where you can give it a name and and you have to fill in the id of your device.</p>
@@ -41,7 +41,7 @@
         <hr>
         <!-- Two Column Section menu -->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>In menu you can open your door, manage rights for users, add users or see the transactions in a protocol. Indeed you can't see the buttons for manage rights and add user if you are a user and not a client. At the top you see the chosen door.</p>
@@ -55,7 +55,7 @@
         <hr>
         <!-- Two Column Section protocol -->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>If you choose "see Transactions" you get a view about who opened the door at which time.
@@ -70,7 +70,7 @@
         <hr>
         <!-- Two Column Section AccessRight -->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>If you choose "add User" you can add an user to the chosen door. Generally the new user gets all rights.</p>
@@ -84,7 +84,7 @@
         <hr>
         <!-- Two Column Section user -->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>If you choose "manage Rights" you get an overwiew about all users who have access to this door.
@@ -99,7 +99,7 @@
         <hr>
         <!-- Two Column Section rights-->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>Here you can add whether your user get the Access Right and the right to see the whole protocol or not.</p>
@@ -113,7 +113,7 @@
         <hr>
         <!-- Two Column Section AccessRight -->
         <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
-            <div class="row">
+            <div class="row my-welcome-p-size">
                 <div class="col-lg-7 col-md-6 col-12 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center">
                         <p>If you give the user the Access Right you can pick the days and the time you give him access.</p>

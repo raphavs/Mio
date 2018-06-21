@@ -33,23 +33,6 @@
                         <p>As part of the Web Technologies module, we developed a web application that allows you to
                             manage your doors smart.</p>
                     </div>
-                    <div class="col-lg-12 my-about-padding">
-                        <h4 class="my-contact-header-big">Improach</h4>
-                        <br>
-                        <p class="my-contact-header-big">From Germany</p>
-                        <p>
-                            If you are approaching via the B33, follow the signs to Switzerland and the signposts "Mio -
-                            Manage your doors smart".
-                            Coming from the ferry, follow these signs as well.
-                            Once you have crossed 'Seerhein', turn right and follow the signs again.
-                        </p>
-                        <p class="my-contact-header-big">From Switzerland</p>
-                        <p>
-                            If you come from the Community Customs, drive north to 'Singen' and follow before you reach
-                            the motorwaybridge 'Rheinbrücke'
-                            the signposts "Mio - Manage your doors smart".
-                        </p>
-                    </div>
                 </div>
             </div>
         </section>

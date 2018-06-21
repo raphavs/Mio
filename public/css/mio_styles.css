@@ -141,12 +141,12 @@ body {
 }
 
 /* Font-Size Paragraph*/
-.my-welcome-p-size {
+.my-welcome-p-size p {
     font-size: 1.2rem;
     margin-bottom: 0;
 }
 @media screen and (max-width: 500px) {
-    .my-welcome-p-size {
+    .my-welcome-p-size p {
         font-size: 0.9rem;
     }
 }
@@ -185,11 +185,6 @@ body {
     padding-bottom: 2.5vh;
 }
 
-/* Margin für Readmore Button */
-.add-margin {
-    margin-bottom: 3vh;
-}
-
 /* Vertically & Horizontally Center */
 .my-put-things-in-vertically-and-horizontally-center {
     position: relative;
@@ -220,8 +215,7 @@ body {
 
 /* Padding für Logo */
 .logo-footer-padding {
-    padding-top: 3vh;
-    padding-bottom: 1vh;
+    padding: 3vh 0;
 }
 
 /* Font-Size Header Footer */
@@ -296,6 +290,7 @@ body {
 
 /* Put Icons in Center */
 .icons-in-center {
+    padding: 3vh 0;
     margin-right: auto;
     margin-left: auto;
 }
@@ -1451,8 +1446,9 @@ a .disabled {
 
 /* Style (Contact) */
 .my-contact-header-big {
+    font-weight: bold;
     text-decoration: underline;
 }
 .my-contact-header-little {
-    font-size: 15px;
+    font-size: 1.2rem;
 }
