@@ -174,8 +174,9 @@ body {
 }
 
 /* Margin für Sections */
-.my-margin-welcome-section {
-    margin: 10vh 0;
+.my-padding-welcome-section {
+    padding-top: 11vh;
+    padding-bottom: 3vh;
 }
 
 /* Padding für About-Section */
@@ -248,6 +249,28 @@ body {
         font-size: 0.8rem;
     }
 }
+.my-welcome-p-link {
+    color: #ffffff;
+    font-size: 1rem;
+}
+.my-welcome-p-link:hover {
+    color: #f3be29;
+}
+.my-welcome-p-link:focus {
+    color: #f3be29;
+    font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .my-welcome-p-link {
+        font-size: 0.8rem;
+    }
+}
+.my-welcome-a-link:hover {
+    text-decoration: none;
+}
+.my-welcome-a-link:focus {
+    text-decoration: none;
+}
 
  /* Margin für Paragraphen in Footer */
 .my-footer-paragraph-margin {
@@ -282,6 +305,21 @@ body {
     font-size: 1.2rem;
     padding-bottom: 1rem;
     margin-bottom: 0;
+}
+
+/* Margin für Terms of Use */
+.my-terms-of-use-style {
+    text-align: center;
+    padding-top: 11vh;
+    padding-bottom: 3vh;
+}
+@media screen and (max-width: 500px) {
+    .my-terms-of-use-style {
+        text-align: left;
+    }
+}
+.my-terms-of-use-list-style {
+    list-style: none;
 }
 
 /* Style Header Logging */
@@ -323,6 +361,11 @@ body {
     color: #226693;
     font-size: 1.2rem;
     font-weight: bold;
+}
+a .disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.65;
 }
 @media screen and (max-width: 500px){
     .my-btn-link {
@@ -1406,17 +1449,10 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
 }
 
-/* Style (Information) */
-.adresse {
-    text-decoration: underline
+/* Style (Contact) */
+.my-contact-header-big {
+    text-decoration: underline;
 }
-#contact {
-    font-size: 15px
-}
-.anfahrt {
-    text-decoration: underline
-}
-#impressum {
-    text-decoration: none;
-    color:white
+.my-contact-header-little {
+    font-size: 15px;
 }

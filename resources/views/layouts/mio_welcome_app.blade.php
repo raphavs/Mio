@@ -48,10 +48,6 @@
                    href="{{ route('welcome.info') }}">Information</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ (\Request::route()->getName() == 'welcome.people') ? 'active-site' : '' }}"
-                   href="{{ route('welcome.people') }}">People</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {{ (\Request::route()->getName() == 'welcome.contact') ? 'active-site' : '' }}"
                    href="{{ route('welcome.contact') }}">Contact</a>
             </li>
@@ -82,22 +78,16 @@
         <div class="row text-center">
             <div class="col-lg-4">
                 <hr class="my-hr-style">
-                <h5 class="my-footer-header">Contact-do not interact. It's a webproject.</h5>
+                <h5 class="my-footer-header">Motivation</h5>
                 <hr class="my-hr-style">
-                <div class="my-footer-paragraph-margin">
-                    <p>07531-954682</p>
-                    <p>mio@managedoors.de</p>
-                    <p> Alfred-Wachtel-Str. 8</p>
-                    <p>78462 Konstanz</p>
+                <div class="my-footer-paragraph-margin offset-1 col-10">
+                    <p>We, the developers of Mio, are studying Business Computer Science at the HTWG in Constance.</p>
+                    <p>As part of the Web Technologies module, we developed a web application that allows you to manage your doors smart.</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="logo-footer-padding">
                     <img src="/Image/Mio_Logo.jpg" class="rounded my-logo-size" alt="Logo">
-                </div>
-                <div class="my-footer-paragraph-margin">
-                    <p>Privacy Policy</p>
-                    <p><a id="impressum" href="{{ route('welcome.contact') }}">Imprint</a></p>
                 </div>
                 <div class="icons-in-center text-center">
                     <a href="#" class="fa fa-github fa-2x"></a>
@@ -113,11 +103,10 @@
                 <hr class="my-hr-style">
                 <h5 class="my-footer-header">Information</h5>
                 <hr class="my-hr-style">
-                <div class="my-footer-paragraph-margin">
-                    <p>Charge</p>
-                    <p>Devices</p>
-                    <p>Security</p>
-                    <p>Terms of Use</p>
+                <div class="my-footer-paragraph-margin offset-1 col-10">
+                    <a class="my-welcome-a-link" href="/information"><p class="my-welcome-p-link">Information about Mio</p></a>
+                    <a class="my-welcome-a-link" href="/contact"><p class="my-welcome-p-link">Imprint</p></a>
+                    <a class="my-welcome-a-link" href="/contact#mio-data-privacy"><p class="my-welcome-p-link">Data Privacy Statement</p></a>
                 </div>
             </div>
         </div>

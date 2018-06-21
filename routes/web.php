@@ -14,9 +14,8 @@
 Auth::routes();
 
 Route::get('/', 'WelcomeController@invokeWelcome')->name('mio.welcome');
-Route::get('/information', 'WelcomeController@invokeInformation')->name('welcome.info');
-Route::get('/people', 'WelcomeController@invokePeople')->name('welcome.people');
 Route::get('/features', 'WelcomeController@invokeFeatures')->name('welcome.features');
+Route::get('/information', 'WelcomeController@invokeInformation')->name('welcome.info');
 Route::get('/contact', 'WelcomeController@invokeContact')->name('welcome.contact');
 
 Route::get('/login', 'WelcomeController@invokeLogin')->name('login');

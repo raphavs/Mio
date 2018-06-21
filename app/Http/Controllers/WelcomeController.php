@@ -8,12 +8,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-
 
 class WelcomeController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('guest');
@@ -24,19 +21,19 @@ class WelcomeController extends Controller
         return view('mio_welcome');
     }
 
+    public function invokeFeatures()
+    {
+        return view('mio_features');
+    }
+
     public function invokeInformation()
     {
         return view('mio_information');
     }
 
-    public function invokePeople()
+    public function invokeContact()
     {
-        return view('mio_people');
-    }
-
-    public function invokeFeatures()
-    {
-        return view('mio_features');
+        return view('mio_contact_and_data_privacy');
     }
 
     public function invokeLogin()
@@ -52,10 +49,6 @@ class WelcomeController extends Controller
     public function invokeMail()
     {
         return view('mio_email');
-    }
-
-    public function invokeContact(){
-        return view('mio_contact');
     }
 
 }
