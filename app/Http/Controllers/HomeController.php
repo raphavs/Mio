@@ -31,12 +31,18 @@ class HomeController extends Controller
         $id = Auth::id();
         $doors = RelationsModel::where('user_id', $id)->get();
 
-        return view('mio_home', ['doors' => $doors]);
+        return view('mio_home', ['doors' => $doors, 'error' => 'okay']);
     }
 
     public function addDoor(Request $request)
     {
         $doorname = $request->input('doorname');
+
+        if (DoorsModel::where('door_name', $doorname)->get()->count() > 0) {
+            $id = Auth::id();
+            $doors = RelationsModel::where('user_id', $id)->get();
+            return view('mio_home', ['doors' => $doors, 'error' => 'already-exists']);
+        }
 
         $new_door = new DoorsModel();
         $new_door->door_name = $doorname;

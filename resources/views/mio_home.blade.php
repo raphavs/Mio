@@ -1,6 +1,27 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
+@if ($error == 'already-exists')
+    <script>
+        window.onload = function ()
+        {
+            $("#div-manage-clients").hide();
+            $("#div-doors").hide();
+            $("#btn-add-door").hide();
+            $("#input-field-doorname").hide();
+            $("#btn-close-add-door").show();
+            $("#div-add-door-form").show();
+            $("#door-already-exists-error").show();
+            setTimeout(function()
+                {
+                    $("#door-already-exists-error").hide();
+                    $("#input-field-doorname").show();
+                },
+                3000
+            );
+        };
+    </script>
+@endif
 <div class="container-fluid">
     <div class="row my-position-btns-home">
         <div class="col-12 col-md-6 my-position-btn-door-home">
@@ -17,7 +38,10 @@
     <div id="div-add-door-form" class="my-add-door-card-body my-add-door-position">
         <form action="/home" method="post">
             @csrf
-            <div class="form-group row">
+            <div id="door-already-exists-error" class="my-error-margin-half">
+                <p class="my-error-font">Doorname already exists!</p>
+            </div>
+            <div id="input-field-doorname" class="form-group row">
                 <label for="new-door-id" class="col-md-5 my-col-form-label text-md-right">{{ __('Doorname:') }}</label>
                 <div class="col-md-4 col-lg-3">
                     <input type="text" class="form-control" id="new-door-id" name="doorname" autocomplete="off">
@@ -52,6 +76,7 @@
 <script type="text/javascript">
     $("#div-add-door-form").hide();
     $("#btn-close-add-door").hide();
+    $("#door-already-exists-error").hide();
 
     $("#btn-add-door").click(function () {
         $("#div-manage-clients").hide();

@@ -122,10 +122,10 @@
                 </div>
             </form>
             <form id="add-existing-user" action="/home/{{ $door }}" method="post">
-                <div id="not-error" class="adduser-error-margin-half">
-                    <p class="adduser-error-font">User does not exist!</p>
-                </div>
                 @csrf
+                <div id="not-error" class="my-error-margin-half">
+                    <p class="my-error-font">User does not exist!</p>
+                </div>
                 <div id="div-existing-email" class="form-group row">
                     <label for="email" class="col-md-4 col-lg-4 my-col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                     <div class="col-md-6 col-lg-5">
@@ -137,8 +137,8 @@
                         @endif
                     </div>
                 </div>
-                <div id="wrong-error" class="adduser-error-margin-half">
-                    <p class="adduser-error-font">Wrong password!</p>
+                <div id="wrong-error" class="my-error-margin-half">
+                    <p class="my-error-font">Wrong password!</p>
                 </div>
                 <div id="div-existing-password" class="form-group row">
                     <label for="password" class="col-md-4 col-lg-4 my-col-form-label text-md-right">{{ __('Password') }}</label>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div id="already-error" class="adduser-error-margin">
-                    <p class="adduser-error-font">User is already User of this door!</p>
+                    <p class="my-error-font">User is already User of this door!</p>
                 </div>
                 <div class="my-margin-change-blade-btn text-center">
                     <button class="btn btn-change" onclick="showNew()">{{ __('Add new User') }}</button>

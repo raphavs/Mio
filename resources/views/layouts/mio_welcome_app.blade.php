@@ -91,10 +91,10 @@
                 </div>
                 <div class="icons-in-center text-center">
                     <a href="#" class="fa fa-github fa-2x"></a>
-                    <a href="#" class="fa fa-xing fa-2x"></a>
+                    <!-- <a href="#" class="fa fa-xing fa-2x"></a> -->
                     <a href="#" class="fa fa-linkedin fa-2x"></a>
                     <a href="#" class="fa fa-instagram fa-2x"></a>
-                    <a href="#" class="fa fa-facebook fa-2x"></a>
+                    <!-- <a href="#" class="fa fa-facebook fa-2x"></a> -->
                     <a href="#" class="fa fa-twitter fa-2x"></a>
                     <a href="#" class="fa fa-snapchat fa-2x"></a>
                 </div>
