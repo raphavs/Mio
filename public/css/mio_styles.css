@@ -80,9 +80,16 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(34, 102, 147, 0.25);
 }
 
-/* Hintergrundfarbe NavBar */
+/* Style NavBar */
 .my-navbar-bg {
-    background-color: #191b1d
+    background-color: #191b1d;
+}
+.my-sticky-top {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 /* Header */
@@ -419,7 +426,7 @@ body {
     top: 0;
     left: 0;
     border-top: 130px solid #d9d9d9;
-    border-left: 150px solid transparent;
+    border-left: 170px solid transparent;
     width: 0;
 }
 .my-user-header-right-corner {
@@ -429,8 +436,16 @@ body {
     top: 0;
     right: 0;
     border-top: 130px solid #d9d9d9;
-    border-right: 150px solid transparent;
+    border-right: 170px solid transparent;
     width: 0;
+}
+@media screen and (max-width: 500px) {
+    .my-user-header-left-corner {
+        border-left: 120px solid transparent;
+    }
+    .my-user-header-right-corner {
+        border-right: 120px solid transparent;
+    }
 }
 
 /* fixed Navbar % Header (Home) */
@@ -622,28 +637,6 @@ body {
     text-decoration: none;
 }
 
-/* Style für Open Button (Home/ManageDoors) */
-.my-btn-open {
-    display: inline-block;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding: 3vh 0;
-    font-size: 2.5rem;
-    line-height: 1.5;
-    border-radius: 0.5rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    width: 100%;
-}
-.my-btn-open.disabled, .my-btn-open:disabled {
-    opacity: 0.65;
-}
-
 /* Margin für Links (Home/ManageDoors) */
 .my-margin-for-links-managedoor {
     margin-top: 7vh;
@@ -655,15 +648,21 @@ body {
     color: #191b1d;
     background-color: #f3be29;
     border: #f3be29 solid medium;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 3vh 0;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    width: 100%;
 }
 .btn-open:hover {
     color: #f3be29;
-    background-color: #226693;
-    border-color: #226693;
+    background-color: #ffffff;
+    border-color: #f3be29;
     text-decoration: none;
 }
 .btn-open:focus {
-    box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
 }
 
 /* Margin für Inputs (Home/ManageDoors/Transactions) */

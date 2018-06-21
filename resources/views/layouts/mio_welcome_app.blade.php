@@ -10,6 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/mio_styles.css">
+
+    <!-- Social Media Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Optional JavaScript -->
@@ -21,7 +23,7 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-xl my-navbar-font my-navbar-bg sticky-top">
+<nav class="navbar navbar-expand-xl my-navbar-font my-navbar-bg my-sticky-top">
     <a href="{{ route('mio.welcome') }}">
         <img src="/Image/Mio_Logo_NavBar.jpg" class="rounded my-logo-size" alt="Logo">
     </a>

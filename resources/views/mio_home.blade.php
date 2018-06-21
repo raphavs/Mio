@@ -9,7 +9,7 @@
     <form id="div-manage-clients" class="col-12 col-md-6 my-position-btn-admin-home" action="/admin">
         <button class="btn btn-change" type="submit" @if (!\Illuminate\Support\Facades\Auth::user()->hasRole('admin')) disabled @endif>Manage Clients</button>
     </form>
-    <div class="col-12 col-md-6 my-position-btn-door-home">
+    <div class="col-12 text-center">
         <button id="btn-close-add-door" class="btn btn-change">Close Form</button>
     </div>
 </div>

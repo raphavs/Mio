@@ -44,9 +44,9 @@ Route::get('/home/{door}/adduser', 'AddUserController@addUser')->name('home.mana
 Route::post('home/{door}', 'AddUserController@storeUser')->name('home.managedoor.storeuser');
 
 Route::get('/admin', 'AdminController@manage')->name('home.admin')->middleware('checkRole:admin');
-Route::post('/admin', 'AdminController@deleteUser')->name('home.admin.deleteuser');
+Route::post('/admin', 'AdminController@deleteUser')->name('home.admin.deleteuser')->middleware('checkRole:admin');
 Route::get('/admin/{user}', 'AdminController@manageClient')->name('home.admin.client')->middleware('checkRole:admin');
-Route::post('/admin/{user}', 'AdminController@delete')->name('home.admin.client.deletedoor');
+Route::post('/admin/{user}', 'AdminController@delete')->name('home.admin.client.deletedoor')->middleware('checkRole:admin');
 
 Route::get('/open/{door}', 'HomeController@openPseudo')->name('home.managedoor.open.pseudo');
 Route::post('/open/{door}', 'HomeController@open')->name('home.managedoor.open');

@@ -23,7 +23,7 @@
     <div class="offset-1 col-10 offset-lg-4 col-lg-4 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
         <form action="/open/{{ $door }}" method="post">
             @csrf
-            <button type="submit" class="my-btn-open btn-open"
+            <button type="submit" class="btn btn-open"
                 @if((date('H:i:s') < $relation_row->from_time or date('H:i:s') > $relation_row->to_time) or $relation_row->$week_day == 0) disabled @endif>
                 @if((date('H:i:s') < $relation_row->from_time or date('H:i:s') > $relation_row->to_time) or $relation_row->$week_day == 0) NO RIGHT @else Open @endif
             </button>
