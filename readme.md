@@ -70,5 +70,3 @@ Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
  schlechten Augen alles zu erkennen.
  Das Wichtige ist farblich hevorgehoben, wie z.B. der Open Button in gelb.
  So weiß auch jeder, der technisch keine Kenntnisse besitzt, worauf es ankommt.
-
-
