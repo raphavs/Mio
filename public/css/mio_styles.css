@@ -504,7 +504,7 @@ a .disabled {
 }
 @media screen and (min-width: 768px) {
     .my-position-btns-home {
-        justify-content: normal;
+        justify-content: initial;
     }
 }
 .my-position-btn-door-home {
@@ -816,11 +816,18 @@ a .disabled {
 }
 
 /* Text Style NO ROWS FOUND (Home/ManageDoors/Transactions) */
-.my-color-grey {
+.my-no-rows-found-font {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 1.7rem;
     color: #d9d9d9;
+    font-size: 1rem;
     font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .my-no-rows-found-font {
+        margin-top: 1.2rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* Media Transactions */

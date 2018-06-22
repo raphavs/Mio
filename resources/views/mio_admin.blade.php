@@ -38,6 +38,9 @@
                 </tr>
                 </thead>
                 <tbody>
+                @if ($clients->count() < 1)
+                    <p class="col-12 my-no-rows-found-font">$$$ NO CLIENTS FOUND $$$</p>
+                @endif
                 @foreach($clients as $c)
                     <tr class="d-flex">
                         <td scope="row" class="col-md-2 col-2">{{ $c->id }}</td>
@@ -61,6 +64,9 @@
                 </tr>
                 </thead>
                 <tbody>
+                @if ($users->count() < 1)
+                    <p class="col-12 my-no-rows-found-font">$$$ NO USERS FOUND $$$</p>
+                @endif
                 @foreach($users as $u)
                     <form id="formUser{{ $u->id }}" action="/admin" method="post"></form>
                     <input form="formUser{{ $u->id }}" type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -22,6 +22,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if ($doors->count() < 1)
+                        <p class="col-12 my-no-rows-found-font">$$$ NO DOORS FOUND $$$</p>
+                    @endif
                     @foreach($doors as $d)
                         <form id="formDoor{{ $d->door->id }}" action="/admin/{{ $user_row->name }}"
                               method="post"></form>

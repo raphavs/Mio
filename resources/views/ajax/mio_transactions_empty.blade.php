@@ -1,1 +1,1 @@
-<p class="col-12 my-color-grey">$$$ NO ROWS FOUND $$$</p>
+<p class="col-12 my-no-rows-found-font">$$$ NO TRANSACTIONS FOUND $$$</p>
