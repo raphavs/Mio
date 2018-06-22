@@ -64,6 +64,9 @@
     </div>
     <div id="div-doors" class="my-doors-position">
         <ul class="navbar-nav my-doors-links">
+            @if ($doors->count() < 1)
+                <p class="col-12 my-no-rows-found-font">$$$ NO DOORS FOUND $$$</p>
+            @endif
             @foreach($doors as $v)
                 <li class="nav-item">
                     <a class="nav-link"
