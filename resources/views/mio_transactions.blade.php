@@ -88,30 +88,28 @@
                 </div>
             </form>
         </div>
-        <div class="container-fluid">
-            <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10">
-                <div class="row">
-                    <table class="table my-table-fixed">
-                        <thead>
+        <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10">
+            <div class="row">
+                <table class="table my-table-fixed">
+                    <thead>
+                    <tr>
+                        <th class="col-2">ID</th>
+                        <th class="col-4">Username</th>
+                        <th class="col-3">Date</th>
+                        <th class="col-3">Time</th>
+                    </tr>
+                    </thead>
+                    <tbody id="my-agile-tbody">
+                    @foreach($transactions as $v)
                         <tr>
-                            <th class="col-2">ID</th>
-                            <th class="col-4">Username</th>
-                            <th class="col-3">Date</th>
-                            <th class="col-3">Time</th>
+                            <td class="col-2">{{ $v->id }}</td>
+                            <td class="col-4">{{ $v->user_name }}</td>
+                            <td class="col-3">{{ $v->entrance_date }}</td>
+                            <td class="col-3">{{ $v->entrance_time }}</td>
                         </tr>
-                        </thead>
-                        <tbody id="my-agile-tbody">
-                        @foreach($transactions as $v)
-                            <tr>
-                                <td class="col-2">{{ $v->id }}</td>
-                                <td class="col-4">{{ $v->user_name }}</td>
-                                <td class="col-3">{{ $v->entrance_date }}</td>
-                                <td class="col-3">{{ $v->entrance_time }}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
