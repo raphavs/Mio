@@ -1358,7 +1358,7 @@ a .disabled {
 }
 @media screen and (max-width: 500px) {
     .my-admin-table-fixed tbody {
-        max-height: 10rem;
+        max-height: 15rem;
     }
     .my-admin-table-fixed thead, .my-admin-table-fixed tbody, .my-admin-table-fixed tr, .my-admin-table-fixed td, .my-admin-table-fixed th {
         font-size: 0.7rem;
@@ -1447,6 +1447,19 @@ a .disabled {
 }
 .btn-delete-client:focus {
     box-shadow: 0 0 0 0.2rem rgba(217, 217, 217, 0.25);
+}
+
+/* Style Table NO ROWS Found (Admin/ManageClients) */
+.my-no-rows-found-font-table {
+    text-align: center;
+    color: #d9d9d9;
+    font-size: 1rem;
+    font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .my-no-rows-found-font-table {
+        font-size: 0.8rem;
+    }
 }
 
 /* Style (Contact) */

@@ -23,7 +23,7 @@
                     </thead>
                     <tbody>
                     @if ($doors->count() < 1)
-                        <p class="col-12 my-no-rows-found-font">$$$ NO DOORS FOUND $$$</p>
+                        <tr><td class="col-12 my-no-rows-found-font-table">$$$ NO DOORS FOUND $$$</td></tr>
                     @endif
                     @foreach($doors as $d)
                         <form id="formDoor{{ $d->door->id }}" action="/admin/{{ $user_row->name }}"

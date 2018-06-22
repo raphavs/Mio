@@ -40,7 +40,7 @@ class AddUserController extends Controller
         if ($request->has('name')) {
             $this->addNewUser($request, $door);
         } else {
-            $this->addExistingUser($request, $door);
+            return $this->addExistingUser($request, $door);
         }
         return redirect("/home/$door");
     }
@@ -87,7 +87,7 @@ class AddUserController extends Controller
     {
         $hashedPassword = User::where('email', $request->input('email'))->value('password');
         if ($hashedPassword == null) {
-            return view ('mio_add_user', ['door' => $door, 'error' => 'not-exists']);
+            return view ('mio_add_user', ['door' => $door, 'error' => 'user-not-exists']);
         }
 
         if (!Hash::check($request->input('password'), $hashedPassword)) {
@@ -99,7 +99,7 @@ class AddUserController extends Controller
         $is_user_already_user = RelationsModel::where('door_id', $door_id)->where('user_id', $existing_user_id)->get();
 
         if ($is_user_already_user->count() > 0) {
-            return view ('mio_add_user', ['door' => $door, 'error' => 'already-exists']);
+            return view ('mio_add_user', ['door' => $door, 'error' => 'user-already-exists']);
         }
 
         $new_relation = new RelationsModel();
@@ -118,6 +118,8 @@ class AddUserController extends Controller
         $new_relation->from_time = '00:00:00';
         $new_relation->to_time = '23:59:00';
         $new_relation->save();
+
+        return redirect("/home/$door");
 
     }
 

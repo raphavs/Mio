@@ -41,7 +41,7 @@ class HomeController extends Controller
         if (DoorsModel::where('door_name', $doorname)->get()->count() > 0) {
             $id = Auth::id();
             $doors = RelationsModel::where('user_id', $id)->get();
-            return view('mio_home', ['doors' => $doors, 'error' => 'already-exists']);
+            return view('mio_home', ['doors' => $doors, 'error' => 'door-already-exists']);
         }
 
         $new_door = new DoorsModel();

@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ (\Request::route()->getName() == 'mio.home') ? 'active-site' : '' }}"
+                    <a class="nav-link @if (\Request::route()->getName() == 'mio.home' or \Request::route()->getName() == 'home.add.door') active-site @endif"
                        href="{{ route('mio.home') }}">Home</a>
                 </li>
                 @if (\Request::route()->getName() == 'home.admin' or \Request::route()->getName() == 'home.admin.client')
@@ -45,7 +45,8 @@
                 @endif
                 @if (\Request::route()->getName() == 'home.managedoor' or \Request::route()->getName() == 'home.managedoor.transactions'
                 or \Request::route()->getName() == 'home.managedoor.adduser' or \Request::route()->getName() == 'home.managedoor.selectuser'
-                or \Request::route()->getName() == 'home.managedoor.selectuser.rights' or \Request::route()->getName() == 'home.managedoor.selectuser.rights.ext')
+                or \Request::route()->getName() == 'home.managedoor.selectuser.rights' or \Request::route()->getName() == 'home.managedoor.selectuser.rights.ext'
+                or \Request::route()->getName() == 'home.managedoor.storeuser')
                     <li class="nav-item">
                         <a class="nav-link {{ (\Request::route()->getName() == 'home.managedoor') ? 'active-site' : '' }}"
                            href="/home/{{ $door }}">Manage Door</a>

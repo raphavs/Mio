@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                 @if ($clients->count() < 1)
-                    <p class="col-12 my-no-rows-found-font">$$$ NO CLIENTS FOUND $$$</p>
+                    <tr><td class="col-12 my-no-rows-found-font-table">$$$ NO CLIENTS FOUND $$$</td></tr>
                 @endif
                 @foreach($clients as $c)
                     <tr class="d-flex">
@@ -65,7 +65,7 @@
                 </thead>
                 <tbody>
                 @if ($users->count() < 1)
-                    <p class="col-12 my-no-rows-found-font">$$$ NO USERS FOUND $$$</p>
+                    <tr><td class="col-12 my-no-rows-found-font-table">$$$ NO USERS FOUND $$$</td></tr>
                 @endif
                 @foreach($users as $u)
                     <form id="formUser{{ $u->id }}" action="/admin" method="post"></form>

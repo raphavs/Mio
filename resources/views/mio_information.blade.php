@@ -1,4 +1,5 @@
 @extends('layouts.mio_welcome_app')
+
 @section('content')
 <!-- Information about Mio -->
 <div class="container-fluid">

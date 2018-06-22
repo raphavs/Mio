@@ -14,21 +14,12 @@
                     <h4 class="my-rights-innerbox my-rights-font col-lg-7 col-md-7">Access Right:</h4>
                     <div class="my-rights-innerbox my-toggles-in-center col-lg-3 col-md-3">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            @if ($access_right == 0)
-                                <label class="btn btn-secondary">
-                                    <input type="radio" value="true" name="access_option" id="access_option1">ON
-                                </label>
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" value="false" name="access_option" id="access_option2">OFF
-                                </label>
-                            @else
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" value="true" name="access_option" id="access_option1">ON
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" value="false" name="access_option" id="access_option2">OFF
-                                </label>
-                            @endif
+                            <label class="btn btn-secondary @if ($access_right == 1) active @endif">
+                                <input type="radio" value="true" name="access_option" id="access_option1">ON
+                            </label>
+                            <label class="btn btn-secondary @if ($access_right == 0) active @endif">
+                                <input type="radio" value="false" name="access_option" id="access_option2">OFF
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -36,21 +27,12 @@
                     <h4 class="my-rights-innerbox my-rights-font col-lg-7 col-md-7">Protocol Right:</h4>
                     <div class="my-rights-innerbox my-toggles-in-center col-lg-3 col-md-3">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            @if ($protocol_right == 0)
-                                <label class="btn btn-secondary">
-                                    <input type="radio" value="true" name="protocol_option" id="protocol_option1">ON
-                                </label>
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" value="false" name="protocol_option" id="protocol_option2">OFF
-                                </label>
-                            @else
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" value="true" name="protocol_option" id="protocol_option1">ON
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" value="false" name="protocol_option" id="protocol_option2">OFF
-                                </label>
-                            @endif
+                            <label class="btn btn-secondary @if ($protocol_right == 1) active @endif">
+                                <input type="radio" value="true" name="protocol_option" id="protocol_option1">ON
+                            </label>
+                            <label class="btn btn-secondary @if ($protocol_right == 0) active @endif">
+                                <input type="radio" value="false" name="protocol_option" id="protocol_option2">OFF
+                            </label>
                         </div>
                     </div>
                 </div>

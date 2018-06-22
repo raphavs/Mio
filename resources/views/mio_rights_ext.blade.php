@@ -17,71 +17,43 @@
                     <div id="checkboxes-id" class="my-centered-checkboxes">
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($mon == 1)
-                                    <input type="checkbox" class="custom-control-input" name="MON" id="customCheck1" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="MON" id="customCheck1">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="MON" id="customCheck1" @if ($mon == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck1">MON</label>
                             </div>
                         </div>
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($tue == 1)
-                                    <input type="checkbox" class="custom-control-input" name="TUE" id="customCheck2" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="TUE" id="customCheck2">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="TUE" id="customCheck2" @if ($tue == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck2">TUE</label>
                             </div>
                         </div>
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($wed == 1)
-                                    <input type="checkbox" class="custom-control-input" name="WED" id="customCheck3" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="WED" id="customCheck3">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="WED" id="customCheck3" @if ($wed == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck3">WED</label>
                             </div>
                         </div>
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($thu == 1)
-                                    <input type="checkbox" class="custom-control-input" name="THU" id="customCheck4" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="THU" id="customCheck4">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="THU" id="customCheck4" @if ($thu == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck4">THU</label>
                             </div>
                         </div>
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($fri == 1)
-                                    <input type="checkbox" class="custom-control-input" name="FRI" id="customCheck5" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="FRI" id="customCheck5">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="FRI" id="customCheck5" @if ($fri == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck5">FRI</label>
                             </div>
                         </div>
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($sat == 1)
-                                    <input type="checkbox" class="custom-control-input" name="SAT" id="customCheck6" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="SAT" id="customCheck6">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="SAT" id="customCheck6" @if ($sat == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck6">SAT</label>
                             </div>
                         </div>
                         <div class="my-checkboxes">
                             <div class="custom-control custom-checkbox">
-                                @if ($sun == 1)
-                                    <input type="checkbox" class="custom-control-input" name="SUN" id="customCheck7" checked>
-                                @else
-                                    <input type="checkbox" class="custom-control-input" name="SUN" id="customCheck7">
-                                @endif
+                                <input type="checkbox" class="custom-control-input" name="SUN" id="customCheck7" @if ($sun == 1) checked @endif>
                                 <label class="custom-control-label" for="customCheck7">SUN</label>
                             </div>
                         </div>
@@ -116,47 +88,5 @@
         </form>
     </div>
 </div>
-<script type="text/javascript">
-    $("#checkboxes-error").hide();
-    $("#time-value-from").text($("#my-from-range").val().toString() + " h");
-    $("#time-value-to").text($("#my-to-range").val().toString() + " h");
-
-    $("#my-from-range").on("input", function()
-    {
-        if ($(this).val() >= parseInt($("#my-to-range").val())) {
-            $(this).val(parseInt($("#my-to-range").val()) - 1);
-        }
-        $("#time-value-from").text($(this).val().toString() + " h");
-    });
-
-    $("#my-to-range").on("input", function()
-    {
-        if ($(this).val() <= parseInt($("#my-from-range").val())) {
-            $(this).val(parseInt($("#my-from-range").val()) + 1);
-        }
-        $("#time-value-to").text($(this).val().toString() + " h");
-    });
-
-    function checkValidation()
-    {
-        if ($(":checkbox:checked").length <= 0) {
-            showCheckboxError();
-            return false;
-        }
-        return true;
-    }
-
-    function showCheckboxError()
-    {
-        $("#checkboxes-id").hide();
-        $("#checkboxes-error").show();
-        setTimeout(function()
-            {
-                $("#checkboxes-error").hide();
-                $("#checkboxes-id").show();
-            },
-            3000
-        );
-    }
-</script>
+<script type="text/javascript" src="/js/mioRightsExt.js"></script>
 @endsection

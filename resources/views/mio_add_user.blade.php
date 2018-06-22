@@ -1,72 +1,6 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-@if ($error == 'not-exists')
-    <script>
-        window.onload = function ()
-        {
-            $("#add-new-user").hide();
-            $("#wrong-error").hide();
-            $("#already-error").hide();
-            $("#div-existing-email").hide();
-            $("#add-btn").hide();
-            $("#add-existing-user").show();
-            $("#not-error").show();
-            setTimeout(function()
-                {
-                    $("#not-error").hide();
-                    $("#div-existing-email").show();
-                    $("#add-btn").show();
-                },
-                3000
-            );
-        };
-    </script>
-@elseif ($error == 'wrong-password')
-    <script>
-        window.onload = function ()
-        {
-            $("#add-new-user").hide();
-            $("#already-error").hide();
-            $("#not-error").hide();
-            $("#div-existing-password").hide();
-            $("#add-btn").hide();
-            $("#add-existing-user").show();
-            $("#wrong-error").show();
-            setTimeout(function()
-                {
-                    $("#wrong-error").hide();
-                    $("#div-existing-password").show();
-                    $("#add-btn").show();
-                },
-                3000
-            );
-        };
-    </script>
-@elseif ($error == 'already-exists')
-    <script>
-        window.onload = function ()
-        {
-            $("#add-new-user").hide();
-            $("#not-error").hide();
-            $("#wrong-error").hide();
-            $("#div-existing-email").hide();
-            $("#div-existing-password").hide();
-            $("#add-btn").hide();
-            $("#add-existing-user").show();
-            $("#already-error").show();
-            setTimeout(function()
-                {
-                    $("#already-error").hide();
-                    $("#div-existing-email").show();
-                    $("#div-existing-password").show();
-                    $("#add-btn").show();
-                },
-                5000
-            );
-        };
-    </script>
-@endif
 <div class="container-fluid">
     <div class="my-adduser-content-center">
         <h1 class="my-doors-header">{{ $door }}</h1>
@@ -168,21 +102,13 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $("#add-existing-user").hide();
-    $("#not-error").hide();
-    $("#wrong-error").hide();
-    $("#already-error").hide();
-
-    function showNew()
-    {
-        $("#add-existing-user").hide();
-        $("#add-new-user").show();
-    }
-    function showExisting()
-    {
-        $("#add-new-user").hide();
-        $("#add-existing-user").show();
-    }
-</script>
+@if ($error == 'user-not-exists')
+    <script type="text/javascript" src="/js/mioUserNotExists.js"></script>
+@elseif ($error == 'wrong-password')
+    <script type="text/javascript" src="/js/mioUserWrongPassword.js"></script>
+@elseif ($error == 'user-already-exists')
+    <script type="text/javascript" src="/js/mioUserAlreadyExists.js"></script>
+@elseif ($error == 'okay')
+    <script type="text/javascript" src="/js/mioAddUser.js"></script>
+@endif
 @endsection

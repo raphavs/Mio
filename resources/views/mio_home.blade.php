@@ -1,27 +1,6 @@
 @extends('layouts.mio_home_app')
 
 @section('content')
-@if ($error == 'already-exists')
-    <script>
-        window.onload = function ()
-        {
-            $("#div-manage-clients").hide();
-            $("#div-doors").hide();
-            $("#btn-add-door").hide();
-            $("#input-field-doorname").hide();
-            $("#btn-close-add-door").show();
-            $("#div-add-door-form").show();
-            $("#door-already-exists-error").show();
-            setTimeout(function()
-                {
-                    $("#door-already-exists-error").hide();
-                    $("#input-field-doorname").show();
-                },
-                3000
-            );
-        };
-    </script>
-@endif
 <div class="container-fluid">
     <div class="row my-position-btns-home">
         <div class="col-12 col-md-6 my-position-btn-door-home">
@@ -76,26 +55,9 @@
         </ul>
     </div>
 </div>
-<script type="text/javascript">
-    $("#div-add-door-form").hide();
-    $("#btn-close-add-door").hide();
-    $("#door-already-exists-error").hide();
-
-    $("#btn-add-door").click(function () {
-        $("#div-manage-clients").hide();
-        $("#div-doors").hide();
-        $("#btn-add-door").hide();
-        $("#btn-close-add-door").show();
-        $("#div-add-door-form").show();
-    });
-
-    $("#btn-close-add-door").click(function () {
-        $("#div-add-door-form").hide();
-        $("#btn-close-add-door").hide();
-        $("#div-manage-clients").show();
-        $("#div-doors").show();
-        $("#btn-add-door").show();
-        $("#new-door-id").val("");
-    });
-</script>
+@if ($error == 'door-already-exists')
+    <script type="text/javascript" src="/js/mioDoorAlreadyExists.js"></script>
+@elseif ($error == 'okay')
+    <script type="text/javascript" src="/js/mioAddDoor.js"></script>
+@endif
 @endsection
