@@ -504,7 +504,7 @@ a .disabled {
 }
 @media screen and (min-width: 768px) {
     .my-position-btns-home {
-        justify-content: normal;
+        justify-content: initial;
     }
 }
 .my-position-btn-door-home {
