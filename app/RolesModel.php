@@ -9,7 +9,7 @@ class RolesModel extends Model
     protected $table = 'roles';
     public $timestamps = false;
 
-    public function relation()
+    public function relations()
     {
         return $this->hasMany(RelationsModel::class, 'role_id');
     }

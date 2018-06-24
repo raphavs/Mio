@@ -75,40 +75,171 @@ Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
  
 ##2. Technische Implementierung
 
-###*Arbeitsauftrag 1, 29.03.2018: Design & CSS*
-Beim Erstellen der Begrüßungsseite haben wir uns zunächst überlegt 
-wie grob der Aufbau der Seite aussehehen soll. Anschließend implementierten 
-wir entsprechend die "index.html"-Datei.
-Zusätzlich erstellten wir eine CSS-Datei "mio_styles.css", um unserer 
-Begrüßungsseite einen eigenen Stil zu verleihen. Dabei hielten wir uns möglichst nahe 
-an unseren Vorlagen aus dem Moodboard und dem Style Tile.
+###*1. Arbeitsauftrag (29.03.2018): Design & CSS*
+Beim Erstellen der Begrüßungsseite haben wir uns zunächst überlegt wie grob der Aufbau 
+unserer Begrüßungsseite aussehehen soll. Anschließend implementierten wir entsprechend 
+die "index.html"-Datei. Zusätzlich erstellten wir eine CSS-Datei "mio_styles.css", 
+um unserer Begrüßungsseite einen eigenen Stil zu verleihen. Dabei hielten wir uns möglichst 
+nahe an unseren Vorlagen aus dem Moodboard und dem Style Tile.
 
-###*Arbeitsauftrag 1, 05.04.2018: Layout & Design*
+###*2. Arbeitsauftrag (05.04.2018): Layout & Design*
 Für diesen Arbeitsauftrag beschäftigten wir uns zunächst intensiv mit Bootstrap.
 Anschließend bauten wir sehr viele Elemente von Bootstrap in unsere Begrüßungsseite 
-ein, um für diese von Anfang an Responsive Design zu implementieren. Da wir jedoch 
+ein, um für diese von Beginn an Responsive Design zu implementieren. Da wir jedoch 
 einen eigenen Stil für unsere Webapplikation haben wollten, überschrieben wir viele 
 von Bootstrap bereitgestellte CSS-Klassen, um ein individuelles Mio-Design zu 
 implementieren.
 
-###*Arbeitsauftrag 1, 12.04.2018: Laravel - PHP*
+###*3. Arbeitsauftrag (12.04.2018): Laravel - PHP*
 Wie in der Übung gemeinsam durchgeführt, erstellte ich später auf meinem eigenen Rechner
 ein Laravel Projekt für unsere Webapplikation. Anschließend integrierten wir 
 unsere "index.html"-Datei und unsere CSS-Datei "mio_styles.css" in das Projekt. 
 Für unsere Begrüßungsseite erstellten wir ein Template "mio_welcome_app.blade.php" und
-erweiterten es mit dem Blade "mio_welcome.blade.php".
-Außerdem erstellten wir eine lokale MySQL-Datenbank und passten die ".env"-Datei 
-entsprechend an. Ergänzend erzeugten wir mit dem Befehl "php artisan make:auth" die Views, 
-Routen und den Controller für die von Laravel bereitgestellte Authentifizierung. 
-Des Weiteren passten wir die Routen in der "web.php"-Datei und eine Methode im 
-entsprechenden Controller an, um unsere Begrüßungsseite auf dem "localhost" aufrufen 
-zu können. Zum Schluss checkte ich das angepasste Projekt in GIT ein, damit meine 
+erweiterten es mit dem Blade "mio_welcome.blade.php".<br>
+Außerdem erstellte jeder von uns auf seinem eigenen Rechner eine lokale MySQL-Datenbank 
+und passte die ".env"-Datei entsprechend an. Ergänzend erzeugten wir mit dem 
+Befehl "php artisan make:auth" die Views, Routen, den Controller, das Model "User.php" und 
+die Tabelle "Users" in unserer Datenbank für die von Laravel bereitgestellte 
+Authentifizierung.<br> 
+Zudem implementierten wir weitere Blades, die alle das Template "mio_welcome_app.blade.php" 
+erweitern, für unseren "Begrüßungsbereich". Für diese Blades implementierten wir einen 
+zusätzlichen Controller "WelcomeController.php", der Funktionen enthält, die die eben 
+erwähnten Blades returnt. Ergänzend passten wir die Routen in der "web.php"-Datei an, 
+um die eben beschriebenen Funktionen im "WelcomeController" aufrufen zu können.<br>
+Zum Schluss checkte ich das angepasste Projekt in GIT ein, damit meine 
 Partnerin Lea es auschecken konnte.
 
-###*Arbeitsauftrag 1, 19.04.2018: Laravel - MVC*
-Für diesen Arbeitsauftrag erstellten wir zunächst ein weiteres 
-Template "mio_home_app.blade.php" sowie weitere Blades, um den Such-Prozess implementieren 
-zu können. Nachdem das Frontend dafür entwickelt war, erstellten wir in unserer Datenbank
-eine Tabelle "Transactions" mit dem Befehl "php artisan make:migration". 
-Zusätzlich erzeugten wir mit dem Befehl "php artisan make:model" ein entsprechendes
-Model, um die Datenbank-Tabelle gemäß dem MVC-Ansatz auf eine Klasse abzubilden.
+###*4. Arbeitsauftrag (19.04.2018) & 5. Arbeitsauftrag (26.04.2018): Laravel - MVC*
+Wir fassen diese beiden Arbeitsaufträge zusammen, da wir diese auch zusammen umgesetzt haben.
+Uns war es wichtig unsere Webapplikation von Beginn an sinnvoll zu strukturieren. Aus diesem
+Grund beschäftigten wir uns schon vorzeitig mit dem MVC-Ansatz sowie mit Migrations.<br>
+Zu Beginn dieses Arbeitsauftrages erstellten wir zunächst ein weiteres 
+Template "mio_home_app.blade.php" sowie weitere Blades, um den Such-Geschäftsprozess 
+implementieren zu können. Nachdem das Frontend dafür entwickelt war, erstellten wir in 
+unserer Datenbank mittels Migrations ("php artisan make:migration") die Tabelle "Transactions". 
+Anschließend erzeugten wir mit dem Befehl "php artisan make:model" ein entsprechendes 
+Model "TransactionsModel.php", um die Datenbank-Tabelle "Transactions" gemäß dem MVC-Ansatz 
+auf eine Klasse abzubilden. Ergänzend erzeugten wir einen Seeder "TransactionsSeeder.php" 
+mit dem Befehl "php artisan make:seeder", implementierten die "run()"-Funktion mit 
+entsprechenden Insert-Statements und führten den Seeder schließlich aus, um unsere 
+Tabelle "Transactions" mit Testdaten zu füllen.<br> 
+Nachdem wir diese Schritte erfolgreich durchgeführt hatten, erstellten wir den 
+Controller "BP_SearchController.php", um die Geschäftslogik für den Such-Geschäftsprozess 
+zu implementieren. In dem eben erwähnten Controller implementierten wir eine 
+Funktion "showTransactions()", in der wir die Daten, die wir im entsprechenden 
+Blade "mio_transactions.blade.php" anzeigen lassen, aus dem "TransactionsModel" holen und 
+in entsprechenden Variablen speichern. Schließlich returnt die Funktion die View 
+beziehungsweise das Blade "mio_transactions.blade.php" und gibt die entsprechenden Variablen mit, 
+damit das Blade die Daten anzeigen kann. Des Weiteren ergänzten wir im selben Controller eine 
+weitere Funktion "filterTransactions()", die aufgerufen wird, wenn der Benutzer in dem 
+Blade "mio_transactions.blade.php" Benutzername und Datum in ein entsprechendes Formular 
+eingegeben hat. Diese Funktion holt sich zunächst die eingegebenen Daten aus dem Request und 
+speichert sie in Variablen. Anschließend holt die Funktion die Daten, in Abhängigkeit der 
+Variablen, aus dem "TransactionsModel" und speichert diese wiederum in entsprechenden Variablen. 
+Schießlich returned die Funktion wieder die selbe View und gibt die entsprechenden  
+Variablen mit.<br> 
+Um das alles zu realisieren, ergänzten wir in der "web.php"-Datei entsprechende 
+Routen, um die eben erwähnten Funktionen im entsprechenden Controller aufrufen zu können.<br> 
+Somit war unsere Webapplikation in der Lage, dem Benutzer eine Suche zu ermöglichen und 
+ihm Daten in Abhängigkeit seiner Eingaben anzeigen zu lassen.
+
+###*6. Arbeitsauftrag (03.05.2018): Laravel - Session Handling, Authentifizierung & Autorisierung*
+Zu Beginn dieses Arbeitsauftrages ergänzten wir unsere Datenbank um weitere Tabellen, die 
+wir für die Realisierung unserer Webapplikation benötigen. Wir erzeugten mittels Migrations
+die Tabellen "Doors", "Roles" und "Relations". Die Tabelle "Doors" speichert Türen, die 
+Tabelle "Roles" speichert die Rollen "Admin", "Client" und "User" und die Tabelle "Relations" 
+speichert die Beziehungen zwischen Benutzern und Türen mit der zugehörigen Rolle und den 
+zugehörigen Rechten.<br> 
+Die Tabelle "Relations" benötigen wir zum einen, da unsere Benutzer ihre Rollen in speziellen 
+Fällen in Abhängigkeit der Tür einnehmen. Präziser, ein Kunde kann in Abhängigkeit der Tür 
+gegebenenfalls auch die Rolle "User" einnehmen. Zum anderen benötigen wir die 
+Tabelle "Relations", um die Rechte eines Benutzers in Abhängigkeit der Tür abspeichern zu 
+können.<br> 
+Des Weiteren ergänzten wir mittels Migrations die von Laravel bereitgestellte Tabelle "Users" 
+um eine Spalte "role_id", um unseren Benutzern eine Rolle zuweisen zu können. Der letzte Satz 
+kann für Verwirrung gesorgt haben, da wir oben beschrieben haben, dass unsere Benutzer ihre 
+Rollen in Abhängigkeit der Tür einnehmen. Deswegen möchte ich diesen Sachverhalt im Folgenden 
+genauer erläutern. Die Rolle unserer Benutzer wird primär in der Tabelle "Users" gespeichert. 
+Da wie ebenfalls oben bereits beschrieben, ein Kunde in Abhängigkeit der Tür 
+gegebenenfalls auch die Rolle "User" einnehmen kann, ist es unabdingbar die Rolle eines 
+Benutzers noch ein zusätzliches Mal in der Tabelle "Relations" in Abhängigkeit der Tür zu 
+speichern.<br> 
+Im nächsten Schritt ergänzten wir wie im vorherigen Arbeitsauftrag entsprechende Models und 
+Seeders für unsere Migrations. In dem Model "RelationsModel" ergänzten wir die 
+Funktionen "door()", "user()" und "role()", um jedem Tupel unserer Tabelle "Relations" 
+eindeutig eine Tür, einen Benutzer und eine Rolle zuweisen zu können. Hierfür verwendeten 
+wir die von Laravel bereitgestellte Funktion "belongsTo()". Zudem ergänzten wir in dem 
+Model "DoorsModel" die Funktionen "relations()" und "transactions()", um jedem Tupel 
+unserer Tabelle "Doors" Relationen und Transaktionen zuweisen zu können. Hierfür verwendeten 
+wir die von Laravel bereitgestellte Funktion "hasMany()". Fortführend ergänzten wir in 
+dem Model "RolesModel" eine Funktion "relations()", in dem Model "TransactionsModel" eine 
+Funktion "door()" und in dem Model "User" die Funktionen "relations()", "role()", 
+"hasRole()" und "authorizeRole()". Die letzten beiden 
+Funktionen dienen dazu, die Rolle eines Benutzers zu überprüfen. Ergänzend passten wir 
+den "RegisterController.php" an. Damit bei der Registrierung eines neuen "Clients" die 
+passende Rolle in der Tabelle "Users" gespeichert wird.<br> 
+Außerdem erstellten wir weitere Blades, die das Template "mio_home_app.blade.php" erweitern 
+sowie weitere Routen in der "web.php"-Datei, um den zweistufigen Eingabe-Geschäftsprozess 
+implementieren zu können.<br> 
+Nachdem wir alle diese Schritte vorgenommen hatten, integrierten wir die von Laravel 
+bereitgestellte Authentifizierung in unsere Webapplikation. Hierfür erstellten wir die 
+Blades "mio_login.blade.php" und "mio_register.blade.php", kopierten den Code aus den 
+entsprechenden Blades von Laravel in unsere eben erwähnten Blades und gestalteten diese 
+gemäß dem Mio-Design.<br> 
+Damit kein authentifizierter Benutzer auf unseren "Begrüßungsbereich" gelangen kann, 
+ergänzten wir den "WelcomeController" um einen Konstruktor, der die Funktion "middleware()" 
+mit dem Übergabeparameter "guest" aufruft. Damit können all die Funktionen des 
+"WelcomeControllers" nur aufgerufen werden, wenn der aktuelle Benutzer nicht 
+authentifiziert ist.<br> 
+Fortführend zum eben beschriebenen Schritt, ergänzten wir ebenfalls die 
+Controller "HomeController", "BP_SearchController", "BP_AdjustController", 
+"AdminController" und "AddUserController" um einen Konstruktor, der die 
+Funktion "middleware()" mit dem Übergabeparameter "auth" aufruft. Damit können all die 
+Funktionen dieser Controller nur aufgerufen werden, wenn der aktuelle Benutzer 
+authentifiziert ist. Die Controller "BP_AdjustController", "AdminController" und 
+"AddUserController" werde ich im weiteren Verlauf der Dokumentation genauer beschreiben.<br> 
+Nachdem das Frontend für den zweistufigen Eingabe-Geschäftsprozess entwickelt war, 
+erstellten wir den Controller "BP_AdjustController.php", um die Geschäftslogik für den 
+diesen Geschäftsprozess zu implementieren. In dem eben erwähnten Controller implementierten 
+wir drei Funktionen, die wir im Folgenden genauer beschreiben werden. Die erste 
+Funktion "invokeRights()" verarbeitet zunächst die beiden Variablen "$door" und "$user". 
+Die beiden Variablen definieren die Beziehung zwischen dem entsprechenden Benutzer und 
+der entsprechenden Tür für die die Rechte eingestellt werden sollen. Danach holt die 
+Funktion mithilfe dieser beiden Variablen, die entsprechende ID der Türe aus 
+dem "DoorsModel" und die entsprechende ID des Benutzers aus dem Model "User" und speichert 
+diese beiden IDs in der entsprechenden Session ab. 
+Code Beispiel für die Speicherung der ID des "Users" in der Session: 
+$request->session()->put('current_user_id', $user_id)<br>
+Anschließend wird das Blade "mio_rights.blade.php" inklusive benötigter Variablen returnt. In 
+diesem Blade bestimmt der autorisierte Kunde, ob der entsprechende Benutzer das Zutrittsrecht und 
+das Protokollrecht bekommen soll. Sobald der Kunde seine Einstellung mit dem entsprechenden 
+Knopfdruck speichern möchte, wird die zweite Funktion "invokeRightsExt()" aufgerufen. Diese 
+Funktion verarbeitet zunächst die vom Kunden eingegebenen Daten (Zutrittsrecht und Protokollrecht) 
+aus dem Request und speichert diese wie die beiden oben erwähnten IDs in der entsprechenden 
+Session ab. 
+Code Beispiel für das Lesen der ID des "Users" aus der Session:  
+$request->session()->get('current_user_id', 'There is no User-ID')<br> 
+Hat der Kunde dem Benutzer das Zutrittsrecht nicht gestattet, so werden die getätigten 
+Einstellungen sofort in der Datenbank gespeichert. Hat der Kunde dem Benuter jedoch das 
+Zutrittsrecht gestattet, so wird das Blade "mio_rights_ext.blade.php" inklusive benötigter 
+Variablen returnt. In diesem Blade bestimmt der autorisierte Kunde, an welchen Wochentagen 
+und zu welcher Uhrzeit der entsprechende Benutzer das Zutrittsrecht bekommen soll. Sobald 
+der Kunde wie eben seine Einstellung mit dem entsprechenden Knopfdruck speichern möchte, 
+wird die dritte Funktion "store()" aufgerufen. Diese Funktion holt sich zunächst die 
+ID des Benutzers, die ID der Türe, das Zutrittsrecht und das Protokollrecht aus der Session. 
+Anschließend verarbeitet die Funktion die vom Kunden eingegebenen Daten aus dem Request und 
+speichert diese gemeinsam mit den Daten aus der Session in der Datenbank ab.<br> 
+Zum Schluss dieses Arbeitsauftrages implementierten wir schließlich noch die Autorisierung für 
+den zweistufigen Eingabe-Geschäftsprozess. Um die Rechte für einen Benutzer festlegen zu können, 
+klickt unser "Client" in der View "mio_manage_door.blade.php" auf den Button "Manage Rights". 
+Da nur "Clients" die Rechte von "Users" für eine entsprechende Tür verwalten dürfen, "disablen"
+wir diesen Button für "Users". Hierfür schicken wir der View "mio_manage_door.blade.php" 
+das entsprechende Tupel aus dem "RelationsModel" mit. In der View fragen wir dann mithilfe des 
+Tupels die Rolle des authentifizierten Benutzers im Zusammenhang mit der Tür ab und geben dem 
+Button die Eigenschaft "disabled", falls die Rolle "User" ist.
+Code Beispiel für das Überprüfen der Rolle des authentifizierten Benutzers im Zusammenhang 
+mit der Tür:
+@if ($relation_row->role_id == 3) disabled @endif<br> 
+Im weiteren Verlauf der Dokumentation werden wir noch weitere Autorisierungsmaßnahmen beschreiben.
+
+###*7. Arbeitsauftrag (17.05.2018): JavaScript - jQuery & AJAX*

@@ -73,27 +73,10 @@ class BP_AdjustController extends Controller
 
         } else {
 
-            $mon = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('mon');
-            $tue = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('tue');
-            $wed = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('wed');
-            $thu = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('thu');
-            $fri = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('fri');
-            $sat = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('sat');
-            $sun = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
-                                 ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->value('sun');
+            $relation_row = RelationsModel::where('user_id', User::where('name', $user)->value('id'))
+                                          ->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->first();
 
-            $from_time = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('from_time');
-            $to_time = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('to_time');
-
-            return view('mio_rights_ext', ['door' => $door, 'user' => $user, 'mon' => $mon, 'tue' => $tue,
-                'wed' => $wed, 'thu' => $thu, 'fri' => $fri, 'sat' => $sat, 'sun' => $sun,
-                'from_time' => $from_time, 'to_time' => $to_time]);
+            return view('mio_rights_ext', ['door' => $door, 'user' => $user, 'relation_row' => $relation_row]);
 
         }
 

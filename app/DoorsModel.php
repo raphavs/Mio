@@ -9,7 +9,7 @@ class DoorsModel extends Model
     protected $table = 'doors';
     public $timestamps = false;
 
-    public function relation()
+    public function relations()
     {
         return $this->hasMany(RelationsModel::class, 'door_id');
     }

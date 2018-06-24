@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function relation()
+    public function relations()
     {
         return $this->hasMany(RelationsModel::class, 'user_id');
     }
