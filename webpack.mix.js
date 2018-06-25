@@ -13,3 +13,19 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.styles([
+    'public/css/bootstrap.css',
+    'public/css/mio_styles.css',
+], 'public/css/mixOfMioAndBootstrap.css');
+
+mix.scripts([
+    'public/js/mioAddDoor.js',
+    'public/js/mioAddUser.js',
+    'public/js/mioDoorAlreadyExists.js',
+    'public/js/mioRightsExt.js',
+    'public/js/mioTransactions.js',
+    'public/js/mioUserAlreadyExists.js',
+    'public/js/mioUserNotExists.js',
+    'public/js/mioUserWrongPassword.js'
+], 'public/js/mixOfMio.js');

@@ -243,3 +243,44 @@ mit der Tür:
 Im weiteren Verlauf der Dokumentation werden wir noch weitere Autorisierungsmaßnahmen beschreiben.
 
 ###*7. Arbeitsauftrag (17.05.2018): JavaScript - jQuery & AJAX*
+Wir verwenden an verschiedenen Stellen JavaScript, um unsere Webapplikation dynamisch 
+zu gestalten. In der View "mio_home.blade.php" verwenden wir zum einen JavaScript, um ein 
+Formular anzeigen zu lassen, wenn unsere "Clients" in dieser View auf den Button "Add Door" 
+klicken. In diesem Formular geben unsere "Clients" einen Türnamen ein und fügen auf dieses Weise 
+Türen zu ihrem Account hinzu. Da Türnamen in unserer Webapplikation nur einmalig vergeben werden 
+können, verwenden wir zum anderen ebenfalls in dieser View JavaScript, um eine Fehlermeldung 
+anzeigen zu lassen, falls der vom "Client" eingegebene Türname bereits vergeben ist.<br> 
+Ein weiteres Mal verwenden wir JavaScript in der View "mio_add_user.blade.php". In dieser View 
+kann ein "Client" neue Benutzer oder auch bereits existierende Benutzer zu seiner Tür hinzufügen. 
+Hierfür verwenden wir zwei verschiedene Formulare. Eines um einen neuen Benutzer zu registrieren 
+und ihn gleichzeitig zu seiner Tür hinzuzufügen. Das Zweite um einen bereits existierenden 
+Benutzer seiner Tür hinzuzufügen. Durch einen entsprechenden Knopfdruck, können unsere "Clients" 
+das Formular wechseln. Hierfür wenden wir JavaScript an. Ein zweites Mal wenden wir in dieser 
+View JavaScript an, um wie im ersten Anwendungsfall entsprechende Fehlermeldungen anzeigen lassen 
+zu können. Es wird mithilfe von JavaScript eine Fehlermeldung angezeigt, falls ein "Client" 
+einen "User"-Account hinzufügen möchte, der nicht existiert. Es wird eine Fehlermedlung angezeigt, 
+falls ein "Client" das falsche Passwort für den entsprechenden "User"-Account eingibt. Und es 
+wird noch ein weiteres Mal eine Fehlermeldung angezeigt, falls ein "Client" einen 
+"User"-Account hinzufügen möchte, der bereits "User" der entsprechenden Tür ist.<br> 
+All diese Überprüfungen aus diesen ersten beiden Anwendungsfällen finden im Backend statt. 
+Daher geben wir im Controller "AddUserController.php" in der Funktion "addExistingUser()" in 
+Abhängigkeit des Ergebnisses der Überprüfung der selben View "mio_add_user.blade.php" eine 
+Variable mit, die den entsprechenden Fehler repräsentiert und rufen dann in der View in 
+Abhängigkeit dieser Variable eine entsprechende JavaScript-Datei auf.<br> 
+Ein weiterer Anwendungsfall von JavaScript befindet sich in der View "mio_rights_ext.blade.php". 
+In dieser View bestimmt ein "Client" an welchen Wochentagen und zu welcher Uhrzeit ein 
+entsprechender "User" eine entsprechende Tür öffnen darf. In diesem Fall verhindern wir zum einen 
+mithilfe von JavaScript, dass die Einstellungen in der Datenbank gespeichert werden, falls 
+ein "Client" keinen der Wochentage auswählt und anschließend auf den Button "save changes" klickt. 
+Ist dies jedoch der Fall, wird eine entsprechende Fehlermeldung angezeigt. Diese Überprüfung fand 
+im Vergleich zu den bisherigen Anwendungsfällen im Frontend statt. Zum anderen verhindern wir in 
+dieser View mithilfe von JavaScript, dass ein "Client" eine ungültige Zeitspanne angeben kann. Es 
+ist nicht möglich den Beginn der Zeitspanne hinter das Ende der Zeitspanne zu setzen.<br> 
+In userem letzten Anwendungsfall wenden wir in der View "mio_transactions.blade.php" JavaScript 
+in Verbindung mit AJAX an. In dieser View zeigen wir Transaktionen einer entsprechenden Tür an 
+und ermöglichen es Benutzern nach Benutzername und Datum zu filtern. Um die bisherige Suche 
+zu einer "Live-Suche" umzuwandeln, erweiterten beziehungsweise veränderten wir 
+den Controller "BP_SearchController", den wir für den Such-Geschäftsprozess erstellt hatten. 
+Wir entfernten die Funktion "filterTransactions()" und fügten sechs weitere Funktionen hinzu. 
+Wir unterscheiden dabei zwei verschiedene Szenarien. Im ersten Szenario gibt ein "User" oder auch 
+"Client"
