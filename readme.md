@@ -4,55 +4,70 @@
 
 ###*Use Cases*
 
-####Gast:
+####Gast
+######Begrüßungsseite
 Bei Mio können Sie Ihre Tür smart verwalten. Als Gast ist es Ihnen möglich, sich 
 über unser Unternehmen auf den Willkommensseiten zu informieren.
 Auf der Begrüßungsseite sehen Sie erste Informationen sowie unsere Kundengruppen.
 Unsere Seite ist für Kunden, Benutzer und Händler ausgelegt, wobei die
 Händler-Funktionen noch nicht implementiert wurden. Der Schwerpunkt liegt
-somit auf Kunden und Benutzern. <br>
+somit auf Kunden und Benutzern.
+######Feature Seite
 Die Feature Seite gibt einen Einblick in die Funktionen, die man als 
-Kunde oder Benutzer hat und wie es zu verwenden ist. <br>
+Kunde oder Benutzer hat und wie man seinen Account verwendet. 
+######Informationsseite
 Auf der Informationsseite wird die Einleitung von der Begrüßungsseite weitergeführt.
-Hier ist textlich zusammengefasst, was Mio bietet. <br>
+Hier ist textlich zusammengefasst, was Mio bietet.
+######Kontaktseite
 Auf der Kontaktseite befindet sich die Adresse der Firma und ein Impressum.
 Hierbei wurde darauf geachtet, das Projekt als Hochschulprojekt auszuzeichnen.
-Auch die Datenschutzerklärung lässt sich hier finden.<br>
+Auch die Datenschutzerklärung lässt sich hier finden.
 
-####Kunde:
+####Kunde
+######Türen hinzufügen
 Nach der Anmeldung wird der Kunde auf eine Seite geleitet, auf der er
 nach Einrichten der Hardware an der Tür, diese hinzufügen kann. 
-Diese erscheint ab jetzt immer auf der Startseite. Wählt man diese aus,
-kommt man zu einer Übersicht, auf der man als Kunde 
-neue oder bereits existierende Benutzer hinzufügen kann, ihre Rechte verwalten und
-das Protokoll einsehen. Um Rechte zu verwalten, muss ein Benutzer ausgewählt
+Diese erscheint ab jetzt immer auf der Startseite. 
+###### Benutzer hinzufügen, Rechte verwalten, Protokoll einsehen
+Wählt man eine Tür aus,kommt man zu einer Übersicht, auf der man als Kunde 
+neue oder bereits existierende Benutzer hinzufügen, ihre Rechte verwalten und
+das Protokoll einsehen kann. 
+######Rechte verwalten
+Um Rechte zu verwalten, muss ein Benutzer ausgewählt
 werden. Dann kann man entscheiden, ob er Zutrittsrechte oder das Protokollrecht haben darf.
 Wird ein neuer Benutzer hinzugefügt, bekommt er alle Rechte!
 Sobald das Zutrittsrecht gestattet wird, kann man wählen, an welchen Tagen und
 zu welcher Uhrzeit der Benutzer Zutritt erlangen darf.
-Öffnet der Kunde die Tür, so wird diese Transaktion im Protokoll abgebildet.
+
+######Tür öffnen
+Öffnet der Kunde die Tür über den Open Button, so wird diese Transaktion im Protokoll abgebildet.
+######Protokolleinsicht
 Der Kunde sieht alle Transaktionen seiner Benutzer und ihm selbst im Protokoll.
 
-####Benutzer:
+####Benutzer
+######Türen hinzufügen und auswählen
 Als Benutzer bekommt man auf der Startseite nach dem Login alle Türen 
 angezeigt, bei denen man als Benutzer gemeldet ist. Die 
 Möglichkeit Türen hinzuzufügen, kann einen Benutzer ebenso zu einem Kunden machen.
+######Protokolleinsicht
 Wählt der Benutzer eine Tür, gelangt er in dasselbe Menü wie der Kunde.
 Allerdings ist der Button 'Add User' sowie 'Manage Rights' für Benutzer blockiert.
 Die Ansicht des Protokolls hängt davon ab, was der Kunde dem Benutzer für Rechte
 gegeben hat. Hat er das Protokollrecht, so sieht er alle Einträge von Benutzern und dem Kunde.
 Hat er das Recht nicht, sieht er nur seine eigenen Transaktionen.
+######Tür öffnen
 Hat der Benutzer das Recht die Türe zu öffnen, so läuft das ab wie beim Kunden.
 Hat er das Recht nicht oder zu bestimmten Zeiten nicht, dann wird auch dieser 
 Button für den Benutzer blockiert. So wird sichergestellt, dass keiner 
 unerlaubt Zugriff erlangen kann.
 
-####Admin:
+####Admin
+######Übersicht über Kunden, Benutzer und Türen
 Als Admin ist es möglich eine Übersicht über alle Türen zu erlangen, 
 sowie über alle Benutzer und Kunden. Es ist möglich diese zu löschen.
 Außerdem ist es möglich Admin, Benutzer und Kunde zugleich zu sein.
 
-###*Wow-Faktor der Applikation*
+##Wow-Faktor der Applikation
 Der Wow-Faktor unserer Applikation besteht darin, Buttons bereitzustellen
 oder sie zu blockieren, auf Grund der Rechte des Benutzers an der Tür.
 Außerdem wird bei der Rechtewahl eines Benutzers, dessen Zeiten und Tage
@@ -62,7 +77,7 @@ Ein weiterer Wow-Faktor der Applikation ist die Möglichkeit, mehrere Rollen anz
 mit nur einem Konto. Es wird viel mit Buttons gearbeitet, sodass Texteingabe umgangen
 wird, die eine Fehlerquelle darstellen kann.
 
-###*Visual Design*
+##Visual Design
 Mit einem Bilder Karussell und der dunklen Farbwahl von schwarz und gold
 ist die Aufmerksamkeit des Kunden direkt geweckt. Durch Symbole wie für die 
 Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
@@ -72,6 +87,7 @@ Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
  schlechten Augen alles zu erkennen.
  Das Wichtige ist farblich hevorgehoben, wie z.B. der Open Button in gelb.
  So weiß auch jeder, der technisch keine Kenntnisse besitzt, worauf es ankommt.
+
  
 ##2. Technische Implementierung
 
