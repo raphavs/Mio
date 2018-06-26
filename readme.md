@@ -1,73 +1,73 @@
-#Mio - Manage your doors smart.
+<h1>Mio - Manage your doors smart.</h1>
 
-##1. Beschreibung der Funktionalität
+## 1. Beschreibung der Funktionalität
 
-###*Use Cases*
+### *Use Cases*
 
-####Gast
-######Begrüßungsseite
+#### Gast\
+###### Begrüßungsseite\
 Bei Mio können Sie Ihre Tür smart verwalten. Als Gast ist es Ihnen möglich, sich 
 über unser Unternehmen auf den Willkommensseiten zu informieren.
 Auf der Begrüßungsseite sehen Sie erste Informationen sowie unsere Kundengruppen.
 Unsere Seite ist für Kunden, Benutzer und Händler ausgelegt, wobei die
 Händler-Funktionen noch nicht implementiert wurden. Der Schwerpunkt liegt
 somit auf Kunden und Benutzern.
-######Feature Seite
+###### Feature Seite\
 Die Feature Seite gibt einen Einblick in die Funktionen, die man als 
 Kunde oder Benutzer hat und wie man seinen Account verwendet. 
-######Informationsseite
+###### Informationsseite\
 Auf der Informationsseite wird die Einleitung von der Begrüßungsseite weitergeführt.
 Hier ist textlich zusammengefasst, was Mio bietet.
-######Kontaktseite
+###### Kontaktseite\
 Auf der Kontaktseite befindet sich die Adresse der Firma und ein Impressum.
 Hierbei wurde darauf geachtet, das Projekt als Hochschulprojekt auszuzeichnen.
 Auch die Datenschutzerklärung lässt sich hier finden.
 
-####Kunde
-######Türen hinzufügen
+#### Kunde\
+###### Türen hinzufügen\
 Nach der Anmeldung wird der Kunde auf eine Seite geleitet, auf der er
 nach Einrichten der Hardware an der Tür, diese hinzufügen kann. 
 Diese erscheint ab jetzt immer auf der Startseite. 
-###### Benutzer hinzufügen, Rechte verwalten, Protokoll einsehen
+###### Benutzer hinzufügen, Rechte verwalten, Protokoll einsehen\
 Wählt man eine Tür aus,kommt man zu einer Übersicht, auf der man als Kunde 
 neue oder bereits existierende Benutzer hinzufügen, ihre Rechte verwalten und
 das Protokoll einsehen kann. 
-######Rechte verwalten
+###### Rechte verwalten\
 Um Rechte zu verwalten, muss ein Benutzer ausgewählt
 werden. Dann kann man entscheiden, ob er Zutrittsrechte oder das Protokollrecht haben darf.
 Wird ein neuer Benutzer hinzugefügt, bekommt er alle Rechte!
 Sobald das Zutrittsrecht gestattet wird, kann man wählen, an welchen Tagen und
 zu welcher Uhrzeit der Benutzer Zutritt erlangen darf.
 
-######Tür öffnen
+###### Tür öffnen\
 Öffnet der Kunde die Tür über den Open Button, so wird diese Transaktion im Protokoll abgebildet.
-######Protokolleinsicht
+###### Protokolleinsicht\
 Der Kunde sieht alle Transaktionen seiner Benutzer und ihm selbst im Protokoll.
 
-####Benutzer
-######Türen hinzufügen und auswählen
+#### Benutzer\
+###### Türen hinzufügen und auswählen\
 Als Benutzer bekommt man auf der Startseite nach dem Login alle Türen 
 angezeigt, bei denen man als Benutzer gemeldet ist. Die 
 Möglichkeit Türen hinzuzufügen, kann einen Benutzer ebenso zu einem Kunden machen.
-######Protokolleinsicht
+###### Protokolleinsicht\
 Wählt der Benutzer eine Tür, gelangt er in dasselbe Menü wie der Kunde.
 Allerdings ist der Button 'Add User' sowie 'Manage Rights' für Benutzer blockiert.
 Die Ansicht des Protokolls hängt davon ab, was der Kunde dem Benutzer für Rechte
 gegeben hat. Hat er das Protokollrecht, so sieht er alle Einträge von Benutzern und dem Kunde.
 Hat er das Recht nicht, sieht er nur seine eigenen Transaktionen.
-######Tür öffnen
+###### Tür öffnen\
 Hat der Benutzer das Recht die Türe zu öffnen, so läuft das ab wie beim Kunden.
 Hat er das Recht nicht oder zu bestimmten Zeiten nicht, dann wird auch dieser 
 Button für den Benutzer blockiert. So wird sichergestellt, dass keiner 
 unerlaubt Zugriff erlangen kann.
 
-####Admin
-######Übersicht über Kunden, Benutzer und Türen
+#### Admin\
+###### Übersicht über Kunden, Benutzer und Türen\
 Als Admin ist es möglich eine Übersicht über alle Türen zu erlangen, 
 sowie über alle Benutzer und Kunden. Es ist möglich diese zu löschen.
 Außerdem ist es möglich Admin, Benutzer und Kunde zugleich zu sein.
 
-##Wow-Faktor der Applikation
+### *Wow-Faktor der Applikation*\
 Der Wow-Faktor unserer Applikation besteht darin, Buttons bereitzustellen
 oder sie zu blockieren, auf Grund der Rechte des Benutzers an der Tür.
 Außerdem wird bei der Rechtewahl eines Benutzers, dessen Zeiten und Tage
@@ -77,7 +77,7 @@ Ein weiterer Wow-Faktor der Applikation ist die Möglichkeit, mehrere Rollen anz
 mit nur einem Konto. Es wird viel mit Buttons gearbeitet, sodass Texteingabe umgangen
 wird, die eine Fehlerquelle darstellen kann.
 
-##Visual Design
+### *Visual Design*
 Mit einem Bilder Karussell und der dunklen Farbwahl von schwarz und gold
 ist die Aufmerksamkeit des Kunden direkt geweckt. Durch Symbole wie für die 
 Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
@@ -89,9 +89,9 @@ Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
  So weiß auch jeder, der technisch keine Kenntnisse besitzt, worauf es ankommt.
 
  
-##2. Technische Implementierung
+## 2. Technische Implementierung
 
-###*1. Arbeitsauftrag (29.03.2018): Design & CSS*
+### *1. Arbeitsauftrag (29.03.2018): Design & CSS*
 Beim Erstellen der Begrüßungsseite haben wir uns zunächst überlegt wie grob der Aufbau 
 unserer Begrüßungsseite aussehehen soll. Anschließend implementierten wir entsprechend 
 die "index.html"-Datei. Zusätzlich erstellten wir eine CSS-Datei "mio_styles.css", 
@@ -255,9 +255,9 @@ Tupels die Rolle des authentifizierten Benutzers im Zusammenhang mit der Tür ab
 Button die Eigenschaft "disabled", falls die Rolle "User" ist.
 Code Beispiel für das Überprüfen der Rolle des authentifizierten Benutzers im Zusammenhang 
 mit der Tür:
-'''php
-@if ($relation_row->role_id == 3) disabled @endif
-'''
+```php
+if ($relation_row->role_id == 3) disabled endif
+```
 Im weiteren Verlauf der Dokumentation werden wir noch weitere Autorisierungsmaßnahmen beschreiben.
 
 ###*7. Arbeitsauftrag (17.05.2018): JavaScript - jQuery & AJAX*
@@ -311,13 +311,68 @@ Anschließend verwendeten wir YSlow, um die Performance unserer Webapplikation z
 die Performance zu verbessern, führten wir mithilfe der Datei "webpack.mix.js" die beiden 
 CSS-Dateien "mio_styles.css" und "bootstrap.css" zu einer CSS-Datei "mixOfMioAndBootstrap.css" 
 zusammen. Zudem komprimierten wir die Datei "mixOfMioAndBootstrap.css". Ergänzend führten wir auch 
-unsere JavaScript-Dateien zu einer JavaScript-Datei "mixOfMio.js" zusammen und komprimierten diese 
-ebenfalls.\ 
+unsere JavaScript-Dateien zu einer einzigen JavaScript-Datei "mixOfMio.js" zusammen und komprimierten 
+diese ebenfalls.\ 
 Des Weiteren optimierten wir unsere Datenbankzugriffe, um die Performance unserer Webapplikation 
 zu verbessern.\ 
 
 ###*9. Arbeitsauftrag (14.06.2018): Search Engine Optimization*
-...
+<h5>Technical SEO</h5>
+Zu Beginn dieses Arbeitsauftrages registrierten wir unsere Webapplikation in der "Google Search Console" 
+und bindeten das von Google bereitgestellte  Meta-Tag in das Template "mio_welcome_app.blade.php" unserer 
+Begrüßungsseite ein. Somit konnte man "Mio" ab sofort auf Google finden.<br> 
+Zudem fügten wir eine Beschreibung unserer Webapplikation in den Head des eben beschriebenen 
+Templates ein.<br> 
+```html
+<meta name="description" content="Mio - Manage your doors smart. Mio is an access control system that allows modern living."/>
+```
+Des Weiteren entwickelten wir, wie am Anfang der Dokumentation bereits beschrieben, Responsive Design 
+für "Mio". Somit wird unsere Webapplikation im "Google Page Rank" tendenziell höher eingestuft, da 
+sie Smartphone freundlich ist.
+<h5>OnPage SEO</h5>
+Um "Mio" möglichst gut finden zu können, überlegten wir uns zunächst ein paar Schlagworte, die 
+höchst wahrscheinlich in der "Google Suche" eingegeben werden, wenn man eine Webappklikation 
+wie unsere sucht. Folgende Schlagworte empfanden wir für sinnvoll: 
+"manage doors smart", "modern living", "access control system", "smart home" und "modern home". 
+Anschließend integrierten wir diese Schlagworte in den Titel, in die Beschreibung, in Überschriften und 
+in Paragraphen unserer Begrüßungsseite.<br> 
+Ergänzend optimierten wir den Inhalt unserer Begrüßungsseite, indem wir doppelt vorkommende Überschriften 
+oder Paragraphen vermieden.
+<h5>Social Networks</h5>
+Exemplarisch ergänzten wir Social Network Links in unserer Begrüßungsseite.
 
 ###*10. Arbeitsauftrag (21.06.2018): Security*
-...
+Bezüglich des Themas Sicherheit stellten wir, wie bereits in der Dokumentation beschrieben, durch eine 
+Registrierung sowie durch einen Login sicher, dass ausschließlich authentifizierte Benutzer Zugang zu den 
+entsprechenden Views erhalten. Zudem stellten wir sicher, dass authentifizierte Benutzer nur das Lesen und 
+Bearbeiten können, wofür sie autorisiert sind. Da in unserer Webapplikation Tür- und Benutzernamen oft 
+über den URL übergeben werden, war es anfangs sehr leicht die Webapplikation zum Absturz zu bringen. Gab man 
+nicht existierende Tür- und Benutzername im URL ein, so konnte man die Rechte eines Benutzers für eine Tür 
+einstellen, obwohl weder die Tür noch der Benutzer existierte. Aus diesem Grund mussten wir zusätzliche 
+Schutzmaßnahmen in unsere Controller integrieren, um die Integrität unserer Webapplikation weiterhin 
+sicherzustellen. Ein Code Beispiel für solch eine Maßnahme sieht wie folgt aus:
+```php
+if (RelationsModel::where('door_id', $door_id)->where('user_id', $user_id)->get()->count() < 1
+    or RelationsModel::where('door_id', $door_id)->where('user_id', Auth::id())->where('role_id', RolesModel::where('name', 'client')->value('id'))->get()->count() < 1) 
+{
+    return redirect('/home');
+}
+```
+Auf diese Weise wurde zum einen überprüft, ob die Beziehung zwischen Tür und "User" überhaupt existiert. Zum 
+anderen, ob der authentifizierte Benutzer überhaupt das Recht besitzt, die Rechte des "Users" im Zusammenhang 
+mit dieser Tür zu verwalten.<br> 
+Eine ähnliche Maßnahme führten wir im Zusammenhang mit AJAX durch. Im "BP_SearchController", der die AJAX-Anfragen 
+entgegennimmt, ergänzten wir folgenden Code: 
+```php
+if (!$request->ajax())
+{
+    return redirect("/home/$door/transactions");
+}
+```
+um sicherzustellen, dass kein unautorisierter Benutzer über den URL eine Datenbank-Abfrage durchführen kann.<br> 
+Eine weitere Sicherheitsmaßnahme war das festlegen des Typs eines jeden Input-Felds, in das unsere 
+Benutzer Daten eingeben können. Außerdem wählten wir stets die POST-Methode, um die in ein Formular eingegebenen 
+Daten (bis auf AJAX-Suche) unserer Benutzer zu übertragen. Ergänzend bindeten wir ein verstecktes CSRF-Token in 
+jedes unserer Formulare ein. Des Weiteren wenden wir konsequent das Eloquent ORM für die Verwaltung unserer 
+Datenbank an. Durch diese Maßnahmen ist "Mio" relativ stark vor SQL-Injections beziehungsweise unerlaubten 
+Datenbankzugriffen geschützt.<br> 

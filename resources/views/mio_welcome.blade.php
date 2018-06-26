@@ -54,9 +54,7 @@
     <!-- About-Section -->
     <section class="my-padding-welcome-section">
         <!-- Headline -->
-        <div class="container-fluid">
-            <h1 class="display-5">About Mio</h1>
-        </div>
+        <h1 class="display-5">About Mio</h1>
 
         <div class="row justify-content-center">
             <hr class="col-8">
@@ -67,9 +65,15 @@
             <div class="row">
                 <div class="col-lg-6 my-about-padding">
                     <div class="my-put-things-in-vertically-and-horizontally-center text-center my-welcome-p-size">
-                        <p>Mio is an access control system that allows clients to manage their doors smart via smartphone, tablet or PC.
-                            To do this, clients create users and determine which person is able to open which door at which time.
-                            In addition, all opening transactions are recorded in a log, which clients and users can view at any time.</p>
+                        <p>
+                            Mio is an access control system that perfectly complements your smart home.
+                            It allows you to manage your doors smart and easily with your smartphone, tablet or PC.
+                            Mio is what defines modern living and modern life nowadays.
+                        </p>
+                        <p>
+                            Register within a few minutes. Add your doors to your account.
+                            Manage your doors by creating users for them and managing their rights.
+                        </p>
                         <br>
                         <a class="btn btn-readmore" role="button" href="{{ route('welcome.info') }}">read more ...</a>
                     </div>
@@ -98,7 +102,9 @@
                 <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">
                     <h3 class="my-welcome-h3-size">Clients</h3>
-                    <p class="col-xl-10 offset-xl-1">... manage their doors. They determine who of their users is allowed to open which door at which time.</p>
+                    <p class="col-xl-10 offset-xl-1">... manage their doors.<br>
+                        I. They determine who of their users is allowed to open which door at which time.<br>
+                        II. They </p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">

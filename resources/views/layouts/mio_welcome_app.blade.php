@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-site-verification" content="3wpuyun9QgG9ijXoQjdUWpycM3XJidpvTqI8qTgOePQ"/>
-    <meta name="description" content="Mio - Manage your doors smart. Mio is an access control system that allows modern living."/>
+    <meta name="description" content="Mio - Manage your doors smart. Mio is an access control system that allows modern living and modern home."/>
 
-    <title>Mio Welcome</title>
+    <title>Mio - Manage your doors smart.</title>
 
     <!-- Mio CSS & Bootstrap CSS -->
     <link rel="stylesheet" href="/css/mixOfMioAndBootstrap.css">
@@ -64,9 +64,7 @@
 
 <!-- Slogan -->
 <header>
-    <div class="text-center">
-        <h3 class="my-header-style">Manage your doors smart.</h3>
-    </div>
+    <h3 class="my-header-style">Manage your doors smart.</h3>
 </header>
 
 <main>
@@ -91,13 +89,13 @@
                     <img src="/Image/Mio_Logo.jpg" class="rounded my-logo-size" alt="Logo">
                 </div>
                 <div class="icons-in-center text-center">
-                    <a href="#" class="fa fa-github fa-2x"></a>
+                    <a href="https://github.com/" class="fa fa-github fa-2x"></a>
                     <!-- <a href="#" class="fa fa-xing fa-2x"></a> -->
-                    <a href="#" class="fa fa-linkedin fa-2x"></a>
-                    <a href="#" class="fa fa-instagram fa-2x"></a>
+                    <a href="https://de.linkedin.com/" class="fa fa-linkedin fa-2x"></a>
+                    <a href="https://www.instagram.com/" class="fa fa-instagram fa-2x"></a>
                     <!-- <a href="#" class="fa fa-facebook fa-2x"></a> -->
-                    <a href="#" class="fa fa-twitter fa-2x"></a>
-                    <a href="#" class="fa fa-snapchat fa-2x"></a>
+                    <a href="https://twitter.com/" class="fa fa-twitter fa-2x"></a>
+                    <a href="https://www.snapchat.com/l/de-de/" class="fa fa-snapchat fa-2x"></a>
                 </div>
             </div>
             <div class="col-lg-4">

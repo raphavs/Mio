@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <section class="my-padding-welcome-section">
         <!-- Headline -->
-        <h1 class="display-5">Information about Mio</h1>
+        <h1 class="display-5">Information</h1>
 
         <div class="row justify-content-center">
             <hr class="col-8">
