@@ -1,94 +1,58 @@
-<h1>Mio - Manage your doors smart.</h1>
+# Mio - Manage your doors smart.
 
-## 1. Beschreibung der Funktionalität
+### 1. Beschreibung der Funktionalität
 
 ### *Use Cases*
 
-#### Gast\
-###### Begrüßungsseite\
-Bei Mio können Sie Ihre Tür smart verwalten. Als Gast ist es Ihnen möglich, sich 
-über unser Unternehmen auf den Willkommensseiten zu informieren.
-Auf der Begrüßungsseite sehen Sie erste Informationen sowie unsere Kundengruppen.
-Unsere Seite ist für Kunden, Benutzer und Händler ausgelegt, wobei die
-Händler-Funktionen noch nicht implementiert wurden. Der Schwerpunkt liegt
-somit auf Kunden und Benutzern.
-###### Feature Seite\
-Die Feature Seite gibt einen Einblick in die Funktionen, die man als 
-Kunde oder Benutzer hat und wie man seinen Account verwendet. 
-###### Informationsseite\
-Auf der Informationsseite wird die Einleitung von der Begrüßungsseite weitergeführt.
-Hier ist textlich zusammengefasst, was Mio bietet.
-###### Kontaktseite\
-Auf der Kontaktseite befindet sich die Adresse der Firma und ein Impressum.
-Hierbei wurde darauf geachtet, das Projekt als Hochschulprojekt auszuzeichnen.
-Auch die Datenschutzerklärung lässt sich hier finden.
+##### Gast
+###### **Begrüßungsseite**
+Bei Mio können Sie Ihre Türen smart verwalten. Als Gast können Sie sich über unser Unternehmen auf den Willkommensseiten informieren. Auf der Begrüßungsseite sehen Sie erste Informationen sowie unsere Kundengruppen. Unsere Seite ist für Clients, User und Endgerät-Hersteller ausgelegt, wobei die Endgerät-Hersteller-Funktionen noch nicht implementiert sind. Der Schwerpunkt liegt somit auf den Clients und den Usern.
+###### **Feature Seite**
+Die Feature Seite gibt Ihnen einen Einblick in die Funktionen, die unsere Webapplikation bietet. 
+###### **Informationsseite**
+Auf der Informationsseite wird die Einleitung von der Begrüßungsseite weitergeführt. Hier ist noch einmal dargestellt, was Mio ist.
+###### **Kontaktseite**
+Auf der Kontaktseite finden Sie die Adresse unserer Hochschule sowie das Impressum. Hierbei achteten wir darauf, dass unseren Gästen klar wird, dass Mio ein Hochschulprojekt ist. Zudem können Sie auf dieser Seite die Datenschutzerklärung finden.
 
-#### Kunde\
-###### Türen hinzufügen\
-Nach der Anmeldung wird der Kunde auf eine Seite geleitet, auf der er
-nach Einrichten der Hardware an der Tür, diese hinzufügen kann. 
-Diese erscheint ab jetzt immer auf der Startseite. 
-###### Benutzer hinzufügen, Rechte verwalten, Protokoll einsehen\
-Wählt man eine Tür aus,kommt man zu einer Übersicht, auf der man als Kunde 
-neue oder bereits existierende Benutzer hinzufügen, ihre Rechte verwalten und
-das Protokoll einsehen kann. 
-###### Rechte verwalten\
-Um Rechte zu verwalten, muss ein Benutzer ausgewählt
-werden. Dann kann man entscheiden, ob er Zutrittsrechte oder das Protokollrecht haben darf.
-Wird ein neuer Benutzer hinzugefügt, bekommt er alle Rechte!
-Sobald das Zutrittsrecht gestattet wird, kann man wählen, an welchen Tagen und
-zu welcher Uhrzeit der Benutzer Zutritt erlangen darf.
+##### Kunde
+###### **Türen hinzufügen**
+Ein Client kann auf der Home-Seite seines Accounts sowohl über den Button "Add Door" Türen hinzufügen als auch seine bereits registrierten Türen auswählen, um diese zu verwalten.
+###### **Tür verwalten**
+Wählt man eine Tür aus, kommt man zu einer View, auf der man als Client neue User für diese Tür hinzufügen, die Rechte der User dieser Tür verwalten, das Protokoll einsehen und diese Tür öffnen kann. 
+###### **Benutzer hinzufügen**
+Klickt man auf den Button "Add User", so wird man auf eine View weitergeleitet, in der man sowohl neue User registrieren und zu seiner Tür hinzufügen als auch bereits existierende User zu seiner Tür hinzufügen kann.
+###### **Rechte verwalten**
+Klickt man auf den Button "Manage Rights", wo wird man auf eine View weitergeleitet, in der man einen User auswählt, um für diesen in den folgenden Views seine Rechte einzustellen. Nachdem man einen User gewählt hat, kann man in der folgenden View entscheiden, ob er das Zutrittsrecht und/oder das Protokollrecht bekommen soll. Falls das Zutrittsrecht gestattet wird, kann man wiederum in der folgenden View wählen, an welchen Tagen und zu welcher Uhrzeit der User Zutritt haben soll. Wenn neue User zu einer Tür hinzugefügt werden, haben sie standardmäßig alle Rechte!
+###### **Protokolleinsicht**
+Klickt man auf den Button "See Transactions", wo wird man auf eine View weitergeleitet, in der man alle Transaktionen der Tür in Form einer Tabelle sieht. Zudem kann man nach einem Benutzernamen und einem Datum suchen.
+###### **Tür öffnen**
+Klickt man auf den Button "Open", wo wird die Tür geöffnet und die entsprechende Transaktion im Protokoll gespeichert.
 
-###### Tür öffnen\
-Öffnet der Kunde die Tür über den Open Button, so wird diese Transaktion im Protokoll abgebildet.
-###### Protokolleinsicht\
-Der Kunde sieht alle Transaktionen seiner Benutzer und ihm selbst im Protokoll.
+##### User
+###### **Türen auswählen**
+Ein User kann auf der Home-Seite seines Accounts Türen, denen er zugeordnet wurde, auswählen, um diese zu öffnen und um das entsprechende Protokoll einzusehen. Ein User hat nicht die Möglichkeit, Türen hinzuzufügen.
+###### **Tür verwalten**
+Wählt man eine Tür aus, kommt man zu einer View, auf der man als User das Protokoll einsehen und diese Tür öffnen kann.  Ein User hat weder die Möglichkeit Rechte zu verwalten noch User hinzuzufügen.
+###### **Protokolleinsicht**
+Klickt man auf den Button "See Transactions", wo wird man auf eine View weitergeleitet, in der man alle Transaktionen der Tür in Form einer Tabelle sieht. Zudem kann man nach einem Benutzernamen und einem Datum suchen. Falls der User im Zusammenhang mit der Tür das Protokollrecht nicht hat, so werden dem User nur die Transaktionen angezeigt, die er selbst getätigt hat und der User kann nur nach einem Datum suchen. Andernfalls sieht er alle Transaktionen und er kann sowohl nach einem Benutzernamen als auch nach einem Datum suchen.
+###### **Tür öffnen**
+Besitzt der User das Recht die Tür zu öffnen, so kann er auf den Button "Open" klicken. Andernfalls ist der Button blockiert. Klickt er diesen, so wird die Tür geöffnet und die entsprechende Transaktion im Protokoll gespeichert. Auf diese Weise wird sichergestellt, dass kein unautorisierter User Zutritt erlangt.
 
-#### Benutzer\
-###### Türen hinzufügen und auswählen\
-Als Benutzer bekommt man auf der Startseite nach dem Login alle Türen 
-angezeigt, bei denen man als Benutzer gemeldet ist. Die 
-Möglichkeit Türen hinzuzufügen, kann einen Benutzer ebenso zu einem Kunden machen.
-###### Protokolleinsicht\
-Wählt der Benutzer eine Tür, gelangt er in dasselbe Menü wie der Kunde.
-Allerdings ist der Button 'Add User' sowie 'Manage Rights' für Benutzer blockiert.
-Die Ansicht des Protokolls hängt davon ab, was der Kunde dem Benutzer für Rechte
-gegeben hat. Hat er das Protokollrecht, so sieht er alle Einträge von Benutzern und dem Kunde.
-Hat er das Recht nicht, sieht er nur seine eigenen Transaktionen.
-###### Tür öffnen\
-Hat der Benutzer das Recht die Türe zu öffnen, so läuft das ab wie beim Kunden.
-Hat er das Recht nicht oder zu bestimmten Zeiten nicht, dann wird auch dieser 
-Button für den Benutzer blockiert. So wird sichergestellt, dass keiner 
-unerlaubt Zugriff erlangen kann.
+##### **Wichtig**: 
+Clients und User haben in unserer Webapplikation feste Rollen. Es ist jedoch möglich, dass ein Client im Zusammenhang mit einer Tür gegebenenfalls auch die Rolle "User" annehmen kann. Sein Account ist in diesem Fall immernoch ein Client-Account. Das heißt, er besitzt immernoch die Möglichkeit Türen hinzuzufügen. Aber wenn er auf eine entsprechende Tür, bei der er selbst nur "User" ist, klickt, so besitzt er für diese Tür weder die Möglichkeit User hinzuzufügen noch Rechte zu verwalten.
 
-#### Admin\
-###### Übersicht über Kunden, Benutzer und Türen\
-Als Admin ist es möglich eine Übersicht über alle Türen zu erlangen, 
-sowie über alle Benutzer und Kunden. Es ist möglich diese zu löschen.
-Außerdem ist es möglich Admin, Benutzer und Kunde zugleich zu sein.
+##### Admin
+###### **Übersicht über Kunden, Benutzer und Türen**
+Ein Admin hat dieselben Use Cases wie ein Client. Zusätzlich kann er jedoch auf seiner Home-Seite, den Button "Manage Clients" klicken, um auf eine View zu gelangen, in der er Clients verwalten und User löschen kann. Klickt er bei einem Client auf den Button "Manage", so wird er auf eine weitere View geleitet, in der er Türen des entsprechenden Clients sowie den Client selber löschen kann.
 
-### *Wow-Faktor der Applikation*\
-Der Wow-Faktor unserer Applikation besteht darin, Buttons bereitzustellen
-oder sie zu blockieren, auf Grund der Rechte des Benutzers an der Tür.
-Außerdem wird bei der Rechtewahl eines Benutzers, dessen Zeiten und Tage
-geladen und angezeigt. Es ist nicht möglich den Startzeitpunkt vor den Endzeitpunkt
-zu setzen!! Damit wird eine Fehlerquelle umgangen.
-Ein weiterer Wow-Faktor der Applikation ist die Möglichkeit, mehrere Rollen anzunehmen 
-mit nur einem Konto. Es wird viel mit Buttons gearbeitet, sodass Texteingabe umgangen
-wird, die eine Fehlerquelle darstellen kann.
+### *Wow-Faktor der Applikation*
+Der Wow-Faktor unserer Applikation besteht darin, dass Buttons in Abhängigkeit der Rolle des authentifizierten Benutzers entweder möglich sind zu klicken oder blockiert sind. Außerdem ist es bei der Rechtewahl eines Users nicht möglich den Beginn des Zeitintervalls vor das Ende des Zeitintervalls zu setzen! Damit wird eine Fehlerquelle ausgeschlossen. Ein weiterer Wow-Faktor unserer Applikation ist, dass ein Client im Zusammenhang mit einer Tür mit ein und dem selben Account gegebenenfalls auch die Rolle User annehmen kann. Zudem arbeiteten wir viel mit Buttons, sodass Texteingaben größtenteils umgangen wurden, um ein mögliches Sicherheitsrisiko auszuschließen.
 
 ### *Visual Design*
-Mit einem Bilder Karussell und der dunklen Farbwahl von schwarz und gold
-ist die Aufmerksamkeit des Kunden direkt geweckt. Durch Symbole wie für die 
-Benutzergruppen, wirkt die Seite aufregender. Wenig Text und viele Bilder
- machen die Seite lebendiger und übersichtlicher. Die Kunden werden 
- nicht mit Informationen zugeschüttet, sondern können sich langsam herantasten.
- Große Formulare und Buttons ermöglichen es auch älteren Leuten oder
- schlechten Augen alles zu erkennen.
- Das Wichtige ist farblich hevorgehoben, wie z.B. der Open Button in gelb.
- So weiß auch jeder, der technisch keine Kenntnisse besitzt, worauf es ankommt.
-
+Allgemein versuchten wir mit unserem "Mio-Design" ein souverän und seriös wirkendes Ambiente zu schaffen. Damit unsere Gäste, Clients und User ein gewisses Vertrauen gegenüber Mio aufbauen und unsere Webapplikation nutzen möchten.\
+Mit dem Bilder Karussell auf unserer Begrüßungsseite und der dunklen Farbwahl von schwarz und gold soll die Aufmerksamkeit unserer Gäste direkt geweckt werden. Durch Symbole und Bilder möchten wir unsere Seite aufregender wirken lassen. Ein eher geringer Anteil an Text und viele Bilder machen die Seite lebendiger und übersichtlicher. Unsere Gäste werden nicht mit Informationen zugeschüttet, sondern können sich langsam herantasten. Große Formulare und Buttons ermöglichen es auch älteren Leuten oder schlechten Augen alles zu erkennen. Zudem ist das Wichtige farblich hevorgehoben, wie beispielsweise der "Open"-Button in gelb. Auf diese Weise wissen unsere Benutzer auf was es ankommt.
  
+
 ## 2. Technische Implementierung
 
 ### *1. Arbeitsauftrag (29.03.2018): Design & CSS*
