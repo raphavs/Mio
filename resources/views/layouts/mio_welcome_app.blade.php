@@ -9,9 +9,8 @@
 
     <title>Mio Welcome</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/mio_styles.css">
+    <!-- Mio CSS & Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/mixOfMioAndBootstrap.css">
 
     <!-- Social Media Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -118,5 +117,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>

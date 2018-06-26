@@ -1,7 +1,3 @@
-$("#div-add-door-form").hide();
-$("#btn-close-add-door").hide();
-$("#door-already-exists-error").hide();
-
 $("#btn-add-door").click(function () {
     $("#div-manage-clients").hide();
     $("#div-doors").hide();

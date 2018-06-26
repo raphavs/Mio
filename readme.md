@@ -255,7 +255,9 @@ Tupels die Rolle des authentifizierten Benutzers im Zusammenhang mit der Tür ab
 Button die Eigenschaft "disabled", falls die Rolle "User" ist.
 Code Beispiel für das Überprüfen der Rolle des authentifizierten Benutzers im Zusammenhang 
 mit der Tür:
-@if ($relation_row->role_id == 3) disabled @endif<br> 
+'''php
+@if ($relation_row->role_id == 3) disabled @endif
+'''
 Im weiteren Verlauf der Dokumentation werden wir noch weitere Autorisierungsmaßnahmen beschreiben.
 
 ###*7. Arbeitsauftrag (17.05.2018): JavaScript - jQuery & AJAX*
@@ -293,10 +295,29 @@ im Vergleich zu den bisherigen Anwendungsfällen im Frontend statt. Zum anderen 
 dieser View mithilfe von JavaScript, dass ein "Client" eine ungültige Zeitspanne angeben kann. Es 
 ist nicht möglich den Beginn der Zeitspanne hinter das Ende der Zeitspanne zu setzen.<br> 
 In userem letzten Anwendungsfall wenden wir in der View "mio_transactions.blade.php" JavaScript 
-in Verbindung mit AJAX an. In dieser View zeigen wir Transaktionen einer entsprechenden Tür an 
-und ermöglichen es Benutzern nach Benutzername und Datum zu filtern. Um die bisherige Suche 
-zu einer "Live-Suche" umzuwandeln, erweiterten beziehungsweise veränderten wir 
-den Controller "BP_SearchController", den wir für den Such-Geschäftsprozess erstellt hatten. 
-Wir entfernten die Funktion "filterTransactions()" und fügten sechs weitere Funktionen hinzu. 
-Wir unterscheiden dabei zwei verschiedene Szenarien. Im ersten Szenario gibt ein "User" oder auch 
-"Client"
+in Verbindung mit AJAX an. In dieser View zeigen wir in Form einer Tabelle Transaktionen einer 
+entsprechenden Tür an und ermöglichen es Benutzern nach Benutzername und Datum zu suchen. Um die 
+bisherige Suche zu einer "Live-Suche" umzuwandeln, erstellten wir zunächst in dem 
+Verzeichnis "/resources/views" den Ordner "ajax". In diesem Ordner erstellten wir dann eine View, 
+die die Tabelle mit aktualisierten Daten anzeigt. Anschließend erweiterten wir 
+den "BP_SearchController", den wir für den Such-Geschäftsprozess erstellt hatten. Wir ergänzten 
+Funktionen, die nach jeder Eingabe des Benutzers die eingegebenen Daten aus dem Request 
+verarbeitet und ...
+
+###*8. Arbeitsauftrag (07.06.2018): Deployment & Performance*
+Zu Beginn dieses Arbeitsauftrages stellten wir gemeinsam mit Ihnen in der Übung unsere 
+Webapplikation auf Heroku bereit.\ 
+Anschließend verwendeten wir YSlow, um die Performance unserer Webapplikation zu analysieren. Um 
+die Performance zu verbessern, führten wir mithilfe der Datei "webpack.mix.js" die beiden 
+CSS-Dateien "mio_styles.css" und "bootstrap.css" zu einer CSS-Datei "mixOfMioAndBootstrap.css" 
+zusammen. Zudem komprimierten wir die Datei "mixOfMioAndBootstrap.css". Ergänzend führten wir auch 
+unsere JavaScript-Dateien zu einer JavaScript-Datei "mixOfMio.js" zusammen und komprimierten diese 
+ebenfalls.\ 
+Des Weiteren optimierten wir unsere Datenbankzugriffe, um die Performance unserer Webapplikation 
+zu verbessern.\ 
+
+###*9. Arbeitsauftrag (14.06.2018): Search Engine Optimization*
+...
+
+###*10. Arbeitsauftrag (21.06.2018): Security*
+...

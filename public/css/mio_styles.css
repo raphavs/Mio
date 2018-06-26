@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 /* Schrift des gesamten Bodys */
 body {
@@ -64,6 +64,7 @@ body {
     color: #ffffff;
     background-color: #226693;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 @media screen and (max-width: 500px) {
     .btn-logging {
@@ -73,7 +74,6 @@ body {
 .btn-logging:hover {
     color: #febe29;
     background-color: #226693;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-logging:focus {
@@ -163,13 +163,12 @@ body {
         font-size: 1rem;
     }
 }
-#my-readmore-btn:hover {
+.btn-readmore:hover {
     color: #f3be29;
     background-color: #ffffff;
-    font-weight: bold;
     text-decoration: none;
 }
-#my-readmore-btn:focus {
+.btn-readmore:focus {
     box-shadow: 0 0 0 0.2rem rgba(243, 190, 41, 0.25);
 }
 
@@ -249,7 +248,6 @@ body {
 }
 .my-welcome-p-link:hover {
     color: #f3be29;
-    font-weight: bold;
 }
 @media screen and (max-width: 500px) {
     .my-welcome-p-link {
@@ -299,19 +297,9 @@ body {
     margin-bottom: 0;
 }
 
-/* Margin für Terms of Use */
-.my-terms-of-use-style {
-    text-align: center;
-    padding-top: 11vh;
-    padding-bottom: 3vh;
-}
-@media screen and (max-width: 500px) {
-    .my-terms-of-use-style {
-        text-align: left;
-    }
-}
+/* Data Privacy Statement List Style */
 .my-terms-of-use-list-style {
-    list-style: none;
+    list-style: upper-roman;
 }
 
 /* Style Header Logging */
@@ -727,7 +715,6 @@ a .disabled {
 .btn-search:hover {
     color: #191b1d;
     background-color: #f3be29;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-search:focus {
@@ -975,6 +962,7 @@ a .disabled {
 .btn-secondary {
     color: #fff;
     font-size: 1rem;
+    font-weight: bold;
     background-color: #6c757d;
     border-color: #6c757d;
 }
@@ -985,14 +973,12 @@ a .disabled {
 }
 .btn-secondary:hover {
     color: #f3be29;
-    font-weight: bold;
     background-color: #5a6268;
     border-color: #545b62;
 }
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
     color: #f3be29;
-    font-weight: bold;
     background-color: #226693;
     border-color: #226693;
 }
@@ -1033,7 +1019,6 @@ a .disabled {
 .btn-save:hover {
     color: #f3be29;
     background-color: #226693;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-save:focus {
@@ -1213,7 +1198,6 @@ a .disabled {
 .btn-add:hover {
     color: #f3be29;
     background-color: #226693;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-add:focus {
@@ -1225,7 +1209,7 @@ a .disabled {
     color: #226693;
     background-color: #ffffff;
     border: 2px solid #226693;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     width: 18rem;
 }
@@ -1259,7 +1243,6 @@ a .disabled {
     color: #ffffff;
     background-color: #226693;
     border: 2px solid #226693;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-change:focus {
@@ -1409,7 +1392,6 @@ a .disabled {
 .btn-manage:hover, .btn-delete:hover {
     color: #f3be29;
     background-color: #226693;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-manage:focus, .btn-delete:focus {
@@ -1442,7 +1424,6 @@ a .disabled {
     color: #ffffff;
     background-color: #226693;
     border: 2px solid #226693;
-    font-weight: bold;
     text-decoration: none;
 }
 .btn-delete-client:focus {

@@ -7,9 +7,8 @@
 
     <title>Mio Welcome</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/mio_styles.css">
+    <!-- Mio CSS & Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/mixOfMioAndBootstrap.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -46,5 +45,6 @@
         <h5 class="thisIsMio-style">THIS IS MIO</h5>
     </div>
 </footer>
+
 </body>
 </html>

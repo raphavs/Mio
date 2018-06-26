@@ -103,12 +103,64 @@
     </div>
 </div>
 @if ($error == 'user-not-exists')
-    <script type="text/javascript" src="/js/mioUserNotExists.js"></script>
+    <script type="text/javascript">
+        $("#add-new-user").hide();
+        $("#wrong-error").hide();
+        $("#already-error").hide();
+        $("#div-existing-email").hide();
+        $("#add-btn").hide();
+        $("#add-existing-user").show();
+        $("#not-error").show();
+        setTimeout(function () {
+                $("#not-error").hide();
+                $("#div-existing-email").show();
+                $("#add-btn").show();
+            },
+            3000
+        );
+    </script>
 @elseif ($error == 'wrong-password')
-    <script type="text/javascript" src="/js/mioUserWrongPassword.js"></script>
+    <script type="text/javascript">
+        $("#add-new-user").hide();
+        $("#already-error").hide();
+        $("#not-error").hide();
+        $("#div-existing-password").hide();
+        $("#add-btn").hide();
+        $("#add-existing-user").show();
+        $("#wrong-error").show();
+        setTimeout(function () {
+                $("#wrong-error").hide();
+                $("#div-existing-password").show();
+                $("#add-btn").show();
+            },
+            3000
+        );
+    </script>
 @elseif ($error == 'user-already-exists')
-    <script type="text/javascript" src="/js/mioUserAlreadyExists.js"></script>
+    <script type="text/javascript">
+        $("#add-new-user").hide();
+        $("#not-error").hide();
+        $("#wrong-error").hide();
+        $("#div-existing-email").hide();
+        $("#div-existing-password").hide();
+        $("#add-btn").hide();
+        $("#add-existing-user").show();
+        $("#already-error").show();
+        setTimeout(function () {
+                $("#already-error").hide();
+                $("#div-existing-email").show();
+                $("#div-existing-password").show();
+                $("#add-btn").show();
+            },
+            5000
+        );
+    </script>
 @elseif ($error == 'okay')
-    <script type="text/javascript" src="/js/mioAddUser.js"></script>
+    <script type="text/javascript">
+        $("#add-existing-user").hide();
+        $("#not-error").hide();
+        $("#wrong-error").hide();
+        $("#already-error").hide();
+    </script>
 @endif
 @endsection

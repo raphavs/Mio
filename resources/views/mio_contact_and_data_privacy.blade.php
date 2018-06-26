@@ -37,7 +37,7 @@
             </div>
         </section>
         <!-- Datenschutzerklärung -->
-        <section id="mio-data-privacy" class="my-terms-of-use-style">
+        <section id="mio-data-privacy" class="my-padding-welcome-section">
             <!-- Headline -->
             <h1 class="display-5">Datenschutzerklärung</h1>
 

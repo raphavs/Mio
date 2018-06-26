@@ -88,5 +88,4 @@
         </form>
     </div>
 </div>
-<script type="text/javascript" src="/js/mioRightsExt.js"></script>
 @endsection

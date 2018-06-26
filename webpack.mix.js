@@ -20,12 +20,8 @@ mix.styles([
 ], 'public/css/mixOfMioAndBootstrap.css');
 
 mix.scripts([
-    'public/js/mioAddDoor.js',
-    'public/js/mioAddUser.js',
-    'public/js/mioDoorAlreadyExists.js',
+    'public/js/mioAddDoorFunctions.js',
+    'public/js/mioAddUserFunctions.js',
     'public/js/mioRightsExt.js',
     'public/js/mioTransactions.js',
-    'public/js/mioUserAlreadyExists.js',
-    'public/js/mioUserNotExists.js',
-    'public/js/mioUserWrongPassword.js'
 ], 'public/js/mixOfMio.js');

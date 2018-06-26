@@ -25,8 +25,12 @@
             <form action="/open/{{ $door }}" method="post">
                 @csrf
                 <button type="submit" class="btn btn-open"
-                        @if((date('H:i:s') < $relation_row->from_time or date('H:i:s') > $relation_row->to_time) or $relation_row->$week_day == 0) disabled @endif>
-                    @if((date('H:i:s') < $relation_row->from_time or date('H:i:s') > $relation_row->to_time) or $relation_row->$week_day == 0) NO RIGHT @else Open @endif
+                        @if(!(date('H:i:s') >= $relation_row->from_time and date('H:i:s') <= $relation_row->to_time)
+                        or $relation_row->$week_day == 0
+                        or $relation_row->access_right == 0) disabled @endif>
+                    @if(!(date('H:i:s') >= $relation_row->from_time and date('H:i:s') <= $relation_row->to_time)
+                    or $relation_row->$week_day == 0
+                    or $relation_row->access_right == 0) NO RIGHT @else Open @endif
                 </button>
             </form>
         </div>

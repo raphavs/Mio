@@ -7,9 +7,8 @@
 
     <title>Mio Home</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/mio_styles.css">
+    <!-- Mio CSS & Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/mixOfMioAndBootstrap.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -95,5 +94,7 @@
         <hr class="my-hr-style">
     </div>
 </footer>
+
+<script type="text/javascript" src="/js/mixOfMio.js"></script>
 </body>
 </html>

@@ -56,8 +56,27 @@
     </div>
 </div>
 @if ($error == 'door-already-exists')
-    <script type="text/javascript" src="/js/mioDoorAlreadyExists.js"></script>
+    <script type="text/javascript">
+        $("#div-manage-clients").hide();
+        $("#div-doors").hide();
+        $("#btn-add-door").hide();
+        $("#input-field-doorname").hide();
+        $("#btn-close-add-door").show();
+        $("#div-add-door-form").show();
+        $("#door-already-exists-error").show();
+        setTimeout(function()
+            {
+                $("#door-already-exists-error").hide();
+                $("#input-field-doorname").show();
+            },
+            3000
+        );
+    </script>
 @elseif ($error == 'okay')
-    <script type="text/javascript" src="/js/mioAddDoor.js"></script>
+    <script type="text/javascript">
+        $("#div-add-door-form").hide();
+        $("#btn-close-add-door").hide();
+        $("#door-already-exists-error").hide();
+    </script>
 @endif
 @endsection
