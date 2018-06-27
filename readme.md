@@ -45,8 +45,12 @@ Clients und User haben in unserer Webapplikation feste Rollen. Es ist jedoch mö
 ###### **Übersicht über Clients, User und Türen**
 Ein Admin hat dieselben Use Cases wie ein Client. Zusätzlich kann er jedoch auf seiner Home-Seite, den Button "Manage Clients" klicken, um auf eine View zu gelangen, in der er Clients verwalten und User löschen kann. Klickt er bei einem Client auf den Button "Manage", so wird er auf eine weitere View geleitet, in der er Türen des entsprechenden Clients sowie den Client selber löschen kann.
 
+---
+
 ### *Wow-Faktor der Applikation*
 Der Wow-Faktor unserer Applikation besteht darin, dass Buttons in Abhängigkeit der Rolle des authentifizierten Benutzers entweder möglich sind zu klicken oder blockiert sind. Außerdem ist es bei der Rechtewahl eines Users nicht möglich den Beginn des Zeitintervalls vor das Ende des Zeitintervalls zu setzen! Damit wird eine Fehlerquelle ausgeschlossen. Ein weiterer Wow-Faktor unserer Applikation ist, dass ein Client im Zusammenhang mit einer Tür mit einem einzigen Account gegebenenfalls auch die Rolle User annehmen kann. Zudem arbeiteten wir viel mit Buttons, sodass Texteingaben größtenteils umgangen wurden, um ein mögliches Sicherheitsrisiko auszuschließen.
+
+---
 
 ### *Visual Design*
 Allgemein versuchten wir mit unserem "Mio-Design" ein souverän und seriös wirkendes Ambiente zu schaffen. Damit unsere Gäste, Clients und User ein gewisses Vertrauen gegenüber Mio aufbauen und unsere Webapplikation nutzen möchten.\
@@ -83,7 +87,7 @@ Grund beschäftigten wir uns schon vorzeitig mit dem MVC-Ansatz sowie mit Migrat
 Zu Beginn dieses Arbeitsauftrages erstellten wir zunächst ein weiteres Template "mio_home_app.blade.php" sowie weitere Views, um den Such-Geschäftsprozess implementieren zu können. Nachdem das Frontend dafür entwickelt war, erstellten wir in unserer Datenbank mittels Migrations ("php artisan make:migration") die Tabelle "Transactions". Anschließend erzeugten wir mit dem Befehl "php artisan make:model" ein entsprechendes Model "TransactionsModel.php", um die Datenbank-Tabelle "Transactions" gemäß dem MVC-Ansatz auf eine Klasse abzubilden. Ergänzend erzeugten wir einen Seeder "TransactionsSeeder.php" mit dem Befehl "php artisan make:seeder", implementierten dessen "run()"-Funktion mit entsprechenden Insert-Statements und führten den Seeder schließlich aus, um unsere Datenbank-Tabelle "Transactions" mit Testdaten zu füllen. 
 ###### **Erstellen des Controllers für den Such-Geschäftsprozess**
 Nachdem wir diese Schritte erfolgreich durchgeführt hatten, erstellten wir den Controller "BP_SearchController.php", um die Geschäftslogik unseres Such-Geschäftsprozesses zu implementieren. In dem eben erwähnten Controller implementierten wir eine Funktion "showTransactions()", welche die Transaktionen aus dem "TransactionsModel.php" holt und in eine Variable speichert. Schließlich returnt die Funktion die View "mio_transactions.blade.php" und gibt die entsprechende Variable mit, damit die View die Transaktionen anzeigen kann. 
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $transactions = TransactionsModel::where('door_id', $door_id)->get();
 return view('mio_transactions', ['door' => $door, 'transactions' => $transactions]);

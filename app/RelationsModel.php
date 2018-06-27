@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class RelationsModel extends Model
 {
     protected $table = 'relations';
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function door()
     {

@@ -76,36 +76,29 @@
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-lg-4">
-                <hr class="my-hr-style">
-                <h5 class="my-footer-header">Motivation</h5>
-                <hr class="my-hr-style">
-                <div class="my-footer-paragraph-margin offset-1 col-10">
-                    <p>We, the developers of Mio, are studying Business Computer Science at the HTWG in Constance.</p>
-                    <p>As part of the Web Technologies module, we developed a web application that allows you to manage your doors smart.</p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="logo-footer-padding">
+                <div class="my-put-things-in-vertically-and-horizontally-center my-footer-padding">
                     <img src="/Image/Mio_Logo.jpg" class="rounded my-logo-size" alt="Logo">
                 </div>
-                <div class="icons-in-center text-center">
-                    <a href="https://github.com/" class="fa fa-github fa-2x"></a>
-                    <!-- <a href="#" class="fa fa-xing fa-2x"></a> -->
-                    <a href="https://de.linkedin.com/" class="fa fa-linkedin fa-2x"></a>
-                    <a href="https://www.instagram.com/" class="fa fa-instagram fa-2x"></a>
-                    <!-- <a href="#" class="fa fa-facebook fa-2x"></a> -->
-                    <a href="https://twitter.com/" class="fa fa-twitter fa-2x"></a>
-                    <a href="https://www.snapchat.com/l/de-de/" class="fa fa-snapchat fa-2x"></a>
-                </div>
             </div>
             <div class="col-lg-4">
-                <hr class="my-hr-style">
                 <h5 class="my-footer-header">Information</h5>
-                <hr class="my-hr-style">
+                <hr class="my-hr-style col-6">
                 <div class="my-footer-paragraph-margin offset-1 col-10">
                     <a class="my-welcome-a-link" href="/information"><p class="my-welcome-p-link">Information about Mio</p></a>
                     <a class="my-welcome-a-link" href="/contact"><p class="my-welcome-p-link">Imprint</p></a>
                     <a class="my-welcome-a-link" href="/contact#mio-data-privacy"><p class="my-welcome-p-link">Data Privacy Statement</p></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="my-put-things-in-vertically-and-horizontally-center my-footer-padding">
+                    <a href="https://github.com/" class="fa fa-github fa-2x" target="_blank"></a>
+                    <!-- <a href="#" class="fa fa-xing fa-2x"></a> -->
+                    <a href="https://twitter.com/" class="fa fa-twitter fa-2x" target="_blank"></a>
+                    <!-- <a href="https://de.linkedin.com/" class="fa fa-linkedin fa-2x" target="_blank"></a> -->
+                    <a href="https://www.instagram.com/" class="fa fa-instagram fa-2x" target="_blank"></a>
+                    <!-- <a href="#" class="fa fa-facebook fa-2x"></a> -->
+                    <a href="https://www.snapchat.com/l/de-de/" class="fa fa-snapchat fa-2x" target="_blank"></a>
+                    <a href="https://www.google.de/" class="fa fa-google fa-2x" target="_blank"></a>
                 </div>
             </div>
         </div>

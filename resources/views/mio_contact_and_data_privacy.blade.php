@@ -15,15 +15,6 @@
             <div class="col-lg-10 offset-lg-1 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                 <div class="row text-center">
                     <div class="col-lg-6 my-about-padding">
-                        <h4 class="my-contact-header-big">Address</h4>
-                        <br>
-                        <p class="my-contact-header-little"><b>Mio (University Project)</b></p>
-                        <p>- Manage your doors smart -</p>
-                        <p>Hochschule Konstanz</p>
-                        <p>Alfred-Wachtel-Str. 8</p>
-                        <p>78462 Konstanz</p>
-                    </div>
-                    <div class="col-lg-6 my-about-padding">
                         <h4 class="my-contact-header-big">Imprint</h4>
                         <br>
                         <p class="my-contact-header-little"><b>Mio (University Project)</b></p>
@@ -33,7 +24,17 @@
                         <p>As part of the Web Technologies module, we developed a web application that allows you to
                             manage your doors smart.</p>
                     </div>
+                    <div class="col-lg-6 my-about-padding">
+                        <h4 class="my-contact-header-big">Address</h4>
+                        <br>
+                        <p class="my-contact-header-little"><b>Mio (University Project)</b></p>
+                        <p>- Manage your doors smart -</p>
+                        <p>Hochschule Konstanz</p>
+                        <p>Alfred-Wachtel-Str. 8</p>
+                        <p>78462 Konstanz</p>
+                    </div>
                 </div>
+                <div id="gmeg-map-canvas" class="my-google-maps-margin"></div>
             </div>
         </section>
         <!-- Datenschutzerklärung -->
@@ -71,7 +72,7 @@
                         Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt
                         eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: <a
                                 href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
-                                target="_blank">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.
+                                target="_blank">Liste der Datenschutzbeauftragten</a>.
                     </p>
 
                     <p><strong>Recht auf Datenübertragbarkeit</strong></p>
@@ -169,4 +170,22 @@
             </div>
         </section>
     </div>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJMNqQ4iF1ZieYmSvtKt7-Y9gwrorI-GM"></script>
+    <script type="text/javascript">
+        var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
+        function gmegInitializeMap() {
+            gmegLatLng = new google.maps.LatLng(47.667787, 9.171383);
+            gmegMap = new google.maps.Map(document.getElementById("gmeg-map-canvas"), {
+                zoom: 15,
+                center: gmegLatLng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            gmegMarker = new google.maps.Marker({map: gmegMap, position: gmegLatLng});
+            gmegInfoWindow = new google.maps.InfoWindow({content: '<b>Mio (University Project)</b><br>Alfred-Wachtel-Str. 8<br>78462 Konstanz'});
+            gmegInfoWindow.open(gmegMap, gmegMarker);
+        }
+
+        google.maps.event.addDomListener(window, "load", gmegInitializeMap);
+    </script>
 @endsection

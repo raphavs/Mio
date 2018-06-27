@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionsModel extends Model
 {
     protected $table = 'transactions';
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function door()
     {

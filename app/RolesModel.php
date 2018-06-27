@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class RolesModel extends Model
 {
     protected $table = 'roles';
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function relations()
     {

@@ -24,7 +24,7 @@ class CreateTransactionsTable extends Migration
             $table->date('entrance_date');
             $table->time('entrance_time');
             $table->integer('door_id');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

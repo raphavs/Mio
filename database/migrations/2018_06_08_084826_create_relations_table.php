@@ -29,7 +29,7 @@ class CreateRelationsTable extends Migration
             $table->integer('sun');
             $table->time('from_time');
             $table->time('to_time');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
