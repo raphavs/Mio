@@ -56,6 +56,7 @@ Der Wow-Faktor unserer Applikation besteht darin, dass Buttons in Abhängigkeit 
 Allgemein versuchten wir mit unserem "Mio-Design" ein souverän und seriös wirkendes Ambiente zu schaffen. Damit unsere Gäste, Clients und User ein gewisses Vertrauen gegenüber Mio aufbauen und unsere Webapplikation nutzen möchten.\
 Mit dem Bilder Karussell auf unserer Begrüßungsseite und der dunklen Farbwahl von schwarz und gold soll die Aufmerksamkeit unserer Gäste direkt geweckt werden. Durch Symbole und Bilder möchten wir unsere Seite aufregender wirken lassen. Ein eher geringer Anteil an Text und viele Bilder machen die Seite lebendiger und übersichtlicher. Unsere Gäste werden nicht mit Informationen zugeschüttet, sondern können sich langsam herantasten. Große Formulare und Buttons ermöglichen es auch älteren Leuten oder schlechten Augen alles zu erkennen. Zudem ist das Wichtige farblich hevorgehoben, wie beispielsweise der "Open"-Button in gelb. Auf diese Weise wissen unsere Benutzer auf was es ankommt.
  
+--- 
 
 ### 2. Technische Implementierung
 
@@ -65,9 +66,13 @@ Beim Erstellen der Begrüßungsseite haben wir uns zunächst überlegt wie grob 
 ###### **Implementierung des Designs**
 Zusätzlich erstellten wir eine CSS-Datei "mio_styles.css", um unserer Begrüßungsseite einen eigenen Stil zu verleihen. Dabei hielten wir uns möglichst nahe an unseren Vorlagen aus dem Moodboard und dem Style Tile.
 
+---
+
 #### *2. Arbeitsauftrag (05.04.2018): Layout & Design*
 ###### **Implementierung der Begrüßungsseite als statische Webseite & Responsive Design (mit Bootstrap)**
 Für diesen Arbeitsauftrag beschäftigten wir uns zunächst intensiv mit Bootstrap. Anschließend bauten wir sehr viele Elemente von Bootstrap in unsere Begrüßungsseite ein, um für diese Responsive Design zu implementieren. Dabei verwendeten wir vor allem das Grid-System, um die Anordnung der Elemente vom Viewport abhängig zu machen. Da wir einen eigenen Stil für unsere Webapplikation haben wollten, überschrieben wir viele von Bootstrap bereitgestellte CSS-Klassen, um ein individuelles Mio-Design zu implementieren.
+
+---
 
 #### *3. Arbeitsauftrag (12.04.2018): Laravel - PHP*
 ###### **Laravel Projekt erstellen**
@@ -78,6 +83,8 @@ Des Weiteren erstellte jeder von uns auf seinem eigenen Rechner eine lokale MySQ
 Zudem implementierten wir weitere Views, die alle das Template "mio_welcome_app.blade.php" erweitern, für unseren "Willkommensbereich". Für diese Views implementierten wir einen zusätzlichen Controller "WelcomeController.php", der Funktionen enthält, die die eben erwähnten Views returnt. Ergänzend passten wir die Routen in der "web.php"-Datei an, um die eben beschriebenen Funktionen im "WelcomeController.php" aufrufen zu können.
 ###### **Einchecken des Projekts in GIT**
 Zum Schluss checkte ich das angepasste Projekt in GIT ein, damit meine Partnerin Lea es auschecken konnte.
+
+---
 
 #### *4. Arbeitsauftrag (19.04.2018) & 5. Arbeitsauftrag (26.04.2018): Laravel - MVC*
 Wir fassen diese beiden Arbeitsaufträge zusammen, da wir diese auch zusammen umgesetzt haben.
@@ -96,11 +103,13 @@ Die Variable "$door" beinhaltet den betreffenden Türnamen.
 Des Weiteren ergänzten wir ebenfalls im "BP_SearchController.php" eine weitere Funktion "filterTransactions()", die aufgerufen wird, wenn der Benutzer in der View "mio_transactions.blade.php" einen Benutzernamen und ein Datum in ein entsprechendes Formular eingegeben hat. Diese Funktion holt Transaktionen in Abhängigkeit der Eingaben des Benutzers aus dem "TransactionsModel.php" und gibt sie der View "mio_transactions.blade.php" mit. Später erweiterten wir unseren Such-Geschäftsprozess um eine "Live-Suche". Deshalb werden wir im weiteren Verlauf der Dokumentation noch einmal im Zusammenhang mit AJAX auf den Such-Geschäftsprozess zurückkommen.
 ###### **Anpassen der Routen für den Such-Geschäftsprozess**
 Um den "BP_SearchController.php" mit seinen Funktionen aufrufen zu können, ergänzten wir in der "web.php"-Datei entsprechende Routen.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 Route::get('/home/{door}/transactions', 'BP_SearchController@showTransactions')->name('home.managedoor.transactions');
 ```
 Somit war unsere Webapplikation in der Lage, dem Benutzer Transaktionen in Abhängigkeit seiner Eingaben anzeigen zu lassen.
+
+---
 
 #### *6. Arbeitsauftrag (03.05.2018): Laravel - Session Handling, Authentifizierung & Autorisierung*
 ###### **Erzeugen weiterer Migrations**
@@ -108,7 +117,7 @@ Zu Beginn dieses Arbeitsauftrages ergänzten wir unsere Datenbank um weitere Tab
 Tabelle "Relations", um die Rechte eines Benutzers in Abhängigkeit der Tür abspeichern zu können. Des Weiteren ergänzten wir mittels Migrations die von Laravel bereitgestellte Tabelle "Users" um eine Spalte "role_id", um unseren Benutzern eine Rolle zuweisen zu können. Der letzte Satz kann für Verwirrung gesorgt haben, da wir eben oben beschrieben haben, dass unsere Benutzer ihre Rollen in Abhängigkeit der Tür einnehmen. Deswegen möchte ich diesen Sachverhalt im Folgenden noch einmal genauer erläutern. Die Rolle unserer Benutzer wird primär in der Tabelle "Users" gespeichert. Da wie ebenfalls bereits oben beschrieben, ein Client in Abhängigkeit der Tür gegebenenfalls auch die Rolle "User" einnehmen kann, ist es unabdingbar die Rolle eines Benutzers noch ein zusätzliches Mal in der Tabelle "Relations" in Abhängigkeit der Tür zu definieren und zu speichern.
 ###### **Erzeugen weiterer Models & Seeder**
 Im nächsten Schritt ergänzten wir wie im vorherigen Arbeitsauftrag entsprechende Models und Seeders für unsere Migrations. In dem Model "RelationsModel.php" ergänzten wir die Funktionen "door()", "user()" und "role()", um jedem Tupel unserer Tabelle "Relations" eindeutig eine Tür, einen Benutzer und eine Rolle zuweisen zu können. Hierfür verwendeten wir die von Laravel bereitgestellte Funktion "belongsTo()".
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 public function door()
 {
@@ -164,7 +173,7 @@ protected function create(array $data)
 Des Weiteren erstellten wir weitere Views, die das Template "mio_home_app.blade.php" erweitern sowie weitere Routen in der "web.php"-Datei, um den zweistufigen Eingabe-Geschäftsprozess implementieren zu können.
 ###### **Implementierung des Controllers für den zweistufigen Eingabe-Geschäftsprozess inklusive Session Handling**
 Nachdem das Frontend für den zweistufigen Eingabe-Geschäftsprozess entwickelt war, erstellten wir den Controller "BP_AdjustController.php", um die Geschäftslogik für diesen Geschäftsprozess zu implementieren. In dem eben erwähnten Controller implementierten wir drei Funktionen, die wir im Folgenden genauer beschreiben werden. Die erste Funktion "invokeRights()" verarbeitet zunächst die Variablen "$door" und "$user", die über den URL übergeben wurden. Diese beiden Variablen definieren die Beziehung zwischen dem User und der Tür für die die Rechte eingestellt werden soll. Danach holt die Funktion mithilfe dieser beiden Variablen, die entsprechende ID der Türe aus dem "DoorsModel.php" und die entsprechende ID des Users aus dem Model "User.php" und speichert diese beiden IDs in der entsprechenden Session ab. 
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $user_id = User::where('name', $user)->value('id');
 $request->session()->put('current_user_id', $user_id);
@@ -172,7 +181,7 @@ $door_id = DoorsModel::where('door_name', $door)->value('id');
 $request->session()->put('current_door_id', $door_id);
 ```
 Anschließend holt die Funktion das Zutritts- und das Protokollrecht der entsprechenden Beziehung aus dem "RelationsModel.php" und speichert diese in Variablen. Danach returnt die Funktion die View "mio_rights.blade.php" inklusive der beiden und noch weiterer Variablen.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $access_right = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('access_right');
 $protocol_right = RelationsModel::where('user_id', $user_id)->where('door_id', $door_id)->value('protocol_right');
@@ -180,13 +189,13 @@ return view('mio_rights', ['door' => $door, 'user' => $user, 'access_right' => $
 ```
 In dieser View bestimmt der autorisierte Client, ob der entsprechende User das Zutritts- und das Protokollrecht bekommen soll. Speichert der Client seine Einstellungen ab, wird die zweite Funktion "invokeRightsExt()" aufgerufen. Diese 
 Funktion verarbeitet zunächst die vom Client eingegebenen Daten (Zutritts- und Protokollrecht) aus dem Request und speichert diese wie die beiden IDs der Tür und des Users in der entsprechenden Session ab. 
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $request->session()->put('access_right', $request->input('access_option') == 'true' ? 1 : 0);
 $request->session()->put('protocol_right', $request->input('protocol_option') == 'true' ? 1 : 0);
 ```
 Hat der Client dem User das Zutrittsrecht nicht gestattet, so werden die getätigten Einstellungen aus der Session geholt und sofort in der Datenbank gespeichert.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $access_right = $request->session()->get('access_right','There is no Access Right');
 $protocol_right = $request->session()->get('protocol_right','There is no Protocol Right');
@@ -196,13 +205,13 @@ $current_user->protocol_right = $protocol_right;
 $current_user->save();
 ```
 Hat der Client dem User jedoch das Zutrittsrecht gestattet, so wird die View "mio_rights_ext.blade.php" inklusive benötigter Variablen returnt.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $relation_row = RelationsModel::where('user_id', User::where('name', $user)->value('id'))->where('door_id', DoorsModel::where('door_name', $door)->value('id'))->first();
 return view('mio_rights_ext', ['door' => $door, 'user' => $user, 'relation_row' => $relation_row]);
 ```
 In dieser View bestimmt der autorisierte Client, an welchen Wochentagen und zu welcher Uhrzeit der entsprechende User das Zutrittsrecht bekommen soll. Speichert der Client seine Einstellungen ab, wird die dritte Funktion "store()" aufgerufen. Diese Funktion holt sich zunächst die ID des Users, die ID der Tür, das Zutritts- und das Protokollrecht aus der Session. Anschließend verarbeitet die Funktion die vom Client eingegebenen Daten aus dem Request und speichert diese gemeinsam mit den Daten aus der Session in der Datenbank ab.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $current_user = RelationsModel::where('user_id', $request->session()->get('current_user_id', 'There is no User-ID'))->where('door_id', $request->session()->get('current_door_id', 'There is no Door-ID'))->first();
 $current_user->access_right = $request->session()->get('access_right','There is no Access Right');
@@ -223,7 +232,7 @@ $current_user->save();
 ###### **Implementierung der Authentifizierung**
 Nachdem wir all diese Schritte vorgenommen hatten, integrierten wir die von Laravel bereitgestellte Authentifizierung in unsere Webapplikation. Hierfür erstellten wir die Views "mio_login.blade.php" und "mio_register.blade.php", kopierten den Code aus den entsprechenden Views von Laravel in unsere beiden eben erwähnten Views und gestalteten diese gemäß dem Mio-Design. Die hierfür benötigten Models, Controller, Migrations und Routen erzeugten wir bereits im 3. Arbeitsauftrag. Damit kein authentifizierter Benutzer auf unseren "Willkommensbereich" gelangen kann, ergänzten wir den "WelcomeController.php" um einen Konstruktor, der die Funktion "middleware()" mit dem Übergabeparameter "guest" aufruft. Damit können all die Funktionen des "WelcomeControllers.php" nur aufgerufen werden, wenn der aktuelle Benutzer nicht 
 authentifiziert ist.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 public function __construct()
 {
@@ -231,17 +240,17 @@ public function __construct()
 }
 ```
 Fortführend zum eben beschriebenen Schritt, ergänzten wir ebenfalls die Controller "HomeController.php", "BP_SearchController.php", "BP_AdjustController.php", "AdminController.php" und "AddUserController.php" um einen Konstruktor, der die Funktion "middleware()" mit dem Übergabeparameter "auth" aufruft. Damit können all die Funktionen dieser Controller nur aufgerufen werden, wenn der aktuelle Benutzer authentifiziert ist.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 public function __construct()
 {
     $this->middleware('auth');
 }
 ```
-Die Controller "BP_AdjustController.php", "AdminController.php" und "AddUserController" werden wir im weiteren Verlauf der Dokumentation genauer beschreiben.
+Der "AdminController.php" definiert die Geschäftslogik der Admin-Funktionen unserer Webapplikation und der "AddUserController.php" definiert die Geschäftslogik für das Hinzufügen von neuen Usern für eine Tür.
 ###### **Implementierung der Autorisierung für den zweistufigen Eingabe-Geschäftsprozess**
 Zum Schluss dieses Arbeitsauftrages implementierten wir schließlich noch die Autorisierung für den zweistufigen Eingabe-Geschäftsprozess. Um die Rechte für einen User festlegen zu können, klicken Clients in der View "mio_manage_door.blade.php" auf den Button "Manage Rights". Da nur Clients die Rechte von Usern für eine Tür verwalten dürfen, blockieren wir diesen Button für User. Hierfür schicken wir der View "mio_manage_door.blade.php" das entsprechende Tupel aus dem "RelationsModel.php" mit.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 $id = Auth::id();
 $door_id = DoorsModel::where('door_name', $door)->value('id');
@@ -249,18 +258,18 @@ $relation_row = RelationsModel::where('user_id', $id)->where('door_id', $door_id
 return view('mio_manage_door', ['door' => $door, 'relation_row' => $relation_row]);
 ```
 In der View fragen wir dann mithilfe des Tupels die Rolle des authentifizierten Benutzers im Zusammenhang mit der Tür ab und blockieren den Button "Manage Rights", falls die Rolle "User" ist.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 @if ($relation_row->role_id == 3) disabled @endif
 ```
 ###### **Implementierung weiterer Autorisierungsmaßnahmen**
 Ausschließlich Admins haben auf der Home-Seite das Recht auf den Button "Manage Clients" zu drücken. Klickt ein Admin diesen Button, so wird er auf eine View weitergeleitet, auf der er Clients verwalten und User löschen kann. Dieser Use Case wurde bereits im 1. Abschnitt ("Beschreibung der Funktionalität") genauer beschrieben. Um diese Autorisierung zu realisieren, fragten wir in der entsprechenden View "mio_home.blade.php" ab, ob der authentifizierte Benutzer ein Admin ist. Ist der authentifizierte Benutzer kein Admin, so wird der Button "Manage Clients" blockiert.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 @if (!\Illuminate\Support\Facades\Auth::user()->hasRole('admin')) disabled @endif
 ```
 Zudem schrieben wir eine eigene Middleware "CheckRole.php", um sicherzustellen, dass kein unautorisierter Benutzer über den URL auf die entsprechenden Views gelangen kann.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 class CheckRole
 {
@@ -274,7 +283,7 @@ class CheckRole
 }
 ```
 Dementsprechend passten wir auch die entsprechenden Routen in der "web.php"-Datei an.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 Route::get('/admin', 'AdminController@manage')->name('home.admin')->middleware('checkRole:admin');
 Route::post('/admin', 'AdminController@deleteUser')->name('home.admin.deleteuser')->middleware('checkRole:admin');
@@ -282,7 +291,7 @@ Route::get('/admin/{user}', 'AdminController@manageClient')->name('home.admin.cl
 Route::post('/admin/{user}', 'AdminController@delete')->name('home.admin.client.deletedoor')->middleware('checkRole:admin');
 ```
 Des Weiteren haben ausschließlich Clients und Admins auf der Home-Seite das Recht auf den Button "Add Door" zu drücken. Klickt ein Client oder ein Admin diesen Button, so wird ihm ein Formular angezeigt, in dem er eine neue Tür registrieren kann. Dieser Use Case wurde ebenfalls bereits im 1. Abschnitt ("Beschreibung der Funktionalität") genauer beschrieben. Um diese Autorisierung zu realisieren, fragten wir in der entsprechenden View "mio_home.blade.php" ab, ob der authentifizierte Benutzer ein Client oder ein Admin ist. Ist der authentifizierte Benutzer weder Client noch Admin, so wird der Button "Add Door" blockiert.
-Code Beispiel:
+<br>Code Beispiel:
 ```php
 @if (!\Illuminate\Support\Facades\Auth::user()->hasRole('client') and !\Illuminate\Support\Facades\Auth::user()->hasRole('admin')) disabled @endif
 ```
@@ -291,10 +300,12 @@ In der View "mio_transactions.blade.php" können authentifizierte Benutzer eine 
 ###### **Weitere Infos zum Thema Autorisierung**
 Viele unserer Views, für die eine Autorisierung erforderlich sind, können über einen entsprechenden URL erreicht werden. Auf die Umsetzung dieser Autorisierungsmaßnahmen, die die Integrität unserer Webapplikation trotz dieser Gefahr gewährleisten, werden wir im 10. Arbeitsauftrag zum Thema Security genauer eingehen. 
 
+---
+
 #### *7. Arbeitsauftrag (17.05.2018): JavaScript - jQuery & AJAX*
 ###### **JavaScript 1. Use Case**
 Wir verwenden an verschiedenen Stellen JavaScript, um unsere Webapplikation dynamisch zu gestalten. In der View "mio_home.blade.php" verwenden wir zum einen JavaScript, um ein Formular anzeigen zu lassen, mit dem ein Client eine Tür hinzufügen kann. Dieses Formular erscheint, wenn ein Client auf den Button "Add Door" klickt. Da Türnamen in unserer Webapplikation nur einmalig vergeben werden, verwenden wir zum anderen ebenfalls in dieser View JavaScript, um eine Fehlermeldung anzeigen zu lassen, falls ein Client einen Türnamen eingibt, der bereits vergeben ist.
-Code Beispiel:
+<br>Code Beispiel:
 ```javascript
 $("#btn-add-door").click(function () {
     $("#div-manage-clients").hide();
@@ -317,7 +328,7 @@ Ein weiteres Mal verwenden wir JavaScript in der View "mio_add_user.blade.php". 
 ###### **JavaScript - Überprüfungen im Backend**
 All diese Überprüfungen aus diesen ersten beiden Anwendungsfällen finden im Backend statt. Daher geben wir im Controller "AddUserController.php" in der Funktion "addExistingUser()" in Abhängigkeit des Ergebnisses der Überprüfung der selben View "mio_add_user.blade.php" eine Variable mit, die den entsprechenden Fehler repräsentiert und rufen dann in der View in 
 Abhängigkeit dieser Variable eine entsprechende JavaScript-Datei auf.
-Code Beispiel 1:
+<br>Code Beispiel 1:
 ```php
 $hashedPassword = User::where('email', $request->input('email'))->value('password');
 if ($hashedPassword == null) 
@@ -364,7 +375,7 @@ s. View "mio_add_user.blade.php"
 ###### **JavaScript 3. Use Case**
 Ein weiterer Anwendungsfall von JavaScript befindet sich in der View "mio_rights_ext.blade.php". In dieser View bestimmt ein Client an welchen Wochentagen und zu welcher Uhrzeit ein User eine entsprechende Tür öffnen darf. In diesem Fall verhindern wir zum einen mithilfe von JavaScript, dass die Einstellungen in der Datenbank gespeichert werden, falls 
 ein Client keinen der Wochentage auswählt und anschließend speichern möchte. Ist dies jedoch der Fall, wird eine entsprechende Fehlermeldung angezeigt. Diese Überprüfung fand im Vergleich zu den bisherigen Anwendungsfällen im Frontend statt.
-Code Beispiel 1:
+<br>Code Beispiel 1:
 ```html
 <form action="/home/{{ $door }}/selectuser" class="col-12" onsubmit="return checkValidation()" method="post">
 ```
@@ -393,7 +404,7 @@ function showCheckboxError()
 }
 ```
 Zum anderen verhindern wir in dieser View mithilfe von JavaScript, dass ein Client eine ungültige Zeitspanne angeben kann. Es ist nicht möglich den Beginn der Zeitspanne hinter das Ende der Zeitspanne zu setzen.
-Code Beispiel 1:
+<br>Code Beispiel 1:
 ```html
 <div class="slidecontainer">
     <?php
@@ -437,7 +448,7 @@ $("#my-to-range").on("input", function()
 ```
 ###### **AJAX Funktionalität**
 In userem letzten Anwendungsfall wenden wir in der View "mio_transactions.blade.php" JavaScript in Verbindung mit AJAX an. In dieser View zeigen wir in Form einer Tabelle Transaktionen einer entsprechenden Tür an und ermöglichen es authentifizierten Benutzern nach einem Benutzername und einem Datum zu suchen. Um die bisherige Suche zu einer "Live-Suche" umzuwandeln, erstellten wir zunächst in dem Verzeichnis "/resources/views" den Ordner "ajax". In diesem Ordner erstellten wir dann eine View, die die Tabelle mit aktualisierten Transaktionen anzeigt.
-Code Beispiel für die View:
+<br>Code Beispiel für die View:
 ```html
 @foreach($transactions as $v)
     <tr>
@@ -449,7 +460,7 @@ Code Beispiel für die View:
 @endforeach
 ```
 Anschließend fügten wir in der View "mio_transactions.blade.php" in den entsprechenden Formularen den Input-Feldern die Eigenschaft "onkeyup" hinzu. Somit wird nach jeder Eingabe des Benutzers eine entsprechende JavaScript-Funktion aufgerufen. Diese JavaScript-Funktion ruft wiederum die jQuery-Funktion "load()" auf. Die "load()"-Funktion bekommt eine URL inklusive Parameter übergeben. Somit wird im "BP_SearchController.php" eine entsprechende Funktion aufgerufen, die die Parameter aus dem Request verarbeitet, entsprechende Transaktionen aus dem "TransactionsModel.php" holt und diese Transaktionen dann der AJAX-View mitgibt. Auf diese Weise wird das Element der View "mio_transaction.blade.php", das innerhalb der JavaScript-Funktion die "load()"-Funktion aufruft, nach jeder Eingabe des Benutzers aktualisiert, ohne dass die Webseite neu geladen wird.
-Code Beispiel für die Erweiterung der Input-Felder um die Eigenschaft "onkeyup":
+<br>Code Beispiel für die Erweiterung der Input-Felder um die Eigenschaft "onkeyup":
 ```html
 <input id="username-big" type="search" onkeyup="reload_big()" class="form-control" name="username" placeholder="Username ..." autocomplete="off" @if ($protocol_right == 0) disabled @endif>
 ```
@@ -481,6 +492,8 @@ private function filterLIKE(Request $request, $door)
 s. "BP_SearchController.php"
 ```
 
+---
+
 #### *8. Arbeitsauftrag (07.06.2018): Deployment & Performance*
 ###### **Deployment**
 Zu Beginn dieses Arbeitsauftrages stellten wir gemeinsam mit Ihnen in der Übung unsere 
@@ -491,6 +504,8 @@ Anschließend verwendeten wir YSlow, um die Performance unserer Webapplikation z
 Um die Performance zu verbessern, führten wir mithilfe der Datei "webpack.mix.js" die beiden CSS-Dateien "mio_styles.css" und "bootstrap.css" zu einer CSS-Datei "mixOfMioAndBootstrap.css" zusammen. Zudem komprimierten wir die Datei "mixOfMioAndBootstrap.css". Ergänzend führten wir all unsere JavaScript-Dateien zu einer einzigen JavaScript-Datei "mixOfMio.js" zusammen und komprimierten diese ebenfalls.
 ###### **Sonstige Optimierungen der Performance**
 Des Weiteren optimierten wir unsere Datenbankzugriffe, um die Performance unserer Webapplikation zu verbessern.
+
+---
 
 #### *9. Arbeitsauftrag (14.06.2018): Search Engine Optimization*
 ###### **Technical SEO**
@@ -505,6 +520,8 @@ Um "Mio" möglichst gut finden zu können, überlegten wir uns zunächst ein paa
 in Paragraphen unserer Begrüßungsseite. Ergänzend optimierten wir den Inhalt unserer Begrüßungsseite, indem wir doppelt vorkommende Überschriften oder Paragraphen vermieden.
 ###### **Social Networks**
 Exemplarisch ergänzten wir Social Network Links in unserer Begrüßungsseite.
+
+---
 
 #### *10. Arbeitsauftrag (21.06.2018): Security*
 ###### **Authentifizierung & Autorisierung**
