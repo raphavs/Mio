@@ -102,19 +102,19 @@
                 <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">
                     <h3 class="my-welcome-h3-size">Clients</h3>
-                    <p>... manage their doors.</p>
-                    <p>They determine who of their users are allowed to open which door at which time.</p>
-                    <p>Of course, they can open their doors and view the transactions.</p>
+                    <p class="offset-xl-1 col-xl-10">... manage their doors.</p>
+                    <p class="offset-xl-1 col-xl-10">They determine who of their users are allowed to open which door at which time.</p>
+                    <p class="offset-xl-1 col-xl-10">Of course, they can open their doors and view the transactions.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">
                     <h3 class="my-welcome-h3-size">Users</h3>
-                    <p>... open doors smart via smartphone, tablet or PC and view also the transactions.</p>
+                    <p class="offset-xl-1 col-xl-10">... open doors smart via smartphone, tablet or PC and view also the transactions.</p>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">
                     <h3 class="my-welcome-h3-size">Manufacturers</h3>
-                    <p>... register their devices. Thus, server and devices can communicate with each other.</p>
+                    <p class="offset-xl-1 col-xl-10">... register their devices. Thus, server and devices can communicate with each other.</p>
                 </div>
             </div>
         </div>
