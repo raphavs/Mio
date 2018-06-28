@@ -68,11 +68,11 @@
                         <p>
                             Mio is an access control system that perfectly complements your smart home.
                             It allows you to manage your doors smart and easily with your smartphone, tablet or PC.
-                            Mio is what defines modern living and modern life nowadays.
+                            Mio is what modern home and modern living is all about today.
                         </p>
                         <p>
-                            Register within a few minutes. Add your doors to your account.
-                            Manage your doors by creating users for them and managing their rights.
+                            Register within a few minutes. Add your doors to your account and then
+                            manage your doors by creating users for them and managing their rights.
                         </p>
                         <br>
                         <a class="btn btn-readmore" role="button" href="{{ route('welcome.info') }}">read more ...</a>
@@ -103,15 +103,13 @@
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">
                     <h3 class="my-welcome-h3-size">Clients</h3>
                     <p>... manage their doors.</p>
-                    <p>... determine who of their users are allowed to open which door at which time.</p>
-                    <p>... open doors easily via smartphone, tablet or PC.</p>
-                    <p>... see transactions.</p>
+                    <p>They determine who of their users are allowed to open which door at which time.</p>
+                    <p>Of course, they can open their doors and view the transactions.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">
                     <h3 class="my-welcome-h3-size">Users</h3>
-                    <p>... open doors easily via smartphone, tablet or PC.</p>
-                    <p>... see transactions.</p>
+                    <p>... open doors smart via smartphone, tablet or PC and view also the transactions.</p>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-lg-4 my-user-padding">
                     <img src="/Image_Pixabay/user_icon.png" class="img-fluid rounded-circle user-img" alt="User">

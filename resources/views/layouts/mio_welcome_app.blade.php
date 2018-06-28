@@ -3,7 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
     <meta name="google-site-verification" content="3wpuyun9QgG9ijXoQjdUWpycM3XJidpvTqI8qTgOePQ"/>
     <meta name="description" content="Mio - Manage your doors smart. Mio is an access control system that allows modern living and modern home."/>
 

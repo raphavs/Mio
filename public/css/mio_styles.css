@@ -319,10 +319,12 @@ body {
 .my-logging-content-center {
     justify-content: center;
     margin-top: 12rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px){
     .my-logging-content-center {
         margin-top: 4.5rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -514,13 +516,15 @@ a .disabled {
 .my-add-door-position {
     justify-content: center;
     margin-top: 5rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px) {
     .my-position-btns-home {
-        margin-top: 7rem;
+        margin-top: 9rem;
     }
     .my-add-door-position {
         margin-top: 2.5rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -540,17 +544,25 @@ a .disabled {
 
 /* Scrollbar Doors (Home) */
 .my-doors-position {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll; */
+    /* overflow-x: hidden; */
     text-align: center;
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
-    max-height: 45%;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+    /* max-height: 45%;
     top: 58%;
     left: 50%;
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+@media screen and (max-width: 500px) {
+    .my-doors-position {
+        margin-top: 3rem;
+        margin-bottom: 3.5rem;
+    }
 }
 ::-webkit-scrollbar {
     width: 0;
@@ -584,20 +596,24 @@ a .disabled {
 /* Position für body (Home/ManageDoors) */
 .my-home-position {
     margin-top: 12.5rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px) {
     .my-home-position {
         margin-top: 8.5rem;
+        margin-bottom: 3.5rem;
     }
 }
 
 /* Position für body (Home/Blades Business Process) */
 .my-home-bp-search-position {
     margin-top: 10rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px) {
     .my-home-bp-search-position {
         margin-top: 8.5rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -845,14 +861,22 @@ a .disabled {
 
 /* Users Position (Home/ManageDoor/SelectUser) */
 .my-users-position {
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
     width: 100%;
-    top: 50%;
+    margin-top: 12.5rem;
+    margin-bottom: 8rem;
+    /* top: 50%;
     left: 50%;
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+@media screen and (max-width: 500px) {
+    .my-users-position {
+        margin-top: 10rem;
+        margin-bottom: 3.5rem;
+    }
 }
 
 /* Schrift Users Liste (Home/ManageDoor/SelectUser) */
@@ -876,25 +900,22 @@ a .disabled {
 
 /* Scrollbar Users (Home/ManageDoor/SelectUser) */
 .my-user-center {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
     text-align: center;
-    max-height: 24rem;
+    /* max-height: 24rem; */
     margin-top: 6vh;
-}
-@media screen and (max-width: 500px){
-    .my-user-center {
-        max-height: 16.5rem;
-    }
 }
 
 /* Position für body (Home/Blades Business Process) */
 .my-home-bp-adjust-position {
     margin-top: 13.5rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px) {
     .my-home-bp-adjust-position {
         margin-top: 8.5rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -1148,10 +1169,12 @@ a .disabled {
 .my-adduser-content-center {
     justify-content: center;
     margin-top: 12rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px){
     .my-adduser-content-center {
         margin-top: 8rem;
+        margin-bottom: 3.5rem;
     }
 }
 
@@ -1274,10 +1297,12 @@ a .disabled {
 /* Margin Content (Admin) */
 .my-admin-content-center {
     margin-top: 14rem;
+    margin-bottom: 8rem;
 }
 @media screen and (max-width: 500px) {
     .my-admin-content-center {
         margin-top: 9.8rem;
+        margin-bottom: 3.5rem;
     }
 }
 
